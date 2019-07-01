@@ -1,6 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { BsModalService } from 'ngx-bootstrap/modal';
+import { BsModalRef } from 'ngx-bootstrap/modal';
 
 import { Group } from '../group.model';
+import { GroupNewModalComponent } from './../group-newModal/group-newModal.component';
 
 @Component({
   selector: 'app-groups-list',
@@ -12,7 +15,9 @@ export class GroupsListComponent implements OnInit {
   @Input() mygroups: boolean;
   @Input() nameGroupp: string;
 
-  constructor() { }
+  modalRef: BsModalRef;
+
+  constructor(private modalService: BsModalService) { }
 
   ngOnInit() {
 
@@ -27,6 +32,15 @@ export class GroupsListComponent implements OnInit {
     } else {
       return false;
     }    
+  }
+
+  onNew() {
+    this.modalRef = this.modalService.show(GroupNewModalComponent,  {
+      initialState: {
+        title: 'Create a New Group',
+        data: {}
+      }
+    });
   }
 
   

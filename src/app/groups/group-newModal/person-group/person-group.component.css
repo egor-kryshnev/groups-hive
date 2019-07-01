@@ -1,0 +1,11 @@
+.hover {
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 15px;
+    width: max-content;
+    height: 4rem;
+}
+
+.hover:hover {
+    background-color: #f0f0f5;
+}

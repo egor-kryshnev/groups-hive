@@ -9,13 +9,14 @@
             </li>
         </ng-container>
         
-        <li *ngIf="mygroups" class="hex">
+        <li *ngIf="mygroups" class="hex" (click)="onNew()">
             <a class="hexIn">
                 <img src="assets/img/Plus_Sign.png" alt=""/>
                 <h1>Create a new Group</h1>
                 <p>Create a new Group</p>
             </a>
         </li>
+        
 </ul>
 
 <!-- <ul id="hexGrid">

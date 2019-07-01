@@ -1,0 +1,21 @@
+/* .modal-backdrop{z-index: 1050;}
+.modal{z-index: 1060;} */
+
+
+.inlinee {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+#horizscroll {
+    overflow: auto;
+    white-space: nowrap;
+}
+
+#horizscroll app-person-group {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+}
