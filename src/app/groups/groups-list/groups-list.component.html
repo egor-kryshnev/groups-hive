@@ -1,0 +1,29 @@
+<ul id="hexGrid">
+        <ng-container *ngFor="let group of groups">
+            <li *ngIf="checking(group.name)" class="hex">
+                <a class="hexIn">
+                    <img src="{{ group.imgPath }}" alt=""/>
+                    <h1>{{ group.name }}</h1>
+                    <p>{{ group.people.length }} of members</p>
+                </a>
+            </li>
+        </ng-container>
+        
+        <li *ngIf="mygroups" class="hex">
+            <a class="hexIn">
+                <img src="assets/img/Plus_Sign.png" alt=""/>
+                <h1>Create a new Group</h1>
+                <p>Create a new Group</p>
+            </a>
+        </li>
+</ul>
+
+<!-- <ul id="hexGrid">
+    <ng-container *ngFor="let group of groups" >
+            <app-group-item class="hexmy" [group]="group" [id]="group._id"></app-group-item>
+    </ng-container>
+    
+</ul> -->
+
+
+

@@ -1,0 +1,25 @@
+<br>
+<div class="container">
+  <!-- <div class="jumbotron"> -->
+    <div class="input-group">
+      <input type="text" class="form-control" name="nameGroup" [(ngModel)]="nameGroup" placeholder="Search">
+    </div>
+  <!-- </div> -->
+</div>
+<hr>
+<div class="row">
+  <div class="col-lg-6">
+    <app-groups-list [mygroups]="false" [groups]="groups" [nameGroupp]="nameGroup"></app-groups-list>
+  </div>
+  <!-- <div class="col-lg-4">
+      <div class="vl" style="float: left;
+      position: relative;
+      left: 50%;"></div>
+  </div> -->
+  
+  <div class="col-lg-6">
+    <!-- <app-hive></app-hive> -->
+    
+    <app-groups-list [mygroups]="true" [groups]="groupsAdmin" [nameGroupp]="nameGroup"></app-groups-list>
+  </div>
+</div>

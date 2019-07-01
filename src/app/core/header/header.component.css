@@ -1,0 +1,12 @@
+.navbar {
+    background-color: #669999;
+    color: black;
+}
+
+.navbar-header a {
+    color: black;
+}
+
+.nav-item a {
+    color: white;
+}
