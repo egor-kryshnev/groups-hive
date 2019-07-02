@@ -1,6 +1,7 @@
 <ul id="hexGrid">
-        <ng-container *ngFor="let group of groups">
-            <li *ngIf="checking(group.name)" class="hex">
+        <ng-container *ngFor="let group of groups | filter :'name' : nameGroupp : 'includes'" >
+            <!-- <li *ngIf="checking(group.name)" class="hex"> -->
+            <li class="hex">
                 <a class="hexIn">
                     <img src="{{ group.imgPath }}" alt=""/>
                     <h1>{{ group.name }}</h1>

@@ -1,64 +1,47 @@
-<!-- <div class="modal fade"> -->
-  <!-- <div class="modal-dialog modal-lg modal-dialog-centered" role="document"> -->
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title"> {{ title }} </h4>
-        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-          <div class="container">
-            <div class="jumbotron">
-              <br>
-              <h4>Choose Image</h4>
-              <input type="file" (change)="onFileSelected($event)">
-              <button type="button" (click)="onUpload()">Upload</button>
-              <br>
-              <br>
-              <div class="input-group">
-                <input type="text" class="form-control" name="nameGroup" [(ngModel)]="nameGroup" placeholder="Name of Group">
+<div class="modal-content">
+  <div class="modal-header">
+    <h4 class="modal-title"> {{ title }} </h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+      <div class="container">
+        <div class="jumbotron">
+          <br>
+          <div class="input-group">
+            <input type="text" class="form-control" name="nameGroup" [(ngModel)]="nameGroup" placeholder="Name of Group">
+          </div>
+          <br>
+          <input class="form-control" type="text" name="name" [(ngModel)]="inputName" #namee="ngModel" placeholder="Search of People">
+          <br>
+          <div id="horizscroll" class="col-xs-12">
+            <ng-container *ngFor="let person of peopleToAdd; let i = index;">
+              <div class="hover card rounded-circle inlinee">
+                <div class="card-body">
+                  <app-person-group [nameToAdd]="person.name"><sup *ngIf="person.admin" class="fa fa-user-secret" style="color: #33cc33;" tooltip="Admin" [adaptivePosition]="false" placement="top"></sup></app-person-group>
+                  <br>
+                  <div>
+                    <button type="button" class="btn btn-danger btn-circle" tooltip="Remove Him" [adaptivePosition]="false" placement="top" (click)="onRemoveFromList(person)"><i class="fa fa-times"></i></button>
+                    <button type="button" class="btn btn-success btn-circle" tooltip="Make Him Admin" [adaptivePosition]="false" placement="top" (click)="onAdminPerson(i)" style="margin-left: 15px;"><i class="fa fa-user"></i></button>
+                  </div>
+                </div>
               </div>
-              <br>
-              <input class="form-control" type="text" name="name" [(ngModel)]="inputName" #namee="ngModel" placeholder="Search of People">
-              <br>
-              <div id="horizscroll" class="col-xs-12">
-                <app-person-group *ngFor="let person of peopleToAdd" class="inlinee" (click)="onRemoveFromList(person)" [nameToAdd]="person.name"></app-person-group>
-              </div>
-              <br>
-              <div class="col-xs-12">
-                <ng-container *ngFor="let person of people">
-                  <app-person *ngIf="checking(person.name)" (click)="onChoosePerson(person)" [name]="person.name"></app-person>
-                </ng-container>
-              </div>
-            </div>
-          </div> 
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="modalRef.hide()">Close</button>
-        <button type="button" class="btn btn-primary" (click)="onSubmit()" [disabled]="!peopleToAdd || peopleToAdd.length === 0">Save changes</button>
-      </div>
-    </div>
-  <!-- </div> -->
-<!-- </div> -->
-
-
-<!-- <div class="modal fade" data-backdrop="false" style="background-color: rgba(0, 0, 0, 0.5);"> -->
-  <!-- <div class="modal-dialog"> -->
-    <!-- <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-      </div>
-      <div class="modal-body">
-        sadsad
-        asdsadsa
-        dsadsad
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div> -->
-  <!-- </div> -->
-<!-- </div> -->
+              <!-- <p>dsfsf</p> -->
+            </ng-container>
+          </div>
+          <br>
+          <div class="col-xs-12">
+            <ng-container *ngFor="let person of people | filterdontshowinstart: 'name' : inputName: 'includes'">
+              <!-- <app-person *ngIf="checking(person.name)" style="cursor: pointer;" (click)="onChoosePerson(person)" [name]="person.name"></app-person> -->
+              <app-person style="cursor: pointer;" (click)="onChoosePerson(person)" [name]="person.name"></app-person>
+            </ng-container>
+          </div>
+        </div>
+      </div> 
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="modalRef.hide()">Close</button>
+    <button type="button" class="btn btn-primary" (click)="onSubmit()" [disabled]="!peopleToAdd || peopleToAdd.length === 0">Save changes</button>
+  </div>
+</div>

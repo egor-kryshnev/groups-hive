@@ -1,5 +1,12 @@
-<div class="hover card">
-  <div class="card-body">
-    <p class="card-text">{{ nameToAdd }} <sup style="color: red">X</sup></p>
-  </div>
-</div>
+<!-- <div class="hover card"> -->
+  <!-- <div class="card-body"> -->
+
+    <!-- <p class="card-text">{{ nameToAdd }} <sup style="color: red">X</sup></p> -->
+    
+    <p class="card-title" style="display: inline-block;">
+    {{ nameToAdd }} <ng-content></ng-content>
+    </p>
+    <!-- <button class="btn btn-primary" (click)="onRemovePerson(i)">Remove</button>
+      <button class="btn btn-primary" style="margin-left: 5px;" (click)="onAdminPerson(i)">Admin</button> -->
+  <!-- </div> -->
+<!-- </div> -->

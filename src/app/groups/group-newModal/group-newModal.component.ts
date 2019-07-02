@@ -2,7 +2,7 @@ import { AuthService } from './../../auth/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BsModalRef } from 'ngx-bootstrap/modal';
-import { People } from '../people.model';
+import { People, PeopleGroup } from '../peopleGroup.model';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -14,7 +14,7 @@ export class GroupNewModalComponent implements OnInit {
   private people: People[];
   public inputName: string;
   public nameGroup: string;
-  private peopleToAdd: People[];
+  private peopleToAdd: PeopleGroup[];
 
   selectedFile: File = null;
 
@@ -27,6 +27,16 @@ export class GroupNewModalComponent implements OnInit {
       console.log(res);
       
       this.people = res;
+      // let acc = {
+      //   name: this.authService.getAcc().name,
+      //   number: this.authService.getAcc().number
+      // };
+      // let index = this.people.findIndex(i => { console.log(i === acc)});
+      
+      // console.log(this.people);
+      // console.log(acc);
+      // console.log(index);
+      
     });
 
   }
@@ -39,12 +49,18 @@ export class GroupNewModalComponent implements OnInit {
       this.peopleToAdd = [person];
     else this.peopleToAdd.push(person);
     console.log(this.peopleToAdd);
+     let index = this.people.indexOf(person);
+     this.people.splice(index, 1);
     
   }
 
   onRemoveFromList(person) {
     let index = this.peopleToAdd.indexOf(person);
     this.peopleToAdd.splice(index, 1);
+
+    if(!this.people) 
+      this.people = [person];
+    else this.people.push(person);
   }
 
   checking(str) {
@@ -91,6 +107,11 @@ export class GroupNewModalComponent implements OnInit {
   }
 
   onUpload() {
+    
+  }
+
+  onAdminPerson(index){
+    this.peopleToAdd[index].admin = !this.peopleToAdd[index].admin;
     
   }
 

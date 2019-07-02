@@ -1,3 +1,5 @@
+import { FilterDontshowinstartPipe } from './groups/filter-dontshowinstart.pipe';
+import { FilterPipe } from './groups/filter.pipe';
 import { AuthService } from './auth/auth.service';
 import { HeaderComponent } from './core/header/header.component';
 import { BrowserModule } from '@angular/platform-browser';
@@ -17,6 +19,9 @@ import { GroupNewModalComponent } from './groups/group-newModal/group-newModal.c
 import { PersonComponent } from './groups/group-newModal/person/person.component';
 import { PersonGroupComponent } from './groups/group-newModal/person-group/person-group.component';
 import { PeopleListComponent } from './groups/group-newModal/people-list/people-list.component';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
+
 
 @NgModule({
    declarations: [
@@ -29,14 +34,18 @@ import { PeopleListComponent } from './groups/group-newModal/people-list/people-
       GroupNewModalComponent,
       PersonComponent,
       PersonGroupComponent,
-      PeopleListComponent
+      PeopleListComponent,
+      FilterPipe,
+      FilterDontshowinstartPipe
    ],
    imports: [
       BrowserModule,
       AppRoutingModule,
       HttpClientModule,
       FormsModule,
-      ModalModule.forRoot()
+      ModalModule.forRoot(),
+      AngularFontAwesomeModule,
+      TooltipModule.forRoot()
    ],
    providers: [
       BsModalRef,

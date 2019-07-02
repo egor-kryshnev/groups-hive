@@ -1,4 +1,4 @@
-import { People } from './../groups/people.model';
+import { PeopleGroup } from './../groups/peopleGroup.model';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -38,8 +38,8 @@ export class AuthService {
         // }
     // }
 
-    public getAcc(): People {
-        let acc = new People('first', '1', true);
+    public getAcc(): PeopleGroup {
+        let acc = new PeopleGroup('first', '1', true);
         return acc;
     }
 }

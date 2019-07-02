@@ -1,4 +1,5 @@
-import { People } from './people.model';
+import { AuthService } from './../auth/auth.service';
+import { People } from './peopleGroup.model';
 import { Component, OnInit, Input, SimpleChanges, SimpleChange, OnChanges } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -15,25 +16,30 @@ export class GroupsComponent implements OnInit, OnChanges {
   @Input() groupsAdmin: Group[];
   private nameGroup: string;
 
-  constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute) { }
+  constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute, private authService: AuthService) { }
 
-  ngOnInit() {
-    // this.http.get('http://localhost:5000/allGroups').subscribe((res: any[]) => {
+  ngOnInit() {    
+
+    // this.http.get('http://localhost:5000/allGroups/getGroupsByPerson/' + this.authService.getAcc().name).subscribe((res: any[]) => {
     //   this.groups = res;
+    //   console.log(this.groups);
+      
     //   // console.log(this.groups);
     // });
-
-    
-    
-
-    this.http.get('http://localhost:5000/allGroups/getGroupsByPerson/first').subscribe((res: any[]) => {
+    this.http.get('http://localhost:5000/allGroups/getGroupsByPersonNotAdmin/' + this.authService.getAcc().name).subscribe((res: any[]) => {
       this.groups = res;
+      console.log(this.groups);
+      
       // console.log(this.groups);
     });
-    this.http.get('http://localhost:5000/allGroups/getGroupsByPersonAdmin/first').subscribe((res: any[]) => {
+    this.http.get('http://localhost:5000/allGroups/getGroupsByPersonAdmin/' + this.authService.getAcc().name).subscribe((res: any[]) => {
       this.groupsAdmin = res;
+      
       // console.log(this.groups);
     });
+
+
+    
 
     
 
