@@ -88,23 +88,7 @@ export class GroupNewModalComponent implements OnInit {
 
     var resGroup = {
       name: this.nameGroup,
-      people: [
-        {
-          name: "second",
-          number: "2",
-          admin: true
-        },
-        {
-          name: "third",
-          number: "3",
-          admin: false
-        },
-        {
-          name: "first",
-          number: "1",
-          admin: true
-        }
-      ],
+      people: this.peopleToAdd,
       imgPath: "assets/img/default" + img + ".png"
     };
 
@@ -116,11 +100,11 @@ export class GroupNewModalComponent implements OnInit {
       console.log(res);      
     });
 
-    // this.inputName = "";
-    // this.nameGroup = "";
-    // this.peopleToAdd.splice(0, this.peopleToAdd.length);
+    this.inputName = "";
+    this.nameGroup = "";
+    this.peopleToAdd.splice(0, this.peopleToAdd.length);
     
-    // this.router.navigate(['/'], { relativeTo: this.route });
+    this.router.navigate(['/'], { relativeTo: this.route });
   }
 
   onFileSelected(event){
