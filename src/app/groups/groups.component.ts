@@ -29,7 +29,8 @@ export class GroupsComponent implements OnInit, OnChanges {
 
     // this.http.get('http://localhost:5000/allGroups/getGroupsByPersonNotAdmin/' + this.authService.getAcc().name).subscribe((res: any[]) => {
     // this.http.get('http://localhost:5000/api/allGroups/getGroupsByPersonNotAdmin/' + this.authService.getAcc().name).subscribe((res: any[]) => {
-    this.http.get('http://0.0.0.0:5000/api/allGroups/getGroupsByPersonNotAdmin/' + this.authService.getAcc().name).subscribe((res: any[]) => {
+    // this.http.get('http://0.0.0.0:5000/api/allGroups/getGroupsByPersonNotAdmin/' + this.authService.getAcc().name).subscribe((res: any[]) => {
+    this.http.get('http://13.79.165.38:5000/api/allGroups/getGroupsByPersonNotAdmin/' + this.authService.getAcc().name).subscribe((res: any[]) => {
       this.groups = res;
       console.log(this.groups);
       
@@ -38,7 +39,8 @@ export class GroupsComponent implements OnInit, OnChanges {
 
     // this.http.get('http://localhost:5000/allGroups/getGroupsByPersonAdmin/' + this.authService.getAcc().name).subscribe((res: any[]) => {
     // this.http.get('http://localhost:5000/api/allGroups/getGroupsByPersonAdmin/' + this.authService.getAcc().name).subscribe((res: any[]) => {
-    this.http.get('http://0.0.0.0:5000/api/allGroups/getGroupsByPersonAdmin/' + this.authService.getAcc().name).subscribe((res: any[]) => {
+    // this.http.get('http://0.0.0.0:5000/api/allGroups/getGroupsByPersonAdmin/' + this.authService.getAcc().name).subscribe((res: any[]) => {
+    this.http.get('http://13.79.165.38:5000/api/allGroups/getGroupsByPersonAdmin/' + this.authService.getAcc().name).subscribe((res: any[]) => {
       this.groupsAdmin = res;
       
       // console.log(this.groups);

@@ -111,7 +111,8 @@ export class GroupNewModalComponent implements OnInit {
     console.log(resGroup);
     
     // this.http.post('http://localhost:5000/createGroup', resGroup).subscribe((res: any[]) => {
-    this.http.post('http://localhost:5000/api/createGroup', resGroup).subscribe((res: any[]) => {
+    // this.http.post('http://localhost:5000/api/createGroup', resGroup).subscribe((res: any[]) => {
+    this.http.post('http://13.79.165.38:5000/api/createGroup', resGroup).subscribe((res: any[]) => {
       console.log(res);      
     });
 
