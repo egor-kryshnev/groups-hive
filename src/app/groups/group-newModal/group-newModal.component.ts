@@ -50,8 +50,8 @@ export class GroupNewModalComponent implements OnInit {
       this.peopleToAdd = [person];
     else this.peopleToAdd.push(person);
     console.log(this.peopleToAdd);
-     let index = this.people.indexOf(person);
-     this.people.splice(index, 1);
+    let index = this.people.indexOf(person);
+    this.people.splice(index, 1);
     
   }
 
@@ -80,6 +80,7 @@ export class GroupNewModalComponent implements OnInit {
     let img = Math.floor(Math.random() * (10 - 1 + 1) ) + 1;
 
     console.log(img);
+    console.log(this.peopleToAdd);
 
     if(!this.peopleToAdd) 
       this.peopleToAdd = [this.authService.getAcc()];
@@ -87,19 +88,38 @@ export class GroupNewModalComponent implements OnInit {
 
     var resGroup = {
       name: this.nameGroup,
-      people: this.peopleToAdd,
+      people: [
+        {
+          name: "second",
+          number: "2",
+          admin: true
+        },
+        {
+          name: "third",
+          number: "3",
+          admin: false
+        },
+        {
+          name: "first",
+          number: "1",
+          admin: true
+        }
+      ],
       imgPath: "assets/img/default" + img + ".png"
     };
 
-    this.http.post('http://localhost:5000/createGroup', resGroup).subscribe((res: any[]) => {
+    console.log(resGroup);
+    
+    // this.http.post('http://localhost:5000/createGroup', resGroup).subscribe((res: any[]) => {
+    this.http.post('http://localhost:5000/api/createGroup', resGroup).subscribe((res: any[]) => {
       console.log(res);      
     });
 
-    this.inputName = "";
-    this.nameGroup = "";
-    this.peopleToAdd.splice(0, this.peopleToAdd.length);
+    // this.inputName = "";
+    // this.nameGroup = "";
+    // this.peopleToAdd.splice(0, this.peopleToAdd.length);
     
-    this.router.navigate(['/'], { relativeTo: this.route });
+    // this.router.navigate(['/'], { relativeTo: this.route });
   }
 
   onFileSelected(event){
