@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 @Injectable()
-export class PeopleGroup {
+export class People {
     public name: string;
     public number: string;
 

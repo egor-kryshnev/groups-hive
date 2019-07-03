@@ -2,7 +2,8 @@ import { AuthService } from './../../auth/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BsModalRef } from 'ngx-bootstrap/modal';
-import { People, PeopleGroup } from '../peopleGroup.model';
+import { PeopleGroup } from '../peopleGroup.model';
+import { People } from '../people.model';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({

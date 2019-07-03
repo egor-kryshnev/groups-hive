@@ -1,5 +1,5 @@
 import { AuthService } from './../auth/auth.service';
-import { People } from './peopleGroup.model';
+import { PeopleGroup } from './peopleGroup.model';
 import { Component, OnInit, Input, SimpleChanges, SimpleChange, OnChanges } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router, ActivatedRoute } from '@angular/router';
