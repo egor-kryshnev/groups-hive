@@ -21,6 +21,8 @@ import { PersonGroupComponent } from './groups/group-newModal/person-group/perso
 import { PeopleListComponent } from './groups/group-newModal/people-list/people-list.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { PersonGroupService } from './groups/group-newModal/person-group/person-group.service';
 
 
 @NgModule({
@@ -45,11 +47,13 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
       FormsModule,
       ModalModule.forRoot(),
       AngularFontAwesomeModule,
-      TooltipModule.forRoot()
+      TooltipModule.forRoot(),
+      ScrollingModule
    ],
    providers: [
       BsModalRef,
-      AuthService
+      AuthService,
+      PersonGroupService
    ],
    bootstrap: [
       AppComponent

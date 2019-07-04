@@ -9,6 +9,11 @@
   font-size: 15px;
 }
 
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
 #hexGrid:after {
   content: "";
   display: block;

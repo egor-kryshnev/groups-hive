@@ -16,25 +16,19 @@
           <input class="form-control" type="text" name="name" [(ngModel)]="inputName" #namee="ngModel" placeholder="Search of People">
           <br>
           <div id="horizscroll" class="col-xs-12">
-            <ng-container *ngFor="let person of peopleToAdd; let i = index;">
-              <div class="hover card rounded-circle inlinee">
-                <div class="card-body">
-                  <app-person-group [nameToAdd]="person.name"><sup *ngIf="person.admin" class="fa fa-user-secret" style="color: #33cc33;" tooltip="Admin" [adaptivePosition]="false" placement="top"></sup></app-person-group>
-                  <br>
-                  <div>
-                    <button type="button" class="btn btn-danger btn-circle" tooltip="Remove Him" [adaptivePosition]="false" placement="top" (click)="onRemoveFromList(person)"><i class="fa fa-times"></i></button>
-                    <button type="button" class="btn btn-success btn-circle" tooltip="Make Him Admin" [adaptivePosition]="false" placement="top" (click)="onAdminPerson(i)" style="margin-left: 15px;"><i class="fa fa-user"></i></button>
-                  </div>
+            <div class="inlinee" *ngFor="let person of personGroupService.getPeopleToAdd(); let i = index;">
+              <div class="d-flex flex-column align-items-center">
+                  <div class=""><app-person-group [nameToAdd]="person.name" [person]="person" [indexPerson]="i"></app-person-group></div>
+                  <div class=""><p>{{ person.name }}</p></div>
+                  <!-- <div class=""><p>Yeagor Kryshniov Andreevich</p></div> -->
                 </div>
-              </div>
-              <!-- <p>dsfsf</p> -->
-            </ng-container>
+            </div>
           </div>
           <br>
           <div class="col-xs-12">
-            <ng-container *ngFor="let person of people | filterdontshowinstart: 'name' : inputName: 'includes'">
+            <ng-container *ngFor="let person of personGroupService.getPeople() | filterdontshowinstart: 'name' : inputName: 'includes'">
               <!-- <app-person *ngIf="checking(person.name)" style="cursor: pointer;" (click)="onChoosePerson(person)" [name]="person.name"></app-person> -->
-              <app-person style="cursor: pointer;" (click)="onChoosePerson(person)" [name]="person.name"></app-person>
+              <app-person *ngIf="person.name !== authService.getAcc().name || true" style="cursor: pointer;" (click)="onChoosePerson(person)" [name]="person.name"></app-person>
             </ng-container>
           </div>
         </div>
@@ -42,6 +36,6 @@
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="modalRef.hide()">Close</button>
-    <button type="button" class="btn btn-primary" (click)="onSubmit()" [disabled]="!peopleToAdd || peopleToAdd.length === 0">Save changes</button>
+    <button type="button" class="btn btn-primary" (click)="onSubmit()" [disabled]="!personGroupService.getPeopleToAdd() || personGroupService.getPeopleToAdd().length === 0">Save changes</button>
   </div>
 </div>

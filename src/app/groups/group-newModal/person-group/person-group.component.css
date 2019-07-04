@@ -1,11 +1,58 @@
+.inlinee {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+#horizscroll {
+    overflow: auto;
+    white-space: nowrap;
+}
+
+#horizscroll .hover {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+}
+
 .hover {
     cursor: pointer;
     display: inline-block;
     margin-right: 15px;
     width: max-content;
-    height: 4rem;
+    height: 8rem;
+
+    position: relative;
+    /* bottom: 8px;
+    left: 16px; */
+}
+
+.top-right {
+    position: absolute;
+    top: 8px;
+    right: 16px;
 }
 
 .hover:hover {
     background-color: #f0f0f5;
+}
+
+.btn-circle.btn-xl {
+    width: 70px;
+    height: 70px;
+    padding: 10px 16px;
+    border-radius: 35px;
+    font-size: 24px;
+    line-height: 1.33;
+}
+
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    padding: 6px 0px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.42857;
 }
