@@ -13,8 +13,7 @@
 
 <!-- <div class="inlinee" style="position: relative;"> -->
   <div class="hover card img-fluid rounded-circle" [ngStyle]="!disabled?{'height' : '140px', 'width' : '140px'} : {'height' : '50px', 'width' : '50px'}">
-    <!-- <img class="card-img-top rounded-circle" src="https://img.icons8.com/ultraviolet/120/000000/guest-male.png" alt="account image" [ngStyle]="!disabled?{'height' : '135px', 'width' : '135px'} : {'height' : '45px', 'width' : '45px'}"> -->
-    <img class="card-img-top rounded-circle" src="https://img.icons8.com/ultraviolet/120/000000/guest-male.png" alt="account image" [ngStyle]="!disabled?{'height' : '139px', 'width' : '139px'} : {'height' : '49px', 'width' : '49px'}">
+    <img class="card-img-top rounded-circle" src="assets/img/guest.png" alt="account image" [ngStyle]="!disabled?{'height' : '139px', 'width' : '139px'} : {'height' : '49px', 'width' : '49px'}">
     <sup *ngIf="personGroupService.checkAdminPersonToAdd(indexPerson)" class="top-right fa fa-user-secret" style="color: #33cc33;" tooltip="Admin" [adaptivePosition]="false" placement="top"></sup>
     <div class="card-img-overlay">
       <div class="card-body" (click)="onMakeLittleCard()">

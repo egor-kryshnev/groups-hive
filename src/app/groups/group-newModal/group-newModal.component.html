@@ -15,7 +15,7 @@
           <br>
           <input class="form-control" type="text" name="name" [(ngModel)]="inputName" #namee="ngModel" placeholder="Search of People">
           <br>
-          <div id="horizscroll" class="col-xs-12">
+          <div id="horizscroll">
             <div class="inlinee" *ngFor="let person of personGroupService.getPeopleToAdd(); let i = index;">
               <div class="d-flex flex-column align-items-center">
                   <div class=""><app-person-group [nameToAdd]="person.name" [person]="person" [indexPerson]="i"></app-person-group></div>

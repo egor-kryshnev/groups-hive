@@ -1,3 +1,4 @@
+import { PeoplegroupListComponent } from './groups/group-detail/peoplegroup-list/peoplegroup-list.component';
 import { FilterDontshowinstartPipe } from './groups/filter-dontshowinstart.pipe';
 import { FilterPipe } from './groups/filter.pipe';
 import { AuthService } from './auth/auth.service';
@@ -23,6 +24,8 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { PersonGroupService } from './groups/group-newModal/person-group/person-group.service';
+import { GroupDetailComponent } from './groups/group-detail/group-detail.component';
+import { GroupDetailService } from './groups/group-detail/group-detail.service';
 
 
 @NgModule({
@@ -38,7 +41,9 @@ import { PersonGroupService } from './groups/group-newModal/person-group/person-
       PersonGroupComponent,
       PeopleListComponent,
       FilterPipe,
-      FilterDontshowinstartPipe
+      FilterDontshowinstartPipe,
+      GroupDetailComponent,
+      PeoplegroupListComponent
    ],
    imports: [
       BrowserModule,
@@ -53,7 +58,8 @@ import { PersonGroupService } from './groups/group-newModal/person-group/person-
    providers: [
       BsModalRef,
       AuthService,
-      PersonGroupService
+      PersonGroupService,
+      GroupDetailService
    ],
    bootstrap: [
       AppComponent

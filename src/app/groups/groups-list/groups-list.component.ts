@@ -1,3 +1,4 @@
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from './../../auth/auth.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { BsModalService } from 'ngx-bootstrap/modal';
@@ -19,7 +20,7 @@ export class GroupsListComponent implements OnInit {
 
   modalRef: BsModalRef;
 
-  constructor(private modalService: BsModalService, private authService: AuthService) { }
+  constructor(private modalService: BsModalService, private authService: AuthService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     this.user = this.authService.getAcc().name;
@@ -43,6 +44,12 @@ export class GroupsListComponent implements OnInit {
         data: {}
       }
     });
+  }
+
+  onChooseGroup(id) {
+    console.log(id);
+    this.router.navigate(['/group', id], {relativeTo: this.route});
+    
   }
 
   

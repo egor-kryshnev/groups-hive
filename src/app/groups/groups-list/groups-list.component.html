@@ -2,7 +2,7 @@
     <cdk-virtual-scroll-viewport style="height: 600px" itemSize="250" class="viewport">
         <ng-container *ngFor="let group of groups | filter :'name' : nameGroupp : 'includes'" >
             <!-- <li *ngIf="checking(group.name)" class="hex"> -->
-            <li class="hex">
+            <li class="hex" (click)="onChooseGroup(group._id)">
                 <a class="hexIn">
                     <img src="{{ group.imgPath }}" alt=""/>
                     <h1>{{ group.name }}</h1>

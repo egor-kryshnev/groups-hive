@@ -1,0 +1,23 @@
+<br>
+<div class="container">
+  <!-- <div class="jumbotron"> -->
+    <div class="input-group">
+      <input type="text" class="form-control" name="namePerson" [(ngModel)]="namePerson" placeholder="Search">
+    </div>
+  <!-- </div> -->
+</div>
+<hr style="border: none;
+background-color: black;
+height: 2px;">
+<br>
+<div class="row" *ngIf="groupDetailService.existGroup()">
+  <div class="col-lg-12">
+    <h1 style="text-align: center">{{ groupDetailService.getGroupName() }}</h1>
+    <hr style="border: none;
+    background-color: black;
+    height: 2px;">
+    <!-- <app-groups-list [mygroups]="false" [groups]="groups" [nameGroupp]="nameGroup"></app-groups-list> -->
+    <!-- <app-peoplegroup-list [namePersonSearch]="namePerson" [people]="group.people"></app-peoplegroup-list> -->
+    <app-peoplegroup-list [namePersonSearch]="namePerson" [people]="groupDetailService.getPeople()"></app-peoplegroup-list>
+  </div>
+</div>
