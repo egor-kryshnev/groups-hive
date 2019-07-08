@@ -9,15 +9,17 @@
                   <h1>
                       {{ person.name }}
                     </h1>
-                    <p>
+                    <p *ngIf="admin">
                         
                     <button type="button" style="left: 60px; height: 24px;" class="btn btn-danger" tooltip="Remove Him"  placement="top" (click)="onRemove(i)"><i class="fa fa-times" style="right: 6px; top: 1px; bottom: 0px;"></i></button>
                     <label class="switch">
-                        <!-- <input type="checkbox" [checked]="true" [(ngModel)]="isChecked" (change)="checkValue(i ,isChecked)"> -->
                         <input type="checkbox" name="admin" id="admin" [checked]="person.admin" (change)="checkValue(i)">
                         <span class="slider round"></span>
                     </label>
-                  </p>
+                    </p>
+                    <p *ngIf="!admin">
+
+                    </p>
               </a>
           </li>
       </ng-container>

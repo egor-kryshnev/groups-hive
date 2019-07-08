@@ -1,3 +1,4 @@
+import { ModalRemoveGroupComponent } from './groups/group-detail/modal-remove-group/modal-remove-group.component';
 import { PeoplegroupListComponent } from './groups/group-detail/peoplegroup-list/peoplegroup-list.component';
 import { FilterDontshowinstartPipe } from './groups/filter-dontshowinstart.pipe';
 import { FilterPipe } from './groups/filter.pipe';
@@ -43,7 +44,8 @@ import { GroupDetailService } from './groups/group-detail/group-detail.service';
       FilterPipe,
       FilterDontshowinstartPipe,
       GroupDetailComponent,
-      PeoplegroupListComponent
+      PeoplegroupListComponent,
+      ModalRemoveGroupComponent
    ],
    imports: [
       BrowserModule,
@@ -65,7 +67,8 @@ import { GroupDetailService } from './groups/group-detail/group-detail.service';
       AppComponent
    ],
    entryComponents: [
-      GroupNewModalComponent
+      GroupNewModalComponent,
+      ModalRemoveGroupComponent
    ]
 })
 export class AppModule { }

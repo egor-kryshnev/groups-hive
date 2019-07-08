@@ -10,6 +10,7 @@ import { PeopleGroup } from '../../peopleGroup.model';
 export class PeoplegroupListComponent implements OnInit {
   @Input() people: PeopleGroup[];
   @Input() namePersonSearch: string;
+  @Input() admin: boolean;
 
   constructor(private groupDetailService: GroupDetailService) { }
 

@@ -42,4 +42,18 @@ export class AuthService {
         let acc = new PeopleGroup('first', '1', true);
         return acc;
     }
+
+    public checkAdmin(people: PeopleGroup[]): boolean {
+        let acc = new PeopleGroup('first', '1', true);
+
+        var result = people.find( person => {
+            return person.name === acc.name && person.admin === acc.admin;
+        });
+        
+        if(result){
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
