@@ -8,6 +8,7 @@ import { GroupDetailService } from './group-detail.service';
 
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { BsModalRef } from 'ngx-bootstrap/modal';
+import { ModalChangeAvatarGroupComponent } from './modal-change-avatar-group/modal-change-avatar-group.component';
 
 @Component({
   selector: 'app-group-detail',
@@ -57,13 +58,22 @@ export class GroupDetailComponent implements OnInit {
   }
 
   onRemoveGroup() {
-    this.groupDetailService.removeGroup();
-    // this.modalRef = this.modalService.show(ModalRemoveGroupComponent,  {
-    //   initialState: {
-    //     title: 'Remove Group',
-    //     data: {}
-    //   }
-    // });
+    // this.groupDetailService.removeGroup();
+    this.modalRef = this.modalService.show(ModalRemoveGroupComponent,  {
+      initialState: {
+        title: 'Remove Group',
+        data: {}
+      }
+    });
+  }
+
+  onChangAvatarGroup() {
+    this.modalRef = this.modalService.show(ModalChangeAvatarGroupComponent,  {
+      initialState: {
+        title: 'Change Avatar Group',
+        data: {}
+      }
+    });
   }
 
 }

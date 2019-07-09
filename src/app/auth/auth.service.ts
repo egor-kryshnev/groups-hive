@@ -39,12 +39,12 @@ export class AuthService {
     // }
 
     public getAcc(): PeopleGroup {
-        let acc = new PeopleGroup('first', '1', true);
+        let acc = new PeopleGroup('first', '1', true, "assets/img/guest.png");
         return acc;
     }
 
     public checkAdmin(people: PeopleGroup[]): boolean {
-        let acc = new PeopleGroup('first', '1', true);
+        let acc = new PeopleGroup('first', '1', true, "assets/img/guest.png");
 
         var result = people.find( person => {
             return person.name === acc.name && person.admin === acc.admin;

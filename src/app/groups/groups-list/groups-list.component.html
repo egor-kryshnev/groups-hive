@@ -1,5 +1,5 @@
+<cdk-virtual-scroll-viewport style="height: 600px;" itemSize="250" class="viewport">
 <ul id="hexGrid">
-    <cdk-virtual-scroll-viewport style="height: 600px" itemSize="250" class="viewport">
         <ng-container *ngFor="let group of groups | filter :'name' : nameGroupp : 'includes'" >
             <!-- <li *ngIf="checking(group.name)" class="hex"> -->
             <li class="hex" (click)="onChooseGroup(group._id)">
@@ -18,8 +18,8 @@
                 <p>Create a new Group</p>
             </a>
         </li>
-    </cdk-virtual-scroll-viewport>    
-</ul>
+    </ul>
+</cdk-virtual-scroll-viewport>    
 
 <!-- <ul id="hexGrid">
     <ng-container *ngFor="let group of groups" >

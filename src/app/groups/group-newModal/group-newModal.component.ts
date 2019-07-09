@@ -40,37 +40,13 @@ export class GroupNewModalComponent implements OnInit {
 
   onChoosePerson(person) {
 
-    // person.admin = false;
-
-    // if(!this.peopleToAdd) 
-    //   this.peopleToAdd = [person];
-    // else this.peopleToAdd.push(person);
-    // console.log(this.peopleToAdd);
-
-    // let index = this.people.indexOf(person);
-    // this.people.splice(index, 1);
-
     console.log("choose");
     
     this.personGroupService.addPeopleToAdd(person);
     this.personGroupService.removeFromPeople(person);
+    this.inputName = "";
     
   }
-
-  // onRemoveFromList(person) {
-  //   // let index = this.peopleToAdd.indexOf(person);
-  //   // this.peopleToAdd.splice(index, 1);
-
-  //   // if(!this.people) 
-  //   //   this.people = [person];
-  //   // else this.people.push(person);
-
-  //   console.log("remove");
-    
-
-  //   this.personGroupService.removeFromPeopleToAdd(person);
-  //   this.personGroupService.addPeople(person);
-  // }
 
   checking(str) {
     if(!this.inputName || this.inputName.length < 3 || str === this.authService.getAcc().name) return false;
@@ -90,9 +66,6 @@ export class GroupNewModalComponent implements OnInit {
     console.log(img);
     console.log(this.personGroupService.getPeopleToAdd());
 
-    // if(!this.peopleToAdd) 
-    //   this.peopleToAdd = [this.authService.getAcc()];
-    // else this.peopleToAdd.push(this.authService.getAcc());
     this.personGroupService.addAdminPeopleToAdd(this.authService.getAcc());
     
     console.log(this.personGroupService.getPeopleToAdd());
@@ -118,7 +91,9 @@ export class GroupNewModalComponent implements OnInit {
     // this.peopleToAdd.splice(0, this.peopleToAdd.length);
     this.personGroupService.cleanPeopleToAdd();
     
-    this.router.navigate(['/'], { relativeTo: this.route });
+    this.modalRef.hide();
+    // this.router.navigate([''], { relativeTo: this.route });
+    window.location.reload();
   }
 
   onFileSelected(event){
@@ -126,14 +101,9 @@ export class GroupNewModalComponent implements OnInit {
     this.selectedFile = <File>event.target.files[0];
   }
 
-  // onUpload() {
-    
-  // }
-
-  // onAdminPerson(index){
-  //   // this.peopleToAdd[index].admin = !this.peopleToAdd[index].admin;
-  //   this.personGroupService.makeAdminPersonToAdd(index);
-    
-  // }
+  onCloseModal(){
+    this.personGroupService.cleanPeopleToAdd();
+    this.modalRef.hide();
+  }
 
 }

@@ -34,7 +34,11 @@ export class GroupDetailService {
     return this.group.name;
   }
 
-  updateGroup(name, people) {
+  getGroupImagePath() {
+    return this.group.imgPath;
+  }
+
+  updateGroup(name, people, imgPath) {
     this.group = name;
     this.group.people = people;
 
@@ -59,6 +63,17 @@ export class GroupDetailService {
     console.log(this.group);
     
 
+    this.http.put('http://localhost:5000/api/updateGroup', this.group).subscribe((res: any) => {
+      console.log(res);
+      
+    });
+  }
+
+  updateImgGroup(imgPath){
+    this.group.imgPath = imgPath;
+    
+    console.log(this.group);
+    
     this.http.put('http://localhost:5000/api/updateGroup', this.group).subscribe((res: any) => {
       console.log(res);
       

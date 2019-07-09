@@ -26,6 +26,7 @@ export class PersonGroupService {
     addPeopleToAdd(person) {
 
         person.admin = false;
+        person.avatarPath = "assets/img/guest.png";
 
         if(!this.peopleToAdd) 
             this.peopleToAdd = [person];
@@ -37,6 +38,7 @@ export class PersonGroupService {
     addAdminPeopleToAdd(person) {
 
         person.admin = true;
+        person.avatarPath = "assets/img/guest.png";
 
         if(!this.peopleToAdd) 
             this.peopleToAdd = [person];
@@ -53,7 +55,9 @@ export class PersonGroupService {
     }
 
     cleanPeopleToAdd() {
-        this.peopleToAdd.splice(0, this.peopleToAdd.length);
+        if(this.peopleToAdd){
+            this.peopleToAdd.splice(0, this.peopleToAdd.length);
+        }
     }
 
     makeAdminPersonToAdd(index) {

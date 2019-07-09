@@ -12,20 +12,22 @@
 </div> -->
 
 <!-- <div class="inlinee" style="position: relative;"> -->
-  <div class="hover card img-fluid rounded-circle" [ngStyle]="!disabled?{'height' : '140px', 'width' : '140px'} : {'height' : '50px', 'width' : '50px'}">
+  <div class="hover card img-fluid rounded-circle" style="z-index: 1;" [ngStyle]="!disabled?{'height' : '140px', 'width' : '140px'} : {'height' : '50px', 'width' : '50px'}">
     <img class="card-img-top rounded-circle" src="assets/img/guest.png" alt="account image" [ngStyle]="!disabled?{'height' : '139px', 'width' : '139px'} : {'height' : '49px', 'width' : '49px'}">
     <sup *ngIf="personGroupService.checkAdminPersonToAdd(indexPerson)" class="top-right fa fa-user-secret" style="color: #33cc33;" tooltip="Admin" [adaptivePosition]="false" placement="top"></sup>
     <div class="card-img-overlay">
       <div class="card-body" (click)="onMakeLittleCard()">
-      <br>
-      <br>
-      <div class="card-text" *ngIf="!disabled" style="padding-inline-end: 50px;">
-        <button type="button" class="btn btn-danger btn-circle" tooltip="Remove Him" [adaptivePosition]="false" placement="top" (click)="onRemoveFromList(person)"><i class="fa fa-times"></i></button>
-        <button type="button" class="btn btn-success btn-circle" tooltip="Make Him Admin" [adaptivePosition]="false" placement="top" (click)="onAdminPerson(indexPerson)" style="margin-left: 15px;"><i class="fa fa-user"></i></button>
-      </div>
+        <div class="card-text" *ngIf="!disabled">
+          <!-- <button type="button" style="margin-top: 20px; left: 2px;"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i></button> -->
+          <br>
+          <br>
+          <button type="button" class="btn btn-danger btn-circle" tooltip="Remove Him" [adaptivePosition]="false" placement="top" (click)="onRemoveFromList(person)"><i class="fa fa-times"></i></button>
+          <button type="button" class="btn btn-success btn-circle" tooltip="Make Him Admin" [adaptivePosition]="false" placement="top" (click)="onAdminPerson(indexPerson)" style="margin-left: 15px;"><i class="fa fa-user"></i></button>
+        </div>
       </div>
     </div>
   </div>
+  <!-- <button type="button" style="z-index: 2;"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i></button> -->
   <!-- <h3 *ngIf="!disabled" class="card-title" style="display: inline-block; position: absolute; bottom: 0;">
       {{ nameToAdd }} <sup *ngIf="personGroupService.checkAdminPersonToAdd(indexPerson)" class="fa fa-user-secret" style="color: #33cc33;" tooltip="Admin" [adaptivePosition]="false" placement="top"></sup>
   </h3> -->

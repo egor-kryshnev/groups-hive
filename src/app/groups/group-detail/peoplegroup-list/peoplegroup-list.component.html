@@ -5,18 +5,21 @@
           <!-- <li *ngIf="checking(group.name)" class="hex"> -->
           <li class="hex">
               <a class="hexIn">
-                  <img src="assets/img/guest.png" alt=""/>
+                  <img [src]="person.avatarPath" alt=""/>
                   <h1>
                       {{ person.name }}
                     </h1>
                     <p *ngIf="admin">
                         
-                    <button type="button" style="left: 60px; height: 24px;" class="btn btn-danger" tooltip="Remove Him"  placement="top" (click)="onRemove(i)"><i class="fa fa-times" style="right: 6px; top: 1px; bottom: 0px;"></i></button>
-                    <label class="switch">
+                    <button type="button" style="left: 60px; height: 24px;" class="btn btn-danger" tooltip="Remove Him"  placement="bottom" (click)="onRemove(i)"><i class="fa fa-times" style="right: 6px; top: 1px; bottom: 0px;"></i></button>
+                    <label class="switch" tooltip="Admin" placement="bottom">
                         <input type="checkbox" name="admin" id="admin" [checked]="person.admin" (change)="checkValue(i)">
                         <span class="slider round"></span>
                     </label>
+                    <br>
+                    <button type="button" style="width: 24px; height: 24px; right: 72px; top: 40px;" class="btn btn-secondary" tooltip="Change Image" placement="top"><i class="fa fa-user-circle" style="right: 4px; top: 2px; bottom: 0px;"></i></button>
                     </p>
+
                     <p *ngIf="!admin">
 
                     </p>

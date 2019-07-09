@@ -27,6 +27,7 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
 import { PersonGroupService } from './groups/group-newModal/person-group/person-group.service';
 import { GroupDetailComponent } from './groups/group-detail/group-detail.component';
 import { GroupDetailService } from './groups/group-detail/group-detail.service';
+import { ModalChangeAvatarGroupComponent } from './groups/group-detail/modal-change-avatar-group/modal-change-avatar-group.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { GroupDetailService } from './groups/group-detail/group-detail.service';
       FilterDontshowinstartPipe,
       GroupDetailComponent,
       PeoplegroupListComponent,
-      ModalRemoveGroupComponent
+      ModalRemoveGroupComponent,
+      ModalChangeAvatarGroupComponent
    ],
    imports: [
       BrowserModule,
@@ -68,7 +70,8 @@ import { GroupDetailService } from './groups/group-detail/group-detail.service';
    ],
    entryComponents: [
       GroupNewModalComponent,
-      ModalRemoveGroupComponent
+      ModalRemoveGroupComponent,
+      ModalChangeAvatarGroupComponent
    ]
 })
 export class AppModule { }

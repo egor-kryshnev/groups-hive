@@ -1,5 +1,5 @@
 .navbar {
-    background-color: #669999;
+    background-color: black;
     color: black;
 }
 
@@ -8,5 +8,9 @@
 }
 
 .nav-item a {
+    color: white;
+}
+
+h2 {
     color: white;
 }

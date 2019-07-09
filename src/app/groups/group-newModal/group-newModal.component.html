@@ -1,7 +1,7 @@
 <div class="modal-content">
   <div class="modal-header">
     <h4 class="modal-title"> {{ title }} </h4>
-    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+    <button type="button" class="close pull-right" aria-label="Close" (click)="onCloseModal()">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
@@ -35,7 +35,7 @@
       </div> 
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="modalRef.hide()">Close</button>
+    <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="onCloseModal()">Close</button>
     <button type="button" class="btn btn-primary" (click)="onSubmit()" [disabled]="!personGroupService.getPeopleToAdd() || personGroupService.getPeopleToAdd().length === 0">Save changes</button>
   </div>
 </div>
