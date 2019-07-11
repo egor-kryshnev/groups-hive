@@ -1,3 +1,4 @@
+import { AuthService } from './../../../auth/auth.service';
 import { GroupDetailService } from './../group-detail.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { PeopleGroup } from '../../peopleGroup.model';
@@ -12,7 +13,7 @@ export class PeoplegroupListComponent implements OnInit {
   @Input() namePersonSearch: string;
   @Input() admin: boolean;
 
-  constructor(private groupDetailService: GroupDetailService) { }
+  constructor(private groupDetailService: GroupDetailService, private authService: AuthService) { }
 
   ngOnInit() {
     this.people = this.groupDetailService.getPeople();

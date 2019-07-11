@@ -1,3 +1,4 @@
+import { GetipService } from '../getip.service';
 import { AuthService } from './../auth/auth.service';
 import { PeopleGroup } from './peopleGroup.model';
 import { Component, OnInit, Input, SimpleChanges, SimpleChange, OnChanges } from '@angular/core';
@@ -16,7 +17,7 @@ export class GroupsComponent implements OnInit, OnChanges {
   @Input() groupsAdmin: Group[];
   private nameGroup: string;
 
-  constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute, private authService: AuthService) { }
+  constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute, private authService: AuthService, private getipService: GetipService) { }
 
   ngOnInit() {    
 
@@ -29,7 +30,8 @@ export class GroupsComponent implements OnInit, OnChanges {
 
     
     // this.http.get('http://13.79.165.38:5000/api/allGroups/getGroupsByPersonNotAdmin/' + this.authService.getAcc().name).subscribe((res: any[]) => {
-    this.http.get('http://localhost:5000/api/allGroups/getGroupsByPersonNotAdmin/' + this.authService.getAcc().name).subscribe((res: any[]) => {
+    // this.http.get('http://localhost:5000/api/allGroups/getGroupsByPersonNotAdmin/' + this.authService.getAcc().name).subscribe((res: any[]) => {
+    this.http.get('http://' + this.getipService.getip() + ':5000/api/allGroups/getGroupsByPersonNotAdmin/' + this.authService.getAcc().name).subscribe((res: any[]) => {
       this.groups = res;
       console.log(this.groups);
       
@@ -38,7 +40,7 @@ export class GroupsComponent implements OnInit, OnChanges {
 
     
     // this.http.get('http://13.79.165.38:5000/api/allGroups/getGroupsByPersonAdmin/' + this.authService.getAcc().name).subscribe((res: any[]) => {
-    this.http.get('http://localhost:5000/api/allGroups/getGroupsByPersonAdmin/' + this.authService.getAcc().name).subscribe((res: any[]) => {
+    this.http.get('http://' + this.getipService.getip() + ':5000/api/allGroups/getGroupsByPersonAdmin/' + this.authService.getAcc().name).subscribe((res: any[]) => {
       this.groupsAdmin = res;
       
       // console.log(this.groups);

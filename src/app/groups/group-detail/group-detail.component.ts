@@ -1,3 +1,4 @@
+import { GetipService } from './../../getip.service';
 import { ModalRemoveGroupComponent } from './modal-remove-group/modal-remove-group.component';
 import { AuthService } from './../../auth/auth.service';
 import { HttpClient } from '@angular/common/http';
@@ -23,14 +24,14 @@ export class GroupDetailComponent implements OnInit {
 
   modalRef: BsModalRef;
 
-  constructor(private modalService: BsModalService, private router: Router, private route: ActivatedRoute, private http: HttpClient, private groupDetailService: GroupDetailService, private authService: AuthService) { }
+  constructor(private modalService: BsModalService, private router: Router, private route: ActivatedRoute, private http: HttpClient, private groupDetailService: GroupDetailService, private authService: AuthService, private getipService: GetipService) { }
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
     console.log(id);
     
     if(id){
-      this.http.get('http://localhost:5000/api/getOneGroupById/' + id).subscribe((res: any) => {
+      this.http.get('http://' + this.getipService.getip() + ':5000/api/getOneGroupById/' + id).subscribe((res: any) => {
           console.log(res);
           this.groupDetailService.setGroup(res);
           this.changingName = this.groupDetailService.getGroupName();

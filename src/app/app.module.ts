@@ -1,3 +1,4 @@
+import { GetipService } from './getip.service';
 import { ModalRemoveGroupComponent } from './groups/group-detail/modal-remove-group/modal-remove-group.component';
 import { PeoplegroupListComponent } from './groups/group-detail/peoplegroup-list/peoplegroup-list.component';
 import { FilterDontshowinstartPipe } from './groups/filter-dontshowinstart.pipe';
@@ -63,7 +64,8 @@ import { ModalChangeAvatarGroupComponent } from './groups/group-detail/modal-cha
       BsModalRef,
       AuthService,
       PersonGroupService,
-      GroupDetailService
+      GroupDetailService,
+      GetipService
    ],
    bootstrap: [
       AppComponent

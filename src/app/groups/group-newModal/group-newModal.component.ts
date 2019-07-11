@@ -1,3 +1,4 @@
+import { GetipService } from './../../getip.service';
 import { PersonGroupService } from './person-group/person-group.service';
 import { AuthService } from './../../auth/auth.service';
 import { Component, OnInit } from '@angular/core';
@@ -25,7 +26,7 @@ export class GroupNewModalComponent implements OnInit {
 
   title;
 
-  constructor( public modalRef: BsModalRef, private http: HttpClient, private router: Router, private route: ActivatedRoute, private authService: AuthService, private personGroupService: PersonGroupService ) { }
+  constructor( public modalRef: BsModalRef, private http: HttpClient, private router: Router, private route: ActivatedRoute, private authService: AuthService, private personGroupService: PersonGroupService, private getipService: GetipService ) { }
 
   ngOnInit() {
     this.http.get('https://groups-3fd03.firebaseio.com/people.json').subscribe((res: any[]) => {
@@ -80,7 +81,7 @@ export class GroupNewModalComponent implements OnInit {
     console.log(resGroup);
     
     // this.http.post('http://localhost:5000/createGroup', resGroup).subscribe((res: any[]) => {
-    this.http.post('http://localhost:5000/api/createGroup', resGroup).subscribe((res: any[]) => {
+    this.http.post('http://' + this.getipService.getip() + ':5000/api/createGroup', resGroup).subscribe((res: any[]) => {
     // this.http.post('http://13.79.165.38:5000/api/createGroup', resGroup).subscribe((res: any[]) => {
       console.log(res);      
     });
