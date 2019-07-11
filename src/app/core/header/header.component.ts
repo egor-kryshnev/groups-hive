@@ -1,3 +1,5 @@
+import { GroupDetailService } from './../../groups/group-detail/group-detail.service';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route: ActivatedRoute, private router: Router, private groupDetailService: GroupDetailService) { }
 
   ngOnInit() {
+  }
+
+  onHome() {
+    this.groupDetailService.cleanGroup();
+    this.router.navigate(['/'], { relativeTo: this.route });
   }
 
 }

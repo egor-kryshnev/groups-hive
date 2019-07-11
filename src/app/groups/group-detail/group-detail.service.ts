@@ -100,4 +100,8 @@ export class GroupDetailService {
     });
   }
 
+  cleanGroup() {
+    this.group = null;
+  }
+
 }

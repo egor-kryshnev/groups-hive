@@ -30,6 +30,10 @@
   transform: rotate(-60deg) skewY(30deg) translatez(-1px);
 }
 
+.hex:hover {
+  cursor: pointer;
+}
+
 .hex * {
   position: absolute;
   visibility: visible;
