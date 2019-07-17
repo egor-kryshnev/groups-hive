@@ -1,3 +1,4 @@
+import { GroupDetailService } from './../group-detail/group-detail.service';
 import { GetipService } from './../../getip.service';
 import { PersonGroupService } from './person-group/person-group.service';
 import { AuthService } from './../../auth/auth.service';
@@ -15,8 +16,12 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class GroupNewModalComponent implements OnInit {
   // private people: People[];
+  title: string;
+  addPeople: boolean;
+
   public inputName: string;
   public nameGroup: string;
+  public description: string = "";
   // private peopleToAdd: PeopleGroup[];
 
   // heightCard = "140px";
@@ -24,9 +29,8 @@ export class GroupNewModalComponent implements OnInit {
 
   selectedFile: File = null;
 
-  title;
 
-  constructor( public modalRef: BsModalRef, private http: HttpClient, private router: Router, private route: ActivatedRoute, private authService: AuthService, private personGroupService: PersonGroupService, private getipService: GetipService ) { }
+  constructor( public modalRef: BsModalRef, private http: HttpClient, private router: Router, private route: ActivatedRoute, private authService: AuthService, private personGroupService: PersonGroupService, private getipService: GetipService, private groupDetailService: GroupDetailService ) { }
 
   ngOnInit() {
     this.http.get('https://groups-3fd03.firebaseio.com/people.json').subscribe((res: any[]) => {
@@ -35,7 +39,13 @@ export class GroupNewModalComponent implements OnInit {
       // this.people = res;
 
       this.personGroupService.setPeople(res);
+
+      let people = this.personGroupService.getPeople();
+      // let peopleinsideGroup = this.groupDetailService.getPeople();
+      
     });
+
+
 
   }
 
@@ -61,7 +71,16 @@ export class GroupNewModalComponent implements OnInit {
   }
 
   onSubmit() {
+    console.log(this.description);
+    
+    if(!this.addPeople){
+      this.onCreateGroup();
+    } else {
+      this.onAddPeopleToGroup();
+    }
+  }
 
+  onCreateGroup() {
     let img = Math.floor(Math.random() * (10 - 1 + 1) ) + 1;
 
     console.log(img);
@@ -75,7 +94,8 @@ export class GroupNewModalComponent implements OnInit {
       name: this.nameGroup,
       // people: this.peopleToAdd,
       people: this.personGroupService.getPeopleToAdd(),
-      imgPath: "assets/img/default" + img + ".png"
+      imgPath: "assets/img/default" + img + ".png",
+      description: this.description
     };
 
     console.log(resGroup);
@@ -97,6 +117,13 @@ export class GroupNewModalComponent implements OnInit {
     window.location.reload();
   }
 
+  onAddPeopleToGroup() {
+    let people: PeopleGroup[] = this.groupDetailService.getPeople();
+    Array.prototype.push.apply(people, this.personGroupService.getPeopleToAdd());
+    this.groupDetailService.updatePeopleGroup(people);
+    this.modalRef.hide();
+  }
+
   onFileSelected(event){
     // console.log(event);
     this.selectedFile = <File>event.target.files[0];
@@ -105,6 +132,10 @@ export class GroupNewModalComponent implements OnInit {
   onCloseModal(){
     this.personGroupService.cleanPeopleToAdd();
     this.modalRef.hide();
+  }
+
+  isInvalidInputName() {
+    return this.addPeople;
   }
 
 }

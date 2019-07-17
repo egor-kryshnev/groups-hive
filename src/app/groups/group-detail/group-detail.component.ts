@@ -1,3 +1,4 @@
+import { ModalChangeDescriptionComponent } from './modal-change-description/modal-change-description.component';
 import { GetipService } from './../../getip.service';
 import { ModalRemoveGroupComponent } from './modal-remove-group/modal-remove-group.component';
 import { AuthService } from './../../auth/auth.service';
@@ -18,9 +19,10 @@ import { ModalChangeAvatarGroupComponent } from './modal-change-avatar-group/mod
 })
 export class GroupDetailComponent implements OnInit {
   // group: Group;
-  changingName: string ;
+  changingName: string;
   changeName: boolean = false;
   admin: boolean;
+  description: string;
 
   modalRef: BsModalRef;
 
@@ -36,6 +38,7 @@ export class GroupDetailComponent implements OnInit {
           this.groupDetailService.setGroup(res);
           this.changingName = this.groupDetailService.getGroupName();
           this.admin = this.authService.checkAdmin(this.groupDetailService.getPeople());
+          this.description = this.groupDetailService.getgroupDescription();
           // this.group = res;        
       });
     }
@@ -63,7 +66,7 @@ export class GroupDetailComponent implements OnInit {
     this.modalRef = this.modalService.show(ModalRemoveGroupComponent,  {
       initialState: {
         title: 'Remove Group',
-        data: {}
+        leaveOrRemove: false
       }
     });
   }
@@ -73,6 +76,24 @@ export class GroupDetailComponent implements OnInit {
       initialState: {
         title: 'Change Avatar Group',
         data: {}
+      }
+    });
+  }
+
+  onChangeDescriptionGroup() {
+    this.modalRef = this.modalService.show(ModalChangeDescriptionComponent, {
+      initialState: {
+        title: 'Change Descripition Of Group',
+        description: this.groupDetailService.getgroupDescription()
+      }
+    });
+  }
+
+  onLeaveFromGroup() {
+    this.modalRef = this.modalService.show(ModalRemoveGroupComponent,  {
+      initialState: {
+        title: 'Leave From Group',
+        leaveOrRemove: true
       }
     });
   }

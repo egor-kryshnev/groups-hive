@@ -9,11 +9,19 @@
       <div class="container">
         <div class="jumbotron">
           <br>
-          <div class="input-group">
+          <!-- <div class="input-group" *ngIf="!addPeople">
             <input type="text" class="form-control" name="nameGroup" [(ngModel)]="nameGroup" placeholder="Name of Group">
-          </div>
+          </div> -->
+          <!-- <div class="input-group"> -->
+            <label for="nameGroup">Name of Group</label>
+            <input type="text" class="form-control" name="nameGroup" [(ngModel)]="nameGroup" placeholder="Name of Group" [disabled]="isInvalidInputName()">
+          <!-- </div> -->
           <br>
+          <label for="name">Search of people</label>
           <input class="form-control" type="text" name="name" [(ngModel)]="inputName" #namee="ngModel" placeholder="Search of People">
+          <br>
+          <label for="description">Description</label>
+          <textarea class="form-control" name="description" id="description" [(ngModel)]="description" cols="50" rows="6" [disabled]="isInvalidInputName()"></textarea>
           <br>
           <div id="horizscroll">
             <div class="inlinee" *ngFor="let person of personGroupService.getPeopleToAdd(); let i = index;">
@@ -26,7 +34,7 @@
           </div>
           <br>
           <div class="col-xs-12">
-            <ng-container *ngFor="let person of personGroupService.getPeople() | filterdontshowinstart: 'name' : inputName: 'includes'">
+            <ng-container *ngFor="let person of personGroupService.getPeople() | filterdontshowinstart: 'name' : inputName: 'addpeople'">
               <!-- <app-person *ngIf="checking(person.name)" style="cursor: pointer;" (click)="onChoosePerson(person)" [name]="person.name"></app-person> -->
               <app-person *ngIf="person.name !== authService.getAcc().name || true" style="cursor: pointer;" (click)="onChoosePerson(person)" [name]="person.name"></app-person>
             </ng-container>
@@ -37,5 +45,6 @@
   <div class="modal-footer">
     <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="onCloseModal()">Close</button>
     <button type="button" class="btn btn-primary" (click)="onSubmit()" [disabled]="!personGroupService.getPeopleToAdd() || personGroupService.getPeopleToAdd().length === 0">Save changes</button>
+    <!-- <button type="button" class="btn btn-primary" (click)="onSubmit()">Save changes</button> -->
   </div>
 </div>

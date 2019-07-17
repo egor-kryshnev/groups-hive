@@ -1,15 +1,17 @@
+import { AuthService } from './../../auth/auth.service';
 import { GetipService } from './../../getip.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { People } from './../people.model';
 import { Group } from './../group.model';
 import { Injectable } from '@angular/core';
+import { BsModalRef } from 'ngx-bootstrap/modal';
 
 @Injectable()
 export class GroupDetailService {
   private group: Group;
 
-  constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router, private getipService: GetipService) { }
+  constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router, private getipService: GetipService, private authService: AuthService) { }
 
   setGroup(group){
     this.group = group;
@@ -31,12 +33,20 @@ export class GroupDetailService {
     }
   }
 
+  getGroup() {
+    return this.group;
+  }
+
   getGroupName() {
     return this.group.name;
   }
 
   getGroupImagePath() {
     return this.group.imgPath;
+  }
+
+  getgroupDescription() {
+    return this.group.description;
   }
 
   updateGroup(name, people, imgPath) {
@@ -68,6 +78,36 @@ export class GroupDetailService {
       console.log(res);
       
     });
+  }
+
+  updateDescriptionGroup(description) {
+    this.group.description = description;
+
+    console.log(this.group);
+    
+
+    this.http.put('http://' + this.getipService.getip() + ':5000/api/updateGroup', this.group).subscribe((res: any) => {
+      console.log(res);
+      
+    });
+  }
+
+  leaveGroup(modalRef: BsModalRef){
+    let name = this.authService.getAcc().name;
+    console.log(name);    
+    let result = this.group.people.filter( el => {
+      return el.name === name;
+    });
+
+    if(result.length > 0){
+      this.group.people.splice(this.group.people.indexOf(result[0]), 1);
+      this.http.put('http://' + this.getipService.getip() + ':5000/api/updateGroup', this.group).subscribe((res: any) => {
+        if(res.message === "Group updated!"){
+          modalRef.hide();
+          this.router.navigate([''], {relativeTo: this.route});
+        }
+      });
+    }
   }
 
   updateImgGroup(imgPath){

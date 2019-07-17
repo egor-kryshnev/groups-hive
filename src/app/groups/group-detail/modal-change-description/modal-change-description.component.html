@@ -6,7 +6,9 @@
     </button>
   </div>
   <div class="modal-body">
-      <h5>Yoy really want to do this</h5>
+      <!-- <h5>Yoy really want to do this</h5> -->
+    <label for="description">Description</label>
+    <textarea class="form-control" name="description" id="description" [(ngModel)]="description" cols="50" rows="6"></textarea>
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="modalRef.hide()">Cancel</button>

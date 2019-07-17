@@ -34,8 +34,24 @@ height: 2px;">
     <hr style="border: none;
     background-color: black;
     height: 2px;">
+    <div class="row">
     
-    <app-peoplegroup-list [namePersonSearch]="namePerson" [people]="groupDetailService.getPeople()" [admin]="admin"></app-peoplegroup-list>
+      <div class="col-lg-9">
+        <app-peoplegroup-list [namePersonSearch]="namePerson" [people]="groupDetailService.getPeople()" [admin]="admin"></app-peoplegroup-list>
+      </div>
+      <div class="col-lg-3">
+        <div>
+          <!-- <div class="row"> -->
+            <label style="margin-left: 5px;"><h1>Description</h1></label>
+            <button class="btn btn-warning" style="position: relative; margin-bottom: 15px; margin-left: 5px;" (click)="onChangeDescriptionGroup()">Change Description</button>
+          <!-- </div> -->
+          <cdk-virtual-scroll-viewport style="height: 600px;" itemSize="250" class="viewport">
+            <h3>{{ description }}</h3>
+          </cdk-virtual-scroll-viewport>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 <button class="btn btn-danger" *ngIf="admin" style="float: right; margin-right: 20px;" (click)="onRemoveGroup()">Remove Group</button>
+<button class="btn btn-danger" style="float: right; margin-right: 20px;" (click)="onLeaveFromGroup()">Leave Group</button>

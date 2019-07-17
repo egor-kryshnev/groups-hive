@@ -7,11 +7,13 @@ export class Group {
     public name: string;
     public people: PeopleGroup[];
     public imgPath: string;
+    public description: string;
     
-    constructor(name: string, people: PeopleGroup[], _id: string, imgPath: string) {
+    constructor(name: string, people: PeopleGroup[], _id: string, imgPath: string, description: string) {
         this.name = name;
         this.people = people;
         this._id = _id;
         this.imgPath = imgPath;
+        this.description = description;
     }
 }

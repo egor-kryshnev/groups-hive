@@ -20,7 +20,7 @@ export class FilterPipe implements PipeTransform {
   filter(source :string, target :string, method:Method) : boolean {
 
     switch(method) {
-      case "includes" : return source.includes(target)
+      case "includes" : return source.toUpperCase().includes(target.toUpperCase())
       case "equal"  : return source === target
       case "not-equal" : return source !== target
     }

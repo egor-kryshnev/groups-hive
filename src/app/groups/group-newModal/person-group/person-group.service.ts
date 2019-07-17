@@ -26,7 +26,11 @@ export class PersonGroupService {
     addPeopleToAdd(person) {
 
         person.admin = false;
-        person.avatarPath = "assets/img/guest.png";
+        // person.avatarPath = "assets/img/guest.png";
+
+
+        let img = Math.floor(Math.random() * (9 - 1 + 1) ) + 1;
+        person.avatarPath = "assets/img/people/person" + img + ".png";
 
         if(!this.peopleToAdd) 
             this.peopleToAdd = [person];
@@ -38,7 +42,12 @@ export class PersonGroupService {
     addAdminPeopleToAdd(person) {
 
         person.admin = true;
-        person.avatarPath = "assets/img/guest.png";
+        // person.avatarPath = "assets/img/guest.png";
+
+
+        let img = Math.floor(Math.random() * (9 - 1 + 1) ) + 1;
+        person.avatarPath = "assets/img/people/person" + img + ".png";
+
 
         if(!this.peopleToAdd) 
             this.peopleToAdd = [person];

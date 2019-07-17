@@ -1,3 +1,4 @@
+import { ModalChangeDescriptionComponent } from './groups/group-detail/modal-change-description/modal-change-description.component';
 import { GetipService } from './getip.service';
 import { ModalRemoveGroupComponent } from './groups/group-detail/modal-remove-group/modal-remove-group.component';
 import { PeoplegroupListComponent } from './groups/group-detail/peoplegroup-list/peoplegroup-list.component';
@@ -48,7 +49,8 @@ import { ModalChangeAvatarGroupComponent } from './groups/group-detail/modal-cha
       GroupDetailComponent,
       PeoplegroupListComponent,
       ModalRemoveGroupComponent,
-      ModalChangeAvatarGroupComponent
+      ModalChangeAvatarGroupComponent,
+      ModalChangeDescriptionComponent
    ],
    imports: [
       BrowserModule,
@@ -73,7 +75,8 @@ import { ModalChangeAvatarGroupComponent } from './groups/group-detail/modal-cha
    entryComponents: [
       GroupNewModalComponent,
       ModalRemoveGroupComponent,
-      ModalChangeAvatarGroupComponent
+      ModalChangeAvatarGroupComponent,
+      ModalChangeDescriptionComponent
    ]
 })
 export class AppModule { }

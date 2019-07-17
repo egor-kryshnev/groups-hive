@@ -1,8 +1,7 @@
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from './../../auth/auth.service';
 import { Component, OnInit, Input } from '@angular/core';
-import { BsModalService } from 'ngx-bootstrap/modal';
-import { BsModalRef } from 'ngx-bootstrap/modal';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 
 import { Group } from '../group.model';
 import { GroupNewModalComponent } from './../group-newModal/group-newModal.component';
@@ -41,7 +40,8 @@ export class GroupsListComponent implements OnInit {
     this.modalRef = this.modalService.show(GroupNewModalComponent,  {
       initialState: {
         title: 'Create a New Group',
-        data: {}
+        addPeople: false,
+        nameGroup: null
       }
     });
   }

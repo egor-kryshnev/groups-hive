@@ -5,6 +5,7 @@
             <li class="hex" (click)="onChooseGroup(group._id)">
                 <a class="hexIn">
                     <img src="{{ group.imgPath }}" alt=""/>
+                    <div class="circle">{{ group.people.length }}</div>
                     <h1>{{ group.name }}</h1>
                     <p>{{ group.people.length }} of members</p>
                 </a>
@@ -19,7 +20,7 @@
             </a>
         </li>
     </ul>
-</cdk-virtual-scroll-viewport>    
+</cdk-virtual-scroll-viewport>
 
 <!-- <ul id="hexGrid">
     <ng-container *ngFor="let group of groups" >
