@@ -11,6 +11,7 @@ import { GroupDetailService } from './group-detail.service';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { BsModalRef } from 'ngx-bootstrap/modal';
 import { ModalChangeAvatarGroupComponent } from './modal-change-avatar-group/modal-change-avatar-group.component';
+import { ModalMailSenderComponent } from './modal-mail-sender/modal-mail-sender.component';
 
 @Component({
   selector: 'app-group-detail',
@@ -94,6 +95,14 @@ export class GroupDetailComponent implements OnInit {
       initialState: {
         title: 'Leave From Group',
         leaveOrRemove: true
+      }
+    });
+  }
+
+  onSendMailForGroup() {
+    this.modalRef = this.modalService.show(ModalMailSenderComponent,  {
+      initialState: {
+        title: 'Mail Sender'
       }
     });
   }

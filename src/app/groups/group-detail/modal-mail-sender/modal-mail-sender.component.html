@@ -1,0 +1,52 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <h4 class="modal-title">Mail Sender</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+      <div class="container">
+        <div class="col-xs-12">
+            <div style="display: block;" class="form-container">
+              <div class="close-form" (click)="modalRef.hide()">x</div>
+              <form class="form-inner">
+                <div class="form-left">	
+                
+                  <div class="label-line">
+                  <span class="span"></span>
+                  <label class="label transition">Name</label><input class="input" id="name" autocomplete="off">
+                  </div>
+                  
+                  <div class="label-line">
+                  <span class="span"></span>
+                  <label class="label transition">Mail</label><input class="input" id="mail" autocomplete="off">
+                  </div>
+                  
+                  <div class="label-line textarea">
+                  <span class="span"></span>
+                  <label class="label transition">Text</label><textarea class="input" id="text"></textarea>
+                  </div>
+                </div>
+                <div class="form-right transition">	
+                  <div class="message-sent">
+                      <span></span>
+                      Message sent
+                  </div>
+                  <div class="button-overlay"></div>
+                  <div class="button">
+                    <img src="http://antoniodinardo.com/TEST/mailform/plane.png">
+                    <span>Send</span>
+                  </div>
+                </div>
+              </form>
+            </div>
+        </div>
+      </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="modalRef.hide()">Cancel</button>
+    <!-- <button type="button" class="btn btn-primary" (click)="onSaveImage()">Save</button> -->
+  </div>
+</div>
+  
