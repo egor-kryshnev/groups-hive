@@ -19,6 +19,7 @@ export class ModalChangeDescriptionComponent implements OnInit {
 
   onSubmit() {
     this.groupDetailService.updateDescriptionGroup(this.description);
+    this.modalRef.hide()
   }
 
 }

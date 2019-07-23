@@ -1,46 +1,37 @@
-<div class="modal-content">
+<div class="modal-content modal modal-wide" style="width: auto; max-width: 600px;">
   <div class="modal-header">
     <h4 class="modal-title">Mail Sender</h4>
     <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
-  <div class="modal-body">
+  <div class="modal-body" style="width: auto; height: auto; max-height: 100%;">
       <div class="container">
         <div class="col-xs-12">
-            <div style="display: block;" class="form-container">
-              <div class="close-form" (click)="modalRef.hide()">x</div>
-              <form class="form-inner">
-                <div class="form-left">	
+            <form class="form">
+              <fieldset class="form__fieldset">
+            
+                <legend class="form__legend">Mail for all members of group</legend>
+            
                 
-                  <div class="label-line">
-                  <span class="span"></span>
-                  <label class="label transition">Name</label><input class="input" id="name" autocomplete="off">
-                  </div>
-                  
-                  <div class="label-line">
-                  <span class="span"></span>
-                  <label class="label transition">Mail</label><input class="input" id="mail" autocomplete="off">
-                  </div>
-                  
-                  <div class="label-line textarea">
-                  <span class="span"></span>
-                  <label class="label transition">Text</label><textarea class="input" id="text"></textarea>
-                  </div>
-                </div>
-                <div class="form-right transition">	
-                  <div class="message-sent">
-                      <span></span>
-                      Message sent
-                  </div>
-                  <div class="button-overlay"></div>
-                  <div class="button">
-                    <img src="http://antoniodinardo.com/TEST/mailform/plane.png">
-                    <span>Send</span>
-                  </div>
-                </div>
-              </form>
-            </div>
+                <label class="form__label" for="subject"></label>
+                <input class="form__input" type="text" placeholder="Subject" id="subject" required autocomplete="off">
+                <br>
+                <!-- <label class="form__label" for="message"></label>
+                <input class="form__input" type="text" placeholder="Message" id="message" required autocomplete="off"> -->
+                <!-- <textarea class="form_input" name="" id="" cols="40" rows="10"></textarea> -->
+
+                <textarea placeholder="Yor text" id="text" name="text" rows="4" style="overflow: hidden; word-wrap: break-word; resize: none; height: 150px; "></textarea>
+
+                <button class="form__btn">
+                  <!-- <svg class="form__indicator" xmlns="http://www.w3.org/2000/svg">
+                    <path class="progressbar" d=""></path>
+                  </svg> -->
+                  send
+                </button>
+            
+              </fieldset>
+            </form>
         </div>
       </div>
   </div>
