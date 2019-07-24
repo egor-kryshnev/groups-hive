@@ -1,6 +1,6 @@
 <cdk-virtual-scroll-viewport style="height: 600px;" itemSize="250" class="viewport">
 <ul id="hexGrid">
-        <ng-container *ngFor="let group of groups | filter :'name' : nameGroupp : 'includes'" >
+        <ng-container *ngFor="let group of groups | filter :['name'] : nameGroupp : 'includes'" >
             <!-- <li *ngIf="checking(group.name)" class="hex"> -->
             <li class="hex" (click)="onChooseGroup(group._id)">
                 <a class="hexIn">

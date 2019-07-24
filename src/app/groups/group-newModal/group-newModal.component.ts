@@ -60,7 +60,7 @@ export class GroupNewModalComponent implements OnInit {
   }
 
   checking(str) {
-    if(!this.inputName || this.inputName.length < 3 || str === this.authService.getAcc().name) return false;
+    if(!this.inputName || this.inputName.length < 3 || str === this.authService.getAcc().user.name) return false;
 
     if(str.toUpperCase().substr(0, this.inputName.length).indexOf(this.inputName.toUpperCase()) >= 0){
       // console.log(true);
@@ -86,13 +86,13 @@ export class GroupNewModalComponent implements OnInit {
     console.log(img);
     console.log(this.personGroupService.getPeopleToAdd());
 
-    this.personGroupService.addAdminPeopleToAdd(this.authService.getAcc());
+    // this.personGroupService.addAdminPeopleToAdd(this.authService.getAcc());
+    this.personGroupService.addMyAccountPeopleToAdd(this.authService.getAcc());
     
     console.log(this.personGroupService.getPeopleToAdd());
 
     var resGroup = {
       name: this.nameGroup,
-      // people: this.peopleToAdd,
       people: this.personGroupService.getPeopleToAdd(),
       imgPath: "assets/img/default" + img + ".png",
       description: this.description
@@ -100,20 +100,17 @@ export class GroupNewModalComponent implements OnInit {
 
     console.log(resGroup);
     
-    // this.http.post('http://localhost:5000/createGroup', resGroup).subscribe((res: any[]) => {
+    
     this.http.post('http://' + this.getipService.getip() + ':5000/api/createGroup', resGroup).subscribe((res: any[]) => {
-    // this.http.post('http://13.79.165.38:5000/api/createGroup', resGroup).subscribe((res: any[]) => {
       console.log(res);      
     });
 
     this.inputName = "";
     this.nameGroup = "";
 
-    // this.peopleToAdd.splice(0, this.peopleToAdd.length);
     this.personGroupService.cleanPeopleToAdd();
     
     this.modalRef.hide();
-    // this.router.navigate([''], { relativeTo: this.route });
     window.location.reload();
   }
 

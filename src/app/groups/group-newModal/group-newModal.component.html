@@ -27,7 +27,7 @@
             <div class="inlinee" *ngFor="let person of personGroupService.getPeopleToAdd(); let i = index;">
               <div class="d-flex flex-column align-items-center">
                   <div class=""><app-person-group [nameToAdd]="person.name" [person]="person" [indexPerson]="i"></app-person-group></div>
-                  <div class=""><p>{{ person.name }}</p></div>
+                  <div class=""><p>{{ person.user.name }}</p></div>
                   <!-- <div class=""><p>Yeagor Kryshniov Andreevich</p></div> -->
                 </div>
             </div>
@@ -36,7 +36,7 @@
           <div class="col-xs-12">
             <ng-container *ngFor="let person of personGroupService.getPeople() | filterdontshowinstart: 'name' : inputName: 'addpeople'">
               <!-- <app-person *ngIf="checking(person.name)" style="cursor: pointer;" (click)="onChoosePerson(person)" [name]="person.name"></app-person> -->
-              <app-person *ngIf="person.name !== authService.getAcc().name || true" style="cursor: pointer;" (click)="onChoosePerson(person)" [name]="person.name"></app-person>
+              <app-person *ngIf="person.name !== authService.getAcc().user.name" style="cursor: pointer;" (click)="onChoosePerson(person)" [name]="person.name"></app-person>
             </ng-container>
           </div>
         </div>

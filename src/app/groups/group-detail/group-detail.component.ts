@@ -39,7 +39,7 @@ export class GroupDetailComponent implements OnInit {
           this.groupDetailService.setGroup(res);
           this.changingName = this.groupDetailService.getGroupName();
           this.admin = this.authService.checkAdmin(this.groupDetailService.getPeople());
-          this.description = this.groupDetailService.getgroupDescription();
+          this.description = this.groupDetailService.getGroupDescription();
           // this.group = res;        
       });
     }
@@ -85,7 +85,7 @@ export class GroupDetailComponent implements OnInit {
     this.modalRef = this.modalService.show(ModalChangeDescriptionComponent, {
       initialState: {
         title: 'Change Descripition Of Group',
-        description: this.groupDetailService.getgroupDescription()
+        description: this.groupDetailService.getGroupDescription()
       }
     });
   }

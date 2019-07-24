@@ -25,28 +25,69 @@ export class PersonGroupService {
 
     addPeopleToAdd(person) {
 
-        person.admin = false;
-        // person.avatarPath = "assets/img/guest.png";
-
+        console.log(person);
 
         let img = Math.floor(Math.random() * (9 - 1 + 1) ) + 1;
         person.avatarPath = "assets/img/people/person" + img + ".png";
 
+        // person.admin = false;
+        
+        const personGroup = {
+            user: person,
+            admin: false
+        };
+        
+
         if(!this.peopleToAdd) 
-            this.peopleToAdd = [person];
-        else this.peopleToAdd.push(person);
+            this.peopleToAdd = [personGroup];
+        else this.peopleToAdd.push(personGroup);
 
         console.log(this.peopleToAdd);
     }
 
     addAdminPeopleToAdd(person) {
 
-        person.admin = true;
-        // person.avatarPath = "assets/img/guest.png";
+        // person.admin = true;
 
+
+        // let img = Math.floor(Math.random() * (9 - 1 + 1) ) + 1;
+        // person.avatarPath = "assets/img/people/person" + img + ".png";
+
+
+        // if(!this.peopleToAdd) 
+        //     this.peopleToAdd = [person];
+        // else this.peopleToAdd.push(person);
+
+        // console.log(this.peopleToAdd);
+
+        console.log(person);
 
         let img = Math.floor(Math.random() * (9 - 1 + 1) ) + 1;
         person.avatarPath = "assets/img/people/person" + img + ".png";
+
+                
+        const personGroup = {
+            user: person,
+            admin: true
+        };
+        
+
+        if(!this.peopleToAdd) 
+            this.peopleToAdd = [personGroup];
+        else this.peopleToAdd.push(personGroup);
+
+        console.log(this.peopleToAdd);
+    }
+
+    addMyAccountPeopleToAdd(person){
+        person.admin = true;
+
+        console.log(person);
+
+        let img = Math.floor(Math.random() * (9 - 1 + 1) ) + 1;
+        person.user.avatarPath = "assets/img/people/person" + img + ".png";
+
+        console.log(person);
 
 
         if(!this.peopleToAdd) 

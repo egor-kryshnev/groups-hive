@@ -1,3 +1,4 @@
+import { ModalChangeAvatarPersonComponent } from './groups/group-detail/peoplegroup-list/modal-change-avatar-person/modal-change-avatar-person.component';
 import { ModalMailSenderComponent } from './groups/group-detail/modal-mail-sender/modal-mail-sender.component';
 import { ModalChangeDescriptionComponent } from './groups/group-detail/modal-change-description/modal-change-description.component';
 import { GetipService } from './getip.service';
@@ -16,14 +17,12 @@ import { ModalModule, BsModalRef } from 'ngx-bootstrap/modal';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HiveComponent } from './hive/hive.component';
 import { GroupsComponent } from './groups/groups.component';
 import { GroupsListComponent } from './groups/groups-list/groups-list.component';
 import { GroupItemComponent } from './groups/group-item/group-item.component';
 import { GroupNewModalComponent } from './groups/group-newModal/group-newModal.component';
 import { PersonComponent } from './groups/group-newModal/person/person.component';
 import { PersonGroupComponent } from './groups/group-newModal/person-group/person-group.component';
-import { PeopleListComponent } from './groups/group-newModal/people-list/people-list.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ScrollingModule } from '@angular/cdk/scrolling';
@@ -36,7 +35,6 @@ import { ModalChangeAvatarGroupComponent } from './groups/group-detail/modal-cha
 @NgModule({
    declarations: [
       AppComponent,
-      HiveComponent,
       GroupsComponent,
       HeaderComponent,
       GroupsListComponent,
@@ -44,7 +42,6 @@ import { ModalChangeAvatarGroupComponent } from './groups/group-detail/modal-cha
       GroupNewModalComponent,
       PersonComponent,
       PersonGroupComponent,
-      PeopleListComponent,
       FilterPipe,
       FilterDontshowinstartPipe,
       GroupDetailComponent,
@@ -52,7 +49,8 @@ import { ModalChangeAvatarGroupComponent } from './groups/group-detail/modal-cha
       ModalRemoveGroupComponent,
       ModalChangeAvatarGroupComponent,
       ModalChangeDescriptionComponent,
-      ModalMailSenderComponent
+      ModalMailSenderComponent,
+      ModalChangeAvatarPersonComponent
    ],
    imports: [
       BrowserModule,
@@ -79,7 +77,8 @@ import { ModalChangeAvatarGroupComponent } from './groups/group-detail/modal-cha
       ModalRemoveGroupComponent,
       ModalChangeAvatarGroupComponent,
       ModalChangeDescriptionComponent,
-      ModalMailSenderComponent
+      ModalMailSenderComponent,
+      ModalChangeAvatarPersonComponent
    ]
 })
 export class AppModule { }

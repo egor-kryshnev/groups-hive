@@ -4,6 +4,7 @@ import { GroupDetailService } from './../group-detail.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { PeopleGroup } from '../../peopleGroup.model';
 import { GroupNewModalComponent } from '../../group-newModal/group-newModal.component';
+import { ModalChangeAvatarPersonComponent } from './modal-change-avatar-person/modal-change-avatar-person.component';
 
 @Component({
   selector: 'app-peoplegroup-list',
@@ -29,7 +30,7 @@ export class PeoplegroupListComponent implements OnInit {
     
   }
 
-  checkValue(index){
+  checkValueAdmin(index){
     this.people[index].admin = !this.people[index].admin;
     console.log(this.people[index].admin);
     this.groupDetailService.updatePeopleGroup(this.people);
@@ -37,11 +38,22 @@ export class PeoplegroupListComponent implements OnInit {
     
   }
 
+  changeAvatarPerson(person, index){
+    this.modalRef = this.modalService.show(ModalChangeAvatarPersonComponent,  {
+      initialState: {
+        title: 'Change Avatar Of Person',
+        person: person,
+        personIndex: index
+      }
+    });
+  }
+
   onRemove(index){
     this.people.splice(index, 1);
     this.groupDetailService.updatePeopleGroup(this.people);
   }
 
+  
 
   onAddPerson(){
     this.modalRef = this.modalService.show(GroupNewModalComponent,  {
@@ -49,7 +61,7 @@ export class PeoplegroupListComponent implements OnInit {
         title: 'Add People To Group',
         addPeople: true,
         nameGroup: this.groupDetailService.getGroupName(),
-        description: this.groupDetailService.getgroupDescription()
+        description: this.groupDetailService.getGroupDescription()
       }
     });
   } 

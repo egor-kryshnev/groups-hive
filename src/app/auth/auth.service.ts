@@ -39,15 +39,15 @@ export class AuthService {
     // }
 
     public getAcc(): PeopleGroup {
-        let acc = new PeopleGroup('first', '1', true, "assets/img/guest.png");
+        let acc = new PeopleGroup('5d2594e36fcb691a0d178a71', 'first', '1', 'first@test.com', true, "assets/img/guest.png");
         return acc;
     }
 
     public checkAdmin(people: PeopleGroup[]): boolean {
-        let acc = new PeopleGroup('first', '1', true, "assets/img/guest.png");
+        let acc = new PeopleGroup('5d2594e36fcb691a0d178a71', 'first', '1', 'first@test.com', true, "assets/img/guest.png");
 
         var result = people.find( person => {
-            return person.name === acc.name && person.admin === acc.admin;
+            return person.user.name === acc.user.name && person.admin === acc.admin;
         });
         
         if(result){

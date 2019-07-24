@@ -14,14 +14,10 @@ export class GroupDetailService {
   constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router, private getipService: GetipService, private authService: AuthService) { }
 
   setGroup(group){
-    this.group = group;
-    // console.log(this.group);
-    
+    this.group = group;    
   }
 
   getPeople(){
-    // console.log(this.group.people);
-    
     return this.group.people;
   }
 
@@ -37,6 +33,10 @@ export class GroupDetailService {
     return this.group;
   }
 
+  getGroupId() {
+    return this.group._id;
+  }
+
   getGroupName() {
     return this.group.name;
   }
@@ -45,7 +45,7 @@ export class GroupDetailService {
     return this.group.imgPath;
   }
 
-  getgroupDescription() {
+  getGroupDescription() {
     return this.group.description;
   }
 
@@ -64,7 +64,16 @@ export class GroupDetailService {
 
     this.http.put('http://' + this.getipService.getip() + ':5000/api/updateGroup', this.group).subscribe((res: any) => {
       console.log(res);
-      
+    });
+  }
+
+  updateAvatarOfPerson(person, index){
+    this.group.people[index] = person;
+    
+    console.log(this.group);
+
+    this.http.put('http://' + this.getipService.getip() + ':5000/api/updateGroup', this.group).subscribe((res: any) => {
+      console.log(res);
     });
   }
 
@@ -88,15 +97,14 @@ export class GroupDetailService {
 
     this.http.put('http://' + this.getipService.getip() + ':5000/api/updateGroup', this.group).subscribe((res: any) => {
       console.log(res);
-      
     });
   }
 
   leaveGroup(modalRef: BsModalRef){
-    let name = this.authService.getAcc().name;
+    let name = this.authService.getAcc().user.name;
     console.log(name);    
     let result = this.group.people.filter( el => {
-      return el.name === name;
+      return el.user.name === name;
     });
 
     if(result.length > 0){
