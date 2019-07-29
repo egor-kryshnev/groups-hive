@@ -1,7 +1,9 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, Input } from '@angular/core';
 import { BsModalRef } from 'ngx-bootstrap/modal';
 import { GroupDetailService } from '../group-detail.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { GetipService } from 'src/app/getip.service';
 
 @Component({
   selector: 'app-modal-mail-sender',
@@ -12,19 +14,25 @@ export class ModalMailSenderComponent implements OnInit {
   @Input() subject: string;
   @Input() text: string;
 
-  constructor(public modalRef: BsModalRef, private groupDetailService: GroupDetailService, private router: Router, private route: ActivatedRoute) { }
+  constructor(public modalRef: BsModalRef, private groupDetailService: GroupDetailService, private router: Router, private route: ActivatedRoute, private http: HttpClient, private getipService: GetipService) { }
 
   ngOnInit() {
   }
 
   onSend() {
     const resultJson = {
-      idGroup: this.groupDetailService.getGroupId(),
+      groupId: this.groupDetailService.getGroupId(),
       subject: this.subject,
       text: this.text
     }
 
     console.log(resultJson);
+    this.http.post('http://' + this.getipService.getip() + ':5000/api/sendEmail', resultJson).subscribe((res: any) => {
+      console.log(res);
+      if(res.message === "Email Sent! :)"){
+        this.modalRef.hide();
+      }
+    });
   }
 
 }

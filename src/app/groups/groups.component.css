@@ -2,3 +2,33 @@
 border-left: 6px solid green;
 height: 500px;
 }
+
+.line {
+    transform: rotate(90deg);
+    margin-top: 50%;
+    border: none;
+    background-color: black;
+    height: 2px;
+}
+
+
+@media only screen and (max-width: 400px) {
+    #line2 {
+        display: none;
+    }
+
+    #line3 {
+        display: none;
+    }
+
+    #line1 {
+        transform: rotate(0deg);
+        /* border: none;
+        background-color: black;
+        height: 2px; */
+    }
+
+    .line-list br {
+        visibility: hidden;
+    }
+} 

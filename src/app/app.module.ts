@@ -30,6 +30,8 @@ import { PersonGroupService } from './groups/group-newModal/person-group/person-
 import { GroupDetailComponent } from './groups/group-detail/group-detail.component';
 import { GroupDetailService } from './groups/group-detail/group-detail.service';
 import { ModalChangeAvatarGroupComponent } from './groups/group-detail/modal-change-avatar-group/modal-change-avatar-group.component';
+import { SharedModule } from './shared/shared.module';
+import { DropdownDirective } from './shared/dropdown.directive';
 
 
 @NgModule({
@@ -51,16 +53,19 @@ import { ModalChangeAvatarGroupComponent } from './groups/group-detail/modal-cha
       ModalChangeDescriptionComponent,
       ModalMailSenderComponent,
       ModalChangeAvatarPersonComponent
+      // DropdownDirective
    ],
    imports: [
       BrowserModule,
       AppRoutingModule,
       HttpClientModule,
       FormsModule,
+      SharedModule,
       ModalModule.forRoot(),
       AngularFontAwesomeModule,
       TooltipModule.forRoot(),
       ScrollingModule
+      // DropdownDirective
    ],
    providers: [
       BsModalRef,

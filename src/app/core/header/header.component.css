@@ -1,3 +1,16 @@
+/* body {
+    background: url(../../../assets/img/background.jpg) no-repeat center center fixed;
+} */
+
+.backgrounds {
+    width: 150px;
+    height: 75px;
+}
+
+/* .backgrounds:hover {
+    color: slategray;
+} */
+
 .navbar {
     background-color: black;
     color: black;
@@ -21,4 +34,44 @@ h2:hover {
 
 #home:hover {
     cursor: pointer;
+}
+
+ul {
+    list-style: none;
+    background-color: black
+}
+
+ul li {
+	float: left;
+	padding: 3px;
+
+}
+
+
+ul li a {
+	display: block;
+	padding: 20px;
+	color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+ul li a:hover {
+	background: #444;
+	 transition-property: background-color;
+   transition-duration: 0.4s;
+   transition-timing-function: ease;
+   color: #FFF;
+
+
+
+}
+
+ul li:hover {
+    background: #a3c2c2;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    background-color: black;
 }
