@@ -60,7 +60,7 @@ export class GroupNewModalComponent implements OnInit {
   }
 
   checking(str) {
-    if(!this.inputName || this.inputName.length < 3 || str === this.authService.getAcc().user.name) return false;
+    if(!this.inputName || this.inputName.length < 3 || str === this.authService.getAcc().name) return false;
 
     if(str.toUpperCase().substr(0, this.inputName.length).indexOf(this.inputName.toUpperCase()) >= 0){
       // console.log(true);
@@ -86,8 +86,9 @@ export class GroupNewModalComponent implements OnInit {
     console.log(img);
     console.log(this.personGroupService.getPeopleToAdd());
 
-    // this.personGroupService.addAdminPeopleToAdd(this.authService.getAcc());
-    this.personGroupService.addMyAccountPeopleToAdd(this.authService.getAcc());
+    
+    // this.personGroupService.addMyAccountPeopleToAdd(this.authService.getAcc());
+    this.personGroupService.addMyAccountPeopleToAdd(this.authService.getAccForGroup());
     
     console.log(this.personGroupService.getPeopleToAdd());
 

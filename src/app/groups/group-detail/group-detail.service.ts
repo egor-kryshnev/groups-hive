@@ -101,7 +101,7 @@ export class GroupDetailService {
   }
 
   leaveGroup(modalRef: BsModalRef){
-    let name = this.authService.getAcc().user.name;
+    let name = this.authService.getAcc().name;
     console.log(name);    
     let result = this.group.people.filter( el => {
       return el.user.name === name;

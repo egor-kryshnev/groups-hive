@@ -24,7 +24,7 @@ export class PeoplegroupListComponent implements OnInit {
     this.people = this.groupDetailService.getPeople();
     // console.log("asdasd");
     
-    // console.log(this.people);
+    console.log(this.people);
     // console.log(this.groupDetailService.getPeople());
     
     

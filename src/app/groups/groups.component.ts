@@ -21,29 +21,16 @@ export class GroupsComponent implements OnInit, OnChanges {
 
   ngOnInit() {    
 
-    // this.http.get('http://localhost:5000/allGroups/getGroupsByPerson/' + this.authService.getAcc().name).subscribe((res: any[]) => {
-    //   this.groups = res;
-    //   console.log(this.groups);
-      
-    //   // console.log(this.groups);
-    // });
-
-    
-    
-    // this.http.get('http://' + this.getipService.getip() + ':5000/api/allGroups/getGroupsByPersonNotAdmin/' + this.authService.getAcc().name).subscribe((res: any[]) => {
-    this.http.get('http://' + this.getipService.getip() + ':5000/api/allGroups/getGroupsByPersonNotAdmin/' + this.authService.getAcc().user._id).subscribe((res: any[]) => {
+    this.http.get('http://' + this.getipService.getip() + ':5000/api/allGroups/getGroupsByPersonNotAdmin/' + this.authService.getAcc()._id).subscribe((res: any[]) => {
       this.groups = res;
-      console.log(this.groups);
       
       // console.log(this.groups);
     });
 
     
-    // this.http.get('http://' + this.getipService.getip() + ':5000/api/allGroups/getGroupsByPersonAdmin/' + this.authService.getAcc().name).subscribe((res: any[]) => {
-    this.http.get('http://' + this.getipService.getip() + ':5000/api/allGroups/getGroupsByPersonAdmin/' + this.authService.getAcc().user._id).subscribe((res: any[]) => {
+    this.http.get('http://' + this.getipService.getip() + ':5000/api/allGroups/getGroupsByPersonAdmin/' + this.authService.getAcc()._id).subscribe((res: any[]) => {
       this.groupsAdmin = res;
       
-      // console.log(this.groups);
     });
 
 

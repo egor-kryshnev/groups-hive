@@ -1,3 +1,5 @@
+import { PeopleDb } from './../core/header/peopleDb.model';
+import { GetipService } from 'src/app/getip.service';
 import { PeopleGroup } from './../groups/peopleGroup.model';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -5,49 +7,68 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 @Injectable()
 export class AuthService {
-    constructor(private route: ActivatedRoute, private http: HttpClient, private router: Router) {}
+    private user = new PeopleDb('', '', '', '', '');
+    constructor(private route: ActivatedRoute, private http: HttpClient, private router: Router, private getipService: GetipService) {}
 
-    login(login: string, password: string) {
-        // this.http.post('http://192.168.99.100:5000/authenticate', {login: login, password: password}).subscribe((resp: any) => {
-        //     localStorage.setItem('auth_token', resp.token);
-        //     localStorage.setItem('auth_login', resp.signed_user);
-        //     this.router.navigate(['chat'], {relativeTo: this.route});
-        // });
-    }
+    login(user) {
 
-    registr(login: string, password: string) {
-        // this.http.post('http://192.168.99.100:5000/setupAcc', {login: login, password: password}).subscribe((resp: any) => {
-        //     localStorage.setItem('auth_token', resp.token);
-        //     localStorage.setItem('auth_login', resp.signed_user);
-        //     this.router.navigate(['chat'], {relativeTo: this.route});
+        /** Shraga */
+        // this.user = new PeopleDb(user.id, user.displayName, '14', "assets/img/guest.png", user.mail);
+        // this.http.post('http://' + this.getipService.getip() + ':5000/api/checkUser', this.user).subscribe((res: any) => {
+        //     if(res !== { message: "User created!" }){
+        //         this.user = new PeopleDb(res._id, res.name, res.number, res.avatarPath, res.email);
+        //     }
         // });
+
+        this.user = new PeopleDb('5d2594e36fcb691a0d178a71', 'first', '1','assets/img/guest.png' , 'first@test.com');
+    
     }
 
     logout() {
-        // localStorage.removeItem('auth_token');
-        // localStorage.removeItem('auth_login');
     }
 
-    // public logIn(): boolean {
-        // return (localStorage.getItem('auth_token') !== null);
+    // public getId() {
+    //     return this.user._id;
     // }
 
-    // public getName(): string {
-        // if(localStorage.getItem('auth_login')){
-        // return localStorage.getItem('auth_login').toString();
-        // }
+    // public getNumber() {
+    //     return this.user.number;
     // }
 
-    public getAcc(): PeopleGroup {
-        let acc = new PeopleGroup('5d2594e36fcb691a0d178a71', 'first', '1', 'first@test.com', true, "assets/img/guest.png");
+    public getName() {
+        return this.user.name;
+    }
+
+    public getAvatarPath() {
+        return this.user.avatarPath;
+    }
+
+    public getUser(): PeopleDb {
+        return this.user;
+    }
+
+    public getAcc(): PeopleDb {
+        // let acc = new PeopleGroup('5d2594e36fcb691a0d178a71', 'first', '1', 'first@test.com', true, "assets/img/guest.png");
+        
+        // return acc;
+        return this.user;
+    }
+
+    public getAccForGroup(): PeopleGroup {
+        let acc = new PeopleGroup(this.user._id, this.user.name, this.user.number, this.user.email, true, this.user.avatarPath);
+        
         return acc;
     }
 
     public checkAdmin(people: PeopleGroup[]): boolean {
-        let acc = new PeopleGroup('5d2594e36fcb691a0d178a71', 'first', '1', 'first@test.com', true, "assets/img/guest.png");
+        // let acc = new PeopleGroup('5d2594e36fcb691a0d178a71', 'first', '1', 'first@test.com', true, "assets/img/guest.png");
 
+        // var result = people.find( person => {
+        //     return person.user.name === acc.user.name && person.admin === acc.admin;
+        // });
+        
         var result = people.find( person => {
-            return person.user.name === acc.user.name && person.admin === acc.admin;
+            return person.user.name === this.user.name && person.admin;
         });
         
         if(result){

@@ -1,7 +1,7 @@
 <ul id="hexGrid">
     <ng-container *ngFor="let person of people | filter : ['user','name'] : namePersonSearch : 'includes'; let i = index">
         <ng-container [ngSwitch]="person.user.name">
-            <li class="hex" *ngSwitchCase="authService.getAcc().user.name">
+            <li class="hex" *ngSwitchCase="authService.getAcc().name">
                 <a class="hexIn">
                     <img [src]="person.user.avatarPath" alt=""/>
                     <h1>

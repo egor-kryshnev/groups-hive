@@ -10,9 +10,9 @@ export class PeopleGroup {
         email: string,
         avatarPath: string
     };
-    public admin: Boolean;
+    public admin: boolean;
     
-    constructor(_id: string, name: string, number: string, email: string, admin: Boolean, avatarPath: string) {
+    constructor(_id: string, name: string, number: string, email: string, admin: boolean, avatarPath: string) {
         this.user = {
             _id: _id,
             name: name,

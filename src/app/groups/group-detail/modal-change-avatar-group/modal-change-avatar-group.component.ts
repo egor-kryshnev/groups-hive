@@ -24,7 +24,6 @@ export class ModalChangeAvatarGroupComponent implements OnInit {
     } else {
       this.imgNumber++;
     }
-    console.log(this.imgNumber);
     this.imgPath = "assets/img/default" + this.imgNumber + ".png";
   }
 
@@ -34,7 +33,6 @@ export class ModalChangeAvatarGroupComponent implements OnInit {
     } else {
       this.imgNumber--;
     }
-    console.log(this.imgNumber);
     this.imgPath = "assets/img/default" + this.imgNumber + ".png";
   }
 

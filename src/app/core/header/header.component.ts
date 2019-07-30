@@ -1,3 +1,6 @@
+import { AuthService } from './../../auth/auth.service';
+import { GetipService } from './../../getip.service';
+import { HttpClient } from '@angular/common/http';
 import { GroupDetailService } from './../../groups/group-detail/group-detail.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit, ViewEncapsulation, ElementRef, AfterViewInit } from '@angular/core';
@@ -10,9 +13,17 @@ import { Component, OnInit, ViewEncapsulation, ElementRef, AfterViewInit } from 
 export class HeaderComponent implements OnInit {
   backgrounds = ['background1.jpg','background2.jpg', 'background3.jpg', 'background4.jpg', 'background5.jpg'];
 
-  constructor(private route: ActivatedRoute, private router: Router, private groupDetailService: GroupDetailService, private elementRef: ElementRef) { }
+  constructor(private route: ActivatedRoute, private router: Router, private groupDetailService: GroupDetailService, private elementRef: ElementRef, private http: HttpClient, private getipService: GetipService, private authService: AuthService) { }
 
   ngOnInit() {
+
+    /** Shraga */
+    // this.http.get('http://' + this.getipService.getip() + ':4200/user').subscribe((res: any[]) => {
+    //   this.authService.login(res);
+    //   console.log(this.authService.getUser());
+    // });
+
+    this.authService.login("dasd");
   }
 
   onHome() {

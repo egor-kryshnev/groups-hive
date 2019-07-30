@@ -1,7 +1,12 @@
 <nav class="navbar navbar-expand-lg navbar-dark">
   <div class="container-fluid">
     <div class="navbar-header">
+      <div class="row">
         <a (click)="onHome()" id="home"><h2>Groups</h2></a>
+        <span>&nbsp</span>
+        <img style="border-radius: 50%; width: 50px; height: 50px; padding-top: 3px;" [src]="authService.getAvatarPath()" alt="avatar">
+        <h5 style="color: white; padding-top: 10px;">{{ authService.getName() }}</h5>
+      </div>
     </div>
     <div class="collaps navbar-collapse">
       
