@@ -21,17 +21,34 @@ export class GroupsComponent implements OnInit, OnChanges {
 
   ngOnInit() {    
 
-    this.http.get('http://' + this.getipService.getip() + ':5000/api/allGroups/getGroupsByPersonNotAdmin/' + this.authService.getAcc()._id).subscribe((res: any[]) => {
-      this.groups = res;
+    // this.http.get('http://' + this.getipService.getip() + ':4200/user').subscribe((res: any[]) => {
+    //   this.authService.login(res);
+    //   console.log(this.authService.getUser());
+    //   this.http.get('http://' + this.getipService.getip() + ':5000/api/allGroups/getGroupsByPersonNotAdmin/' + this.authService.getId()).subscribe((res: any[]) => {
+    //     this.groups = res;
+        
+    //     // console.log(this.groups);
+    //   });
+  
       
-      // console.log(this.groups);
-    });
+    //   this.http.get('http://' + this.getipService.getip() + ':5000/api/allGroups/getGroupsByPersonAdmin/' + this.authService.getId()).subscribe((res: any[]) => {
+    //     this.groupsAdmin = res;
+        
+    //   });
+    // });
 
-    
-    this.http.get('http://' + this.getipService.getip() + ':5000/api/allGroups/getGroupsByPersonAdmin/' + this.authService.getAcc()._id).subscribe((res: any[]) => {
-      this.groupsAdmin = res;
+    this.http.get('http://' + this.getipService.getip() + ':5000/api/allGroups/getGroupsByPersonNotAdmin/' + this.authService.getId()).subscribe((res: any[]) => {
+        this.groups = res;
+        
+        // console.log(this.groups);
+      });
+  
       
-    });
+      this.http.get('http://' + this.getipService.getip() + ':5000/api/allGroups/getGroupsByPersonAdmin/' + this.authService.getId()).subscribe((res: any[]) => {
+        this.groupsAdmin = res;
+        
+      });
+
 
 
     

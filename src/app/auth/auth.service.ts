@@ -15,12 +15,19 @@ export class AuthService {
         /** Shraga */
         // this.user = new PeopleDb(user.id, user.displayName, '14', "assets/img/guest.png", user.mail);
         // this.http.post('http://' + this.getipService.getip() + ':5000/api/checkUser', this.user).subscribe((res: any) => {
-        //     if(res !== { message: "User created!" }){
+        //     if(res != { message: "User created!" }){
         //         this.user = new PeopleDb(res._id, res.name, res.number, res.avatarPath, res.email);
         //     }
         // });
 
         this.user = new PeopleDb('5d2594e36fcb691a0d178a71', 'first', '1','assets/img/guest.png' , 'first@test.com');
+        this.http.post('http://' + this.getipService.getip() + ':5000/api/checkUser', this.user).subscribe((res: any) => {
+            console.log(res);
+            if(res != { message: "User created!" }){
+                this.user = new PeopleDb(res._id, res.name, res.number, res.avatarPath, res.email);
+            }
+        });
+        
     
     }
 
@@ -39,6 +46,10 @@ export class AuthService {
         return this.user.name;
     }
 
+    public getId() {
+        return this.user._id;
+    }
+
     public getEmail() {
         return this.user.email;
     }
@@ -47,7 +58,20 @@ export class AuthService {
         return this.user.avatarPath;
     }
 
-    public setAvatarPath(avatar) {
+    public setAvatarPath(avatar): boolean {
+        this.user.avatarPath = avatar;
+        this.http.put('http://' + this.getipService.getip() + ':5000/api/updateUser', this.user).subscribe((res: any) => {
+            console.log(res);
+            if(res === { message: "User Updated!" }){
+                return true;
+            } else {
+                return false;
+            }
+        });
+        return false;
+    }
+
+    public setAvatarPathLocal(avatar) {
         this.user.avatarPath = avatar;
     }
 

@@ -32,6 +32,7 @@ import { GroupDetailService } from './groups/group-detail/group-detail.service';
 import { ModalChangeAvatarGroupComponent } from './groups/group-detail/modal-change-avatar-group/modal-change-avatar-group.component';
 import { SharedModule } from './shared/shared.module';
 import { DropdownDirective } from './shared/dropdown.directive';
+import { ModalChangeAvatarAccountComponent } from './core/header/modal-change-avatar-account/modal-change-avatar-account.component';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { DropdownDirective } from './shared/dropdown.directive';
       ModalChangeAvatarGroupComponent,
       ModalChangeDescriptionComponent,
       ModalMailSenderComponent,
-      ModalChangeAvatarPersonComponent
+      ModalChangeAvatarPersonComponent,
+      ModalChangeAvatarAccountComponent
       // DropdownDirective
    ],
    imports: [
@@ -83,7 +85,8 @@ import { DropdownDirective } from './shared/dropdown.directive';
       ModalChangeAvatarGroupComponent,
       ModalChangeDescriptionComponent,
       ModalMailSenderComponent,
-      ModalChangeAvatarPersonComponent
+      ModalChangeAvatarPersonComponent,
+      ModalChangeAvatarAccountComponent
    ]
 })
 export class AppModule { }

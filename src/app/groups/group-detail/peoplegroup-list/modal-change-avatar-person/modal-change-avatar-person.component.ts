@@ -2,6 +2,7 @@ import { PeopleGroup } from './../../../peopleGroup.model';
 import { Component, OnInit, Input } from '@angular/core';
 import { BsModalRef } from 'ngx-bootstrap/modal';
 import { GroupDetailService } from '../../group-detail.service';
+import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
   selector: 'app-modal-change-avatar-person',
@@ -13,7 +14,7 @@ export class ModalChangeAvatarPersonComponent implements OnInit {
   @Input() person: PeopleGroup;
   @Input() personIndex: number;
 
-  constructor(public modalRef: BsModalRef, private groupDetailService: GroupDetailService) { }
+  constructor(public modalRef: BsModalRef, private groupDetailService: GroupDetailService, private authService: AuthService) { }
 
   imgNumber: number = 1;
   imgPath: string = "assets/img/people/person1.png";
@@ -48,6 +49,7 @@ export class ModalChangeAvatarPersonComponent implements OnInit {
   onSaveAvatar() {
     this.person.user.avatarPath = this.imgPath;
     this.groupDetailService.updateAvatarOfPerson(this.person, this.personIndex);
+    this.authService.setAvatarPathLocal(this.imgPath);
     this.modalRef.hide();
     // window.location.reload();
   }

@@ -4,7 +4,7 @@
       <div class="row">
         <a (click)="onHome()" id="home"><h2>Groups</h2></a>
         <span>&nbsp</span>
-        <img id="userAvatar" [src]="authService.getAvatarPath()" alt="avatar">
+        <img id="userAvatar" [src]="authService.getAvatarPath()" alt="avatar" (click)="onChangeAvatar()">
         <h5 id="userName">{{ authService.getName() }}</h5>
       </div>
     </div>
