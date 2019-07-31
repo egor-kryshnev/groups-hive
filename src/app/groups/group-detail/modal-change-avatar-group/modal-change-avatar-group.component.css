@@ -1,0 +1,15 @@
+#leftPart {
+    float: left;
+}
+
+#centerPart {
+    width: 150px;
+}
+
+#rightPart {
+    float: right;
+}
+
+.btns-back-and-forward {
+    width: 50px;
+}

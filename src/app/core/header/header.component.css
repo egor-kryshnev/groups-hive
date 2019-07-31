@@ -5,6 +5,24 @@
 .backgrounds {
     width: 150px;
     height: 75px;
+    border-radius: 10%;
+}
+
+#userAvatar {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    padding-top: 3px;
+}
+
+#userName {
+    color: white;
+    padding-top: 10px;
+}
+
+#btnBackgrounds {
+    cursor: pointer;
+    color: white;
 }
 
 /* .backgrounds:hover {
@@ -70,6 +88,7 @@ ul li a:hover {
 ul li:hover {
     background: #a3c2c2;
     cursor: pointer;
+    border-radius: 10%;
 }
 
 .dropdown-menu {

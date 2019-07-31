@@ -1,3 +1,4 @@
+import { AuthService } from './../../../auth/auth.service';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, Input } from '@angular/core';
 import { BsModalRef } from 'ngx-bootstrap/modal';
@@ -14,7 +15,7 @@ export class ModalMailSenderComponent implements OnInit {
   @Input() subject: string;
   @Input() text: string;
 
-  constructor(public modalRef: BsModalRef, private groupDetailService: GroupDetailService, private router: Router, private route: ActivatedRoute, private http: HttpClient, private getipService: GetipService) { }
+  constructor(public modalRef: BsModalRef, private groupDetailService: GroupDetailService, private router: Router, private route: ActivatedRoute, private http: HttpClient, private getipService: GetipService, private authService: AuthService) { }
 
   ngOnInit() {
   }
@@ -23,7 +24,7 @@ export class ModalMailSenderComponent implements OnInit {
     const resultJson = {
       groupId: this.groupDetailService.getGroupId(),
       subject: this.subject,
-      text: this.text
+      text: this.text + "\n -- \n " + this.authService.getName() + " " + this.authService.getEmail()
     }
 
     console.log(resultJson);

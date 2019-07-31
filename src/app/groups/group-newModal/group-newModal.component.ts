@@ -86,9 +86,12 @@ export class GroupNewModalComponent implements OnInit {
     console.log(img);
     console.log(this.personGroupService.getPeopleToAdd());
 
-    
-    // this.personGroupService.addMyAccountPeopleToAdd(this.authService.getAcc());
-    this.personGroupService.addMyAccountPeopleToAdd(this.authService.getAccForGroup());
+    var myacc = {
+      user: this.authService.getAcc(),
+      admin: true
+    }
+    // this.personGroupService.addAdminPeopleToAdd(myacc);
+    this.personGroupService.addMyAccountPeopleToAdd(myacc);
     
     console.log(this.personGroupService.getPeopleToAdd());
 

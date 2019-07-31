@@ -39,8 +39,16 @@ export class AuthService {
         return this.user.name;
     }
 
+    public getEmail() {
+        return this.user.email;
+    }
+
     public getAvatarPath() {
         return this.user.avatarPath;
+    }
+
+    public setAvatarPath(avatar) {
+        this.user.avatarPath = avatar;
     }
 
     public getUser(): PeopleDb {
