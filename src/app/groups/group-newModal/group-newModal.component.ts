@@ -2,12 +2,19 @@ import { GroupDetailService } from './../group-detail/group-detail.service';
 import { GetipService } from './../../getip.service';
 import { PersonGroupService } from './person-group/person-group.service';
 import { AuthService } from './../../auth/auth.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BsModalRef } from 'ngx-bootstrap/modal';
 import { PeopleGroup } from '../peopleGroup.model';
-import { People } from '../people.model';
 import { Router, ActivatedRoute } from '@angular/router';
+import { fromEvent, of } from 'rxjs';
+import {
+  debounceTime,
+  map,
+  distinctUntilChanged,
+  filter
+} from "rxjs/operators";
+import { People } from '../people.model';
 
 @Component({
   selector: 'app-group-newModal',
@@ -22,6 +29,11 @@ export class GroupNewModalComponent implements OnInit {
   public inputName: string;
   public nameGroup: string;
   public description: string = "";
+  
+  @ViewChild('searchPeople', { read: ElementRef }) searchPeople: ElementRef;
+  isSearching:boolean;
+  people: People[];
+  
   // private peopleToAdd: PeopleGroup[];
 
   // heightCard = "140px";
@@ -33,20 +45,50 @@ export class GroupNewModalComponent implements OnInit {
   constructor( public modalRef: BsModalRef, private http: HttpClient, private router: Router, private route: ActivatedRoute, private authService: AuthService, private personGroupService: PersonGroupService, private getipService: GetipService, private groupDetailService: GroupDetailService ) { }
 
   ngOnInit() {
-    this.http.get('https://groups-3fd03.firebaseio.com/people.json').subscribe((res: any[]) => {
-      console.log(res);
+    // this.http.get('https://groups-3fd03.firebaseio.com/people.json').subscribe((res: any[]) => {
+    //   console.log(res);
+
+    //   this.personGroupService.setPeople(res);
+
+    //   let people = this.personGroupService.getPeople();
       
-      // this.people = res;
+    // });
 
-      this.personGroupService.setPeople(res);
+    fromEvent(this.searchPeople.nativeElement, 'keyup').pipe(
+      // get value
+      map((event: any) => {
+        return event.target.value;
+      })
+      // if character length greater then 2
+      ,filter(res => res.length > 2)
+      // Time in milliseconds between key events
+      ,debounceTime(1000)        
+      // If previous query is diffent from current   
+      ,distinctUntilChanged()
+      // subscription for response
+      ).subscribe((text: string) => {
+        this.isSearching = true;
+        this.searchGetCall(text).subscribe((res: any[])=>{
+          console.log('res',res);
+          this.isSearching = false;
+          this.personGroupService.setPeople(res);
+          this.people = this.personGroupService.getPeople();
+          console.log(this.people);
+        },(err)=>{
+          this.isSearching = false;
+          console.log('error',err);
+        });
+      });
 
-      let people = this.personGroupService.getPeople();
-      // let peopleinsideGroup = this.groupDetailService.getPeople();
-      
-    });
 
 
+  }
 
+  searchGetCall(term: string) {
+    if (term === '') {
+      return of([]);
+    }
+    return this.http.get('http://localhost:5000/api/getuserByName/' + term);
   }
 
   onChoosePerson(person) {
@@ -60,7 +102,7 @@ export class GroupNewModalComponent implements OnInit {
   }
 
   checking(str) {
-    if(!this.inputName || this.inputName.length < 3 || str === this.authService.getAcc().name) return false;
+    if(!this.inputName || this.inputName.length < 3 || str === this.authService.getAcc().fullName) return false;
 
     if(str.toUpperCase().substr(0, this.inputName.length).indexOf(this.inputName.toUpperCase()) >= 0){
       // console.log(true);

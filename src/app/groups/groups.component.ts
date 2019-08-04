@@ -1,6 +1,5 @@
 import { GetipService } from '../getip.service';
 import { AuthService } from './../auth/auth.service';
-import { PeopleGroup } from './peopleGroup.model';
 import { Component, OnInit, Input, SimpleChanges, SimpleChange, OnChanges } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -21,6 +20,7 @@ export class GroupsComponent implements OnInit, OnChanges {
 
   ngOnInit() {    
 
+    /** Shraga */
     // this.http.get('http://' + this.getipService.getip() + ':4200/user').subscribe((res: any[]) => {
     //   this.authService.login(res);
     //   console.log(this.authService.getUser());
@@ -37,6 +37,7 @@ export class GroupsComponent implements OnInit, OnChanges {
     //   });
     // });
 
+    /** Angular */
     this.http.get('http://' + this.getipService.getip() + ':5000/api/allGroups/getGroupsByPersonNotAdmin/' + this.authService.getId()).subscribe((res: any[]) => {
         this.groups = res;
         

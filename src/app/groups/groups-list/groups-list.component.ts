@@ -22,7 +22,7 @@ export class GroupsListComponent implements OnInit {
   constructor(private modalService: BsModalService, private authService: AuthService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
-    this.user = this.authService.getAcc().name;
+    this.user = this.authService.getAcc().fullName;
   }
 
   // checking(str) {

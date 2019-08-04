@@ -20,12 +20,13 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
 
     /** Shraga */
-    this.http.get('http://' + this.getipService.getip() + ':4200/user').subscribe((res: any[]) => {
-      this.authService.login(res);
-      console.log(this.authService.getUser());
-    });
+    // this.http.get('http://' + this.getipService.getip() + ':4200/user').subscribe((res: any[]) => {
+    //   this.authService.login(res);
+    //   console.log(this.authService.getUser());
+    // });
 
-    // this.authService.login("dasd");
+    /** Angular */
+    this.authService.login("dasd");
   }
 
   onHome() {

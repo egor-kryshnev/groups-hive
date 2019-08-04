@@ -1,4 +1,5 @@
 import { PeopleDb } from './../core/header/peopleDb.model';
+import { People } from './../groups/people.model';
 import { GetipService } from 'src/app/getip.service';
 import { PeopleGroup } from './../groups/peopleGroup.model';
 import { Injectable } from '@angular/core';
@@ -7,28 +8,31 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 @Injectable()
 export class AuthService {
-    private user = new PeopleDb('', '', '', '', '');
+    // private user = new PeopleDb('', '', '', '', '');
+    private user = new People('','','',['',''],{ adfsUID: '', uniqueID: ''},[{ adfsUID: '', uniqueID: ''}],'', '');
     constructor(private route: ActivatedRoute, private http: HttpClient, private router: Router, private getipService: GetipService) {}
 
     login(user) {
 
+        console.log(user);
         /** Shraga */
-        // this.user = new PeopleDb(user.id, user.displayName, '14', "assets/img/guest.png", user.mail);
+        // this.user = new People(user.id, user.displayName, '111111', [''], { adfsUID: 'first@sadasd', uniqueID: 'first@fdsfl.idf'}, [{ adfsUID: 'first@fgh', uniqueID: 'first@fgh.idf'}], user.mail, "assets/img/guest.png");
         // this.http.post('http://' + this.getipService.getip() + ':5000/api/checkUser', this.user).subscribe((res: any) => {
         //     if(res != { message: "User created!" }){
-        //         this.user = new PeopleDb(res._id, res.name, res.number, res.avatarPath, res.email);
+        //         this.user = new People(res._id, res.fullName, res.personalNumber, res.hierarchy, res.primaryDomainUser, res.secondaryDomainUsers, res.mail, res.avatarPath);
         //     }
         // });
 
-        this.user = new PeopleDb('5d2594e36fcb691a0d178a71', 'first', '1','assets/img/guest.png' , 'first@test.com');
+        /** Angular */
+        this.user = new People('5d2594e36fcb691a0d178a71', 'first', '111111', ['aman', 'modiin'], { adfsUID: 'first@sadasd', uniqueID: 'first@fdsfl.idf'}, [{ adfsUID: 'first@fgh', uniqueID: 'first@fgh.idf'}, { adfsUID: 'first@qwe', uniqueID: 'first@qwe.idf'}], 'first@test.com', 'assets/img/guest.png');
         this.http.post('http://' + this.getipService.getip() + ':5000/api/checkUser', this.user).subscribe((res: any) => {
             console.log(res);
             if(res != { message: "User created!" }){
-                this.user = new PeopleDb(res._id, res.name, res.number, res.avatarPath, res.email);
+                this.user = new People(res._id, res.fullName, res.personalNumber, res.hierarchy, res.primaryDomainUser, res.secondaryDomainUsers, res.mail, res.avatarPath);
             }
         });
         
-    
+        
     }
 
     logout() {
@@ -43,7 +47,8 @@ export class AuthService {
     // }
 
     public getName() {
-        return this.user.name;
+        // return this.user.name;
+        return this.user.fullName;
     }
 
     public getId() {
@@ -51,7 +56,8 @@ export class AuthService {
     }
 
     public getEmail() {
-        return this.user.email;
+        // return this.user.email;
+        return this.user.mail;
     }
 
     public getAvatarPath() {
@@ -75,11 +81,11 @@ export class AuthService {
         this.user.avatarPath = avatar;
     }
 
-    public getUser(): PeopleDb {
+    public getUser(): People {
         return this.user;
     }
 
-    public getAcc(): PeopleDb {
+    public getAcc(): People {
         // let acc = new PeopleGroup('5d2594e36fcb691a0d178a71', 'first', '1', 'first@test.com', true, "assets/img/guest.png");
         
         // return acc;
@@ -87,8 +93,8 @@ export class AuthService {
     }
 
     public getAccForGroup(): PeopleGroup {
-        let acc = new PeopleGroup(this.user._id, this.user.name, this.user.number, this.user.email, true, this.user.avatarPath);
-        
+        // let acc = new PeopleGroup(this.user._id, this.user.fullName, this.user.personalNumber, this.user.mail, true, this.user.avatarPath);
+        let acc = new PeopleGroup(this.user, true);
         return acc;
     }
 
@@ -100,7 +106,7 @@ export class AuthService {
         // });
         
         var result = people.find( person => {
-            return person.user.name === this.user.name && person.admin;
+            return person.user.fullName === this.user.fullName && person.admin;
         });
         
         if(result){

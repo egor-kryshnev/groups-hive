@@ -31,7 +31,7 @@ export class FilterDontshowinstartPipe implements PipeTransform {
         if(this.groupDetailService.getGroup()){
           let groupAddPeople = this.groupDetailService.getPeople();
           let sdf = groupAddPeople.filter(el => {
-            if(el.user.name.toUpperCase().includes(target.toUpperCase())){
+            if(el.user.fullName.toUpperCase().includes(target.toUpperCase())){
               return true;
             }
           });

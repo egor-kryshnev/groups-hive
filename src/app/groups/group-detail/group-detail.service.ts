@@ -2,7 +2,6 @@ import { AuthService } from './../../auth/auth.service';
 import { GetipService } from './../../getip.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { People } from './../people.model';
 import { Group } from './../group.model';
 import { Injectable } from '@angular/core';
 import { BsModalRef } from 'ngx-bootstrap/modal';
@@ -101,10 +100,10 @@ export class GroupDetailService {
   }
 
   leaveGroup(modalRef: BsModalRef){
-    let name = this.authService.getAcc().name;
+    let name = this.authService.getAcc().fullName;
     console.log(name);    
     let result = this.group.people.filter( el => {
-      return el.user.name === name;
+      return el.user.fullName === name;
     });
 
     if(result.length > 0){

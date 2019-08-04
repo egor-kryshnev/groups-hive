@@ -7,6 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class PersonComponent implements OnInit {
   @Input() name: string;
+  @Input() hierarchy: string[];
 
   constructor() { }
 

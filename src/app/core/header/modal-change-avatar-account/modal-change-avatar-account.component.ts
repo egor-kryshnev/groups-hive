@@ -2,7 +2,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { BsModalRef } from 'ngx-bootstrap/modal';
 import { AuthService } from 'src/app/auth/auth.service';
-import { PeopleDb } from '../peopleDb.model';
 // import { GroupDetailService } from '../../group-detail.service';
 
 @Component({
