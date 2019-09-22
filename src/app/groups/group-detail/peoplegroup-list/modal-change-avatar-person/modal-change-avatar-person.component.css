@@ -1,0 +1,200 @@
+/* @import url("https://fonts.googleapis.com/css?family=Saira+Condensed"); */
+html {
+    box-sizing: border-box;
+  }
+  html *,
+  html *:after,
+  html *:before {
+    box-sizing: inherit;
+  }
+  
+  
+  
+  
+  #text {
+      /* width:auto;
+      max-width: 100%;
+      overflow:hidden;
+      background-color:#FFF;
+      color:#222;
+      font-family:Courier, monospace;
+      font-weight:normal;
+      font-size:18px;
+      resize:none;
+      line-height:40px;
+      padding-left:100px;
+      padding-right:30px;
+      padding-top:45px;
+      padding-bottom:34px;
+      background-image:url(https://static.tumblr.com/maopbtg/E9Bmgtoht/lines.png), url(https://static.tumblr.com/maopbtg/nBUmgtogx/paper.png);
+      background-repeat:repeat-y, repeat;
+      -webkit-border-radius:12px;
+      border-radius:12px;
+      -webkit-box-shadow: 0px 2px 14px #000;
+      box-shadow: 0px 2px 14px #000;
+      border-top:1px solid #FFF;
+      border-bottom:1px solid #FFF; */
+      
+      display: block;
+      width: 100%;
+      padding: 5px 0;
+      margin-bottom: 10px;
+      background: none;
+      border: 0;
+      outline: 0;
+      font-size: 1.5em;
+      font-weight: 400;
+      font-family: inherit;
+  }
+  
+  /* textarea {
+      height:200px;
+      max-width:600px;
+      color:#999;
+      font-weight:400;
+      font-size:30px;
+      font-family:'Ubuntu', Helvetica, Arial, sans-serif;
+      width:100%;
+      background:#fff;
+      border-radius:3px;
+      line-height:2em;
+      border:none;
+      box-shadow:0px 0px 5px 1px rgba(0,0,0,0.1);
+      padding:30px;
+      -webkit-transition: height 2s ease;
+      -moz-transition: height 2s ease;
+      -ms-transition: height 2s ease;
+      -o-transition: height 2s ease;
+      transition: height 2s ease;
+  }
+  
+  * {
+      -webkit-font-smoothing:antialiased !important;
+  } */
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    line-height: 1.6;
+    font-family: 'Saira Condensed', sans-serif;
+    background-color: #fe7b1a;
+  }
+  
+  .form {
+    max-width: 35em;
+    width: 100%;
+    padding: 4em;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 0 0 40px 2px rgba(48, 48, 48, 0.22);
+  }
+  
+  .form__fieldset {
+    padding: 0;
+    border: 0;
+    margin: 0;
+  }
+  
+  .form__legend {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+    color: #3e3e42;
+  }
+  
+  .form__label {
+    display: block;
+  }
+  
+  .form__input {
+    display: block;
+    width: 100%;
+    padding: 5px 0;
+    margin-bottom: 10px;
+    background: none;
+    border: 0;
+    outline: 0;
+    font-size: 1.5em;
+    font-weight: 400;
+    font-family: inherit;
+  }
+  .form__input:not(:last-of-type) {
+    border-bottom: 1px solid #e4e4e4;
+  }
+  .form__input::-webkit-input-placeholder {
+    font-size: .8em;
+    color: #e4e4e4;
+  }
+  .form__input:-ms-input-placeholder {
+    font-size: .8em;
+    color: #e4e4e4;
+  }
+  .form__input::-ms-input-placeholder {
+    font-size: .8em;
+    color: #e4e4e4;
+  }
+  .form__input::placeholder {
+    font-size: .8em;
+    color: #e4e4e4;
+  }
+  
+  .form__btn {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 140px;
+    height: 40px;
+    background: none;
+    border: 0;
+    outline: 0;
+    color: #fe7b1a;
+    border: 0;
+    padding: .5em 3.5em;
+    border-radius: 25px;
+    border-radius: 0;
+    margin-top: 1.5em;
+    font-family: inherit;
+    box-shadow: inset 0 0 0 1px #e4e4e4;
+    transition: all .3s ease-in-out;
+    transition-delay: .4s;
+  }
+  .is-valid .form__btn {
+    color: #fff;
+    transition-delay: 0;
+  }
+  .form__btn::before {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background-color: #fe7b1a;
+    border-radius: inherit;
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+    transition: all .5s ease-in-out;
+  }
+  .is-valid .form__btn::before {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+    transition-delay: .3s;
+  }
+  
+  .form__indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .form__indicator .progressbar {
+    stroke-width: 2px;
+    stroke: #fe7b1a;
+    fill: none;
+    transition: all .3s ease-in-out;
+  }

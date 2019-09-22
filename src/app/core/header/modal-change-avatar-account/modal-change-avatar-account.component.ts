@@ -48,9 +48,12 @@ export class ModalChangeAvatarAccountComponent implements OnInit {
     if(this.authService.setAvatarPath(this.imgPath)){
       this.modalRef.hide();
     }
+    
     // this.groupDetailService.updateAvatarOfPerson(this.person, this.personIndex);
-    // this.modalRef.hide();
-    // window.location.reload();
+    setTimeout(() => {
+      this.modalRef.hide();
+      // window.location.reload();
+    }, 200);
   }
 
 }

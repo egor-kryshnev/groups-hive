@@ -15,6 +15,10 @@
     padding-top: 3px;
 }
 
+#userAvatar:hover {
+    cursor: pointer;
+}
+
 #userName {
     color: white;
     padding-top: 10px;

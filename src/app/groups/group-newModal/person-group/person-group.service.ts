@@ -123,8 +123,8 @@ export class PersonGroupService {
 
     addPeople(person) {
         if(!this.people) 
-            this.people = [person];
-        else this.people.push(person);
+            this.people = [person.user];
+        else this.people.push(person.user);
 
         console.log(this.people);
     }
