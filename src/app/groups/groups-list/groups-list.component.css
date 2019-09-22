@@ -29,6 +29,11 @@
 	margin-top:22px;
 }
 
+.float:hover{
+  visibility:visible!important;
+	opacity:1!important;
+}
+
 /* Hexagons */
 #hexGrid {
   overflow: hidden;

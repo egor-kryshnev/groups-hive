@@ -2,14 +2,18 @@
   <div class="container-fluid">
     <div class="navbar-header">
       <div class="row">
-        <a (click)="onHome()" id="home"><h2>Groups</h2></a>
-        <span>&nbsp</span>
+          <img id="userAvatar" src="assets/img/logo.png" alt="avatar" style="width:40px; height:40px" >
+        <a (click)="onHome()" id="home"><h2>Friends</h2></a>
+        <span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
         <img id="userAvatar" [src]="authService.getAvatarPath()" alt="avatar" (click)="onChangeAvatar()">
         <h5 id="userName">{{ authService.getName() }}</h5>
       </div>
     </div>
     <div class="collaps navbar-collapse">
-      
+
     </div>
     <div class="navbar-nav nav-right">
       <li class="dropdown" appDropdown #r="appDropdown" >
@@ -18,7 +22,7 @@
             <ng-container *ngFor="let background of backgrounds">
               <li (click)="onChooseBackground(background)"><img class="backgrounds" src="assets/img/backgrounds/{{ background }}" alt="image"></li>
             </ng-container>
-            
+
         </ul>
     </li>
     </div>
