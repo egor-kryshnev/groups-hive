@@ -9,6 +9,11 @@
     font-size: 15px;
 }
 
+#cancel {
+    border-bottom-right-radius: 8%;
+    border-top-right-radius: 8%;
+}
+
 ::-webkit-scrollbar {
     width: 0px;
     background: transparent;
