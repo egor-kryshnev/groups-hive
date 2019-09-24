@@ -29,11 +29,11 @@ export class GroupNewModalComponent implements OnInit {
   public inputName: string;
   public nameGroup: string;
   public description: string = "";
-  
+
   @ViewChild('searchPeople', { read: ElementRef }) searchPeople: ElementRef;
   isSearching:boolean;
   people: People[];
-  
+
   // private peopleToAdd: PeopleGroup[];
 
   // heightCard = "140px";
@@ -51,7 +51,7 @@ export class GroupNewModalComponent implements OnInit {
     //   this.personGroupService.setPeople(res);
 
     //   let people = this.personGroupService.getPeople();
-      
+
     // });
 
     fromEvent(this.searchPeople.nativeElement, 'keyup').pipe(
@@ -62,8 +62,8 @@ export class GroupNewModalComponent implements OnInit {
       // if character length greater then 2
       ,filter(res => res.length > 2)
       // Time in milliseconds between key events
-      ,debounceTime(1000)        
-      // If previous query is diffent from current   
+      ,debounceTime(1000)
+      // If previous query is diffent from current
       ,distinctUntilChanged()
       // subscription for response
       ).subscribe((text: string) => {
@@ -88,17 +88,18 @@ export class GroupNewModalComponent implements OnInit {
     if (term === '') {
       return of([]);
     }
+    console.log('byuser', term);
     return this.http.get('http://localhost:5000/api/getuserByName/' + term);
   }
 
   onChoosePerson(person) {
 
     console.log("choose");
-    
+
     this.personGroupService.addPeopleToAdd(person);
     this.personGroupService.removeFromPeople(person);
     this.inputName = "";
-    
+
   }
 
   checking(str) {
@@ -109,12 +110,12 @@ export class GroupNewModalComponent implements OnInit {
       return true;
     } else {
       return false;
-    }  
+    }
   }
 
   onSubmit() {
     console.log(this.description);
-    
+
     if(!this.addPeople){
       this.onCreateGroup();
     } else {
@@ -134,7 +135,7 @@ export class GroupNewModalComponent implements OnInit {
     }
     // this.personGroupService.addAdminPeopleToAdd(myacc);
     this.personGroupService.addMyAccountPeopleToAdd(myacc);
-    
+
     console.log(this.personGroupService.getPeopleToAdd());
 
     var resGroup = {
@@ -145,17 +146,17 @@ export class GroupNewModalComponent implements OnInit {
     };
 
     console.log(resGroup);
-    
-    
+
+
     this.http.post('http://' + this.getipService.getip() + ':5000/api/createGroup', resGroup).subscribe((res: any[]) => {
-      console.log(res);      
+      console.log(res);
     });
 
     this.inputName = "";
     this.nameGroup = "";
 
     this.personGroupService.cleanPeopleToAdd();
-    
+
     this.modalRef.hide();
     window.location.reload();
   }

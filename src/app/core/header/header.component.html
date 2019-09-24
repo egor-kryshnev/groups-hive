@@ -4,19 +4,25 @@
       <div class="row">
          <img id="logoSite" src="assets/img/logo.png" alt="avatar" style="width:40px; height:40px" >
         <a (click)="onHome()" id="home"><h2>Friends</h2></a>
-        <span>&nbsp</span>
+
         <!-- <img id="userAvatar" [src]="ervice.getAvatarPath()" alt="avatar" (click)="onChangeAvatar()">
         <h5 id="userName">{{ authService.getName() }}</h5> -->
       </div>
     </div>
+
 
     <div class="collaps navbar-collapse">
       </div>
       <div class="navbar-nav nav-right">
         <img id="userAvatar" class="navbar-nav nav-right" style="width:30px; height:30px;" [src]="authService.getAvatarPath()"
           alt="avatar" (click)="onChangeAvatar()">
-        <h5 id="userName" style="padding-right:40px; padding-top:5px;">{{ authService.getName() }}</h5>
+          <span>&</span>
+        <h5 id="userName" style="padding-right:40px; padding-top:5px;">Hello {{ authService.getName() }}</h5>
         <li class="dropdown" appDropdown #r="appDropdown" style="align-items: center;" >
+            <!-- <form class="form-inline my-2 my-lg-0"> //search
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              </form> -->
           <a id="btnBackgrounds" class="dropdown-toggle" role="button">Backgrounds <span class="caret"></span></a>
           <ul class="dropdown-menu dropdown-menu-right" [ngClass]="{'show':r.isOpen}">
               <ng-container *ngFor="let background of backgrounds">
@@ -26,21 +32,6 @@
       </li>
       </div>
   </div>
+
 </nav>
 
-<!--
-<div class="collaps navbar-collapse">
-  </div>
-  <div class="navbar-nav nav-right">
-    <img id="userAvatar" class="navbar-nav nav-right" style="width:30px; height:30px;" [src]="authService.getAvatarPath()"
-      alt="avatar" (click)="onChangeAvatar()">
-    <h5 id="userName" style="padding-right:40px; padding-top:5px;">{{ authService.getName() }}</h5>
-    <li class="dropdown" appDropdown #r="appDropdown" >
-      <a id="btnBackgrounds" class="dropdown-toggle" role="button">Backgrounds <span class="caret"></span></a>
-      <ul class="dropdown-menu dropdown-menu-right" [ngClass]="{'show':r.isOpen}">
-          <ng-container *ngFor="let background of backgrounds">
-            <li (click)="onChooseBackground(background)"><img class="backgrounds" src="assets/img/backgrounds/{{ background }}" alt="image"></li>
-          </ng-container>
-      </ul>
-  </li>
-  </div> -->
