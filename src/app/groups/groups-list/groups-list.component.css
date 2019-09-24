@@ -37,7 +37,7 @@
 /* Hexagons */
 #hexGrid {
   overflow: hidden;
-  width: 50%;
+  width: 55%;
   margin: 0 auto;
   /* padding: 0.866% 0; */
   padding: 3.7%;
@@ -202,3 +202,5 @@
     font-size: 13px;
   }
 }
+
+
