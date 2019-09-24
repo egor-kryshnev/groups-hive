@@ -240,7 +240,13 @@ input:checked + .slider:before {
 }
 
 .float:hover{
+    cursor: pointer;
+}
+
+
+#fontFloat:hover{
   color: #88b999;
+  /* cursor: pointer; */
 }
 
 .my-float{
