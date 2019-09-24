@@ -10,13 +10,13 @@
                     <p *ngIf="admin">
                     <button type="button" style="width: 24px; height: 24px; right: 72px; top: 40px;" class="btn btn-secondary" tooltip="Change Avatar" placement="top"><i class="fa fa-user-circle" style="right: 4px; top: 2px; bottom: 0px;" (click)="changeAvatarPerson(person, i)"></i></button>
                     </p>
-    
+
                     <p *ngIf="!admin">
-    
+
                     </p>
                 </a>
             </li>
-            
+
             <li class="hex" *ngSwitchDefault>
                 <a class="hexIn">
                     <img [src]="person.user.avatarPath" alt=""/>
@@ -24,7 +24,7 @@
                         {{ person.user.fullName }}
                     </h1>
                     <p *ngIf="admin">
-                        
+
                     <button type="button" style="left: 60px; height: 24px;" class="btn btn-danger" tooltip="Remove Him"  placement="bottom" (click)="onRemove(i)"><i class="fa fa-times" style="right: 6px; top: 1px; bottom: 0px;"></i></button>
                     <label class="switch" tooltip="Admin" placement="bottom">
                         <input type="checkbox" name="admin" id="admin" [checked]="person.admin" (change)="checkValueAdmin(i)">
@@ -34,19 +34,22 @@
                     <!-- Change Avatar -->
                     <!-- <button type="button" style="width: 24px; height: 24px; right: 72px; top: 40px;" class="btn btn-secondary" tooltip="Change Avatar" placement="top"><i class="fa fa-user-circle" style="right: 4px; top: 2px; bottom: 0px;" (click)="changeAvatarPerson(person, i)"></i></button> -->
                     </p>
-    
+
                     <p *ngIf="!admin">
-    
+
                     </p>
                 </a>
             </li>
-        </ng-container>      
+        </ng-container>
     </ng-container>
-    <li *ngIf="admin" class="hex" (click)="onAddPerson()">
+    <!-- <li *ngIf="admin" class="hex" (click)="onAddPerson()">
         <a class="hexIn">
             <img src="assets/img/Plus_Sign.png" alt=""/>
             <h1>Add a new Person</h1>
             <p>Add a new Person</p>
         </a>
-    </li>
+    </li> -->
+    <a class="float" (click)="onAddPerson()">
+      <i class="fa fa-plus my-float"></i>
+    </a>
 </ul>

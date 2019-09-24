@@ -171,7 +171,7 @@
     height: 24px;
 }
 
-.switch input { 
+.switch input {
     opacity: 0;
     width: 0;
     height: 0;
@@ -223,4 +223,27 @@ input:checked + .slider:before {
 .slider.round:before {
     border-radius: 50%;
 }
-  
+
+
+
+.float{
+	position:fixed;
+	width:60px;
+  height:60px;
+	bottom:20px;
+	right:500px;
+	background-color:rgb(23, 23, 24);
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+}
+
+.float:hover{
+  color: #88b999;
+}
+
+.my-float{
+	margin-top:22px;
+}
+
