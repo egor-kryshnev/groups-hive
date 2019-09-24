@@ -36,7 +36,7 @@
             <h4>Searching ... </h4>
           </div>
         </div>
-      </div> 
+      </div>
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="onCloseModal()">Close</button>
@@ -57,9 +57,9 @@
         <div class="col-xs-12">
             <form class="form">
               <fieldset class="form__fieldset">
-            
+
                 <legend class="form__legend">{{ title }}</legend>
-            
+
                 <label class="form_label" for="nameGroup">Name of Group</label>
                 <input type="text" class="form__input" name="nameGroup" [(ngModel)]="nameGroup" placeholder="Name of Group" [disabled]="isInvalidInputName()">
                 <br>
@@ -86,7 +86,7 @@
                 <div class="text-center" *ngIf="isSearching">
                   <h4>Searching ... </h4>
                 </div>
-            
+
               </fieldset>
             </form>
         </div>
@@ -94,6 +94,6 @@
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="modalRef.hide()">Cancel</button>
-    <button type="button" class="btn btn-primary" (click)="onSubmit()" [disabled]="!personGroupService.getPeopleToAdd() || personGroupService.getPeopleToAdd().length === 0">Save changes</button>
+    <button type="button" class="btn btn-primary" (click)="onSubmit()" [disabled]="!personGroupService.getPeopleToAdd() || personGroupService.getPeopleToAdd().length === 0">Create Group</button>
   </div>
 </div>

@@ -10,10 +10,10 @@
         <div class="col-xs-12">
             <form class="form">
               <fieldset class="form__fieldset">
-            
-                <legend class="form__legend">Mail for all members of group</legend>
-            
-                
+
+                <legend class="form__legend">Mail for all members of the group</legend>
+
+
                 <label class="form__label" for="subject"></label>
                 <input class="form__input" type="text" placeholder="Subject" id="subject" name="subject" [(ngModel)]="subject" required autocomplete="off">
                 <br>
@@ -21,15 +21,11 @@
                 <input class="form__input" type="text" placeholder="Message" id="message" required autocomplete="off"> -->
                 <!-- <textarea class="form_input" name="" id="" cols="40" rows="10"></textarea> -->
 
-                <textarea placeholder="Yor text" id="text" name="text" rows="4" [(ngModel)]="text" style="overflow: hidden; word-wrap: break-word; resize: none; height: 150px; "></textarea>
+                <textarea placeholder="Your text" id="text" name="text" rows="4" [(ngModel)]="text" style="overflow: hidden; word-wrap: break-word; resize: none; height: 150px; "></textarea>
 
-                <button class="form__btn" (click)="onSend()">
-                  <!-- <svg class="form__indicator" xmlns="http://www.w3.org/2000/svg">
-                    <path class="progressbar" d=""></path>
-                  </svg> -->
-                  send
-                </button>
-            
+                <!-- <button class="form__btn" (click)="onSend()">Send
+                </button> -->
+
               </fieldset>
             </form>
         </div>
@@ -37,7 +33,7 @@
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="modalRef.hide()">Cancel</button>
+    <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="onSend()">Send</button>
     <!-- <button type="button" class="btn btn-primary" (click)="onSaveImage()">Save</button> -->
   </div>
 </div>
-  
