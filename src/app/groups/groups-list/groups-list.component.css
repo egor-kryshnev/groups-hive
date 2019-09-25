@@ -37,7 +37,7 @@
 /* Hexagons */
 #hexGrid {
   overflow: hidden;
-  width: 55%;
+  width: 60%;
   margin: 0 auto;
   /* padding: 0.866% 0; */
   padding: 3.7%;
@@ -172,7 +172,7 @@
   }
 }
 
-@media (max-width: 1200px) {  /* <- 1-2  hexagons per row */
+@media (max-width: 1800px) {  /* <- 1-2  hexagons per row */
   .hex {
     width: 49.5%;    /* = (100-1) / 2 */
     padding-bottom: 57.158%;    /* =  width / sin(60) */
