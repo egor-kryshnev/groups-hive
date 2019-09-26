@@ -65,10 +65,10 @@
                 <br>
                 <label class="form_label" for="name">Search of people</label>
                 <input class="form__input form-control" type="text" name="name" #searchPeople [(ngModel)]="inputName" #namee="ngModel" placeholder="Search of People">
-                <br>
+                <!-- <br>
                 <label class="form__label" for="description">Description</label>
                 <textarea class="form-control" name="description" id="description" [(ngModel)]="description" cols="50" rows="6" [disabled]="isInvalidInputName()" style="overflow: hidden; word-wrap: break-word; resize: none; height: 150px; "></textarea>
-                <br>
+                <br> -->
                 <div id="horizscroll">
                   <div class="inlinee" *ngFor="let person of personGroupService.getPeopleToAdd(); let i = index;">
                     <div class="d-flex flex-column align-items-center">
@@ -86,8 +86,11 @@
                 <div class="text-center" *ngIf="isSearching">
                   <h4>Searching ... </h4>
                 </div>
-
               </fieldset>
+              <br>
+              <label class="form__label" for="description">Description</label>
+              <textarea class="form-control" name="description" id="description" [(ngModel)]="description" cols="50" rows="6" [disabled]="isInvalidInputName()" style="overflow: hidden; word-wrap: break-word; resize: none; height: 150px; "></textarea>
+              <br>
             </form>
         </div>
       </div>

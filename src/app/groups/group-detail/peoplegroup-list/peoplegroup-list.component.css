@@ -252,4 +252,17 @@ input:checked + .slider:before {
 .my-float{
 	margin-top:22px;
 }
+.name {
+  position: relative;
+  width: 90px;
+  height: auto;
+  font-size: 20px;
+  color: #fff;
+  line-height: 28px;
+  text-align: center;
+  background: #000;
+  margin-top: 80%;
+  margin-left: 25%;
+}
+
 

@@ -8,8 +8,10 @@
 }
 
 #horizscroll {
-    overflow: auto;
-    white-space: nowrap;
+    /* overflow: auto;
+    white-space: nowrap; */
+    max-height: 150px;
+    overflow-y: scroll;
 }
 
 #horizscroll .hover {
@@ -61,10 +63,10 @@ html {
   html *:before {
     box-sizing: inherit;
   }
-  
-  
-  
-  
+
+
+
+
   #text {
       /* width:auto;
       max-width: 100%;
@@ -88,7 +90,7 @@ html {
       box-shadow: 0px 2px 14px #000;
       border-top:1px solid #FFF;
       border-bottom:1px solid #FFF; */
-      
+
       display: block;
       width: 100%;
       padding: 5px 0;
@@ -100,7 +102,7 @@ html {
       font-weight: 400;
       font-family: inherit;
   }
-  
+
   /* textarea {
       height:200px;
       max-width:600px;
@@ -121,11 +123,11 @@ html {
       -o-transition: height 2s ease;
       transition: height 2s ease;
   }
-  
+
   * {
       -webkit-font-smoothing:antialiased !important;
   } */
-  
+
   body {
     display: flex;
     justify-content: center;
@@ -135,7 +137,7 @@ html {
     font-family: 'Saira Condensed', sans-serif;
     background-color: #fe7b1a;
   }
-  
+
   .form {
     max-width: 35em;
     width: 100%;
@@ -144,23 +146,23 @@ html {
     background: #fff;
     box-shadow: 0 0 40px 2px rgba(48, 48, 48, 0.22);
   }
-  
+
   .form__fieldset {
     padding: 0;
     border: 0;
     margin: 0;
   }
-  
+
   .form__legend {
     font-size: 1.5em;
     margin-bottom: 1em;
     color: #3e3e42;
   }
-  
+
   .form__label {
     display: block;
   }
-  
+
   .form__input {
     display: block;
     width: 100%;
@@ -192,7 +194,7 @@ html {
     font-size: .8em;
     color: #e4e4e4;
   }
-  
+
   .form__btn {
     position: relative;
     z-index: 1;
@@ -236,7 +238,7 @@ html {
             transform: scaleX(1);
     transition-delay: .3s;
   }
-  
+
   .form__indicator {
     position: absolute;
     top: 0;
@@ -251,4 +253,15 @@ html {
     stroke: #fe7b1a;
     fill: none;
     transition: all .3s ease-in-out;
+  }
+
+  .form-control:focus {
+    box-shadow: none;
+  }
+
+  .form-control-underlined {
+    border-width: 0;
+    border-bottom-width: 1px;
+    border-radius: 0;
+    padding-left: 0;
   }

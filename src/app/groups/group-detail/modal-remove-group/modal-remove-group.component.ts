@@ -24,6 +24,7 @@ export class ModalRemoveGroupComponent implements OnInit {
     } else {
       this.onRemove();
     }
+    
   }
 
   onRemove() {
