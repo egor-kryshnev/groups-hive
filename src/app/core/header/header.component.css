@@ -27,6 +27,7 @@
 #btnBackgrounds {
     cursor: pointer;
     color: white;
+    font-size: 1.3rem;
 }
 
 /* .backgrounds:hover {
