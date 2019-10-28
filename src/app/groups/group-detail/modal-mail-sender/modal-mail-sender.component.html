@@ -21,8 +21,10 @@
                 <input class="form__input" type="text" placeholder="Message" id="message" required autocomplete="off"> -->
                 <!-- <textarea class="form_input" name="" id="" cols="40" rows="10"></textarea> -->
 
-                <textarea placeholder="Your text" id="text" name="text" rows="4" [(ngModel)]="text" style="overflow: hidden; word-wrap: break-word; resize: none; height: 150px; "></textarea>
-
+                <textarea placeholder="Your text" id="text" name="text" rows="4" [(ngModel)]="text"></textarea>
+                
+                <textarea placeholder="" id="textSign" name="textSign" rows="1" [(ngModel)]="textSign" disabled></textarea>
+                
                 <!-- <button class="form__btn" (click)="onSend()">Send
                 </button> -->
 

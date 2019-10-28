@@ -14,6 +14,9 @@ import { GetipService } from 'src/app/getip.service';
 export class ModalMailSenderComponent implements OnInit {
   @Input() subject: string;
   @Input() text: string;
+  nameEmail: string = this.authService.getName() + " " + this.authService.getEmail();
+  @Input() textSign: string = this.nameEmail; 
+  
 
   constructor(public modalRef: BsModalRef, private groupDetailService: GroupDetailService, private router: Router, private route: ActivatedRoute, private http: HttpClient, private getipService: GetipService, private authService: AuthService) { }
 
