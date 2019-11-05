@@ -9,7 +9,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 @Injectable()
 export class AuthService {
     // private user = new PeopleDb('', '', '', '', '');
-    private user = new People('','','',['',''],{ adfsUID: '', uniqueID: ''},[{ adfsUID: '', uniqueID: ''}],'', '');
+    private user = new People('','','',['',''],[{ adfsUID: '', uniqueID: ''}],'', '');
     constructor(private route: ActivatedRoute, private http: HttpClient, private router: Router, private getipService: GetipService) {}
 
     login(user) {
@@ -24,15 +24,15 @@ export class AuthService {
         // });
 
         /** Angular */
-        this.user = new People('5d2594e36fcb691a0d178a71', 'first', '111111', ['aman', 'modiin'], { adfsUID: 'first@sadasd', uniqueID: 'first@fdsfl.idf'}, [{ adfsUID: 'first@fgh', uniqueID: 'first@fgh.idf'}, { adfsUID: 'first@qwe', uniqueID: 'first@qwe.idf'}], 'first@test.com', 'assets/img/guest.png');
+        this.user = new People('5d2594e36fcb691a0d178a71', 'first', '111111', ['aman', 'modiin'], [{ adfsUID: 'first@fgh', uniqueID: 'first@fgh.idf'}, { adfsUID: 'first@qwe', uniqueID: 'first@qwe.idf'}], 'first@test.com', 'assets/img/guest.png');
         this.http.post('http://' + this.getipService.getip() + ':5000/api/checkUser', this.user).subscribe((res: any) => {
             console.log(res);
             if(res != { message: "User created!" }){
-                this.user = new People(res._id, res.fullName, res.personalNumber, res.hierarchy, res.primaryDomainUser, res.secondaryDomainUsers, res.mail, res.avatarPath);
+                this.user = new People(res._id, res.fullName, res.personalNumber, res.hierarchy, res.secondaryDomainUsers, res.mail, res.avatarPath);
             }
         });
-        
-        
+
+
     }
 
     logout() {
@@ -87,7 +87,7 @@ export class AuthService {
 
     public getAcc(): People {
         // let acc = new PeopleGroup('5d2594e36fcb691a0d178a71', 'first', '1', 'first@test.com', true, "assets/img/guest.png");
-        
+
         // return acc;
         return this.user;
     }
@@ -104,11 +104,11 @@ export class AuthService {
         // var result = people.find( person => {
         //     return person.user.name === acc.user.name && person.admin === acc.admin;
         // });
-        
+
         var result = people.find( person => {
             return person.user.fullName === this.user.fullName && person.admin;
         });
-        
+
         if(result){
             return true;
         } else {

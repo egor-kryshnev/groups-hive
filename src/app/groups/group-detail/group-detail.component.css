@@ -242,7 +242,4 @@ input:checked + .slider:before {
 .p-1{
     padding: .35rem!important;
 }
-
-.container{
-  width: 30%;
-}
+  
