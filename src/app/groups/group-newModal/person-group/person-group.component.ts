@@ -17,19 +17,13 @@ export class PersonGroupComponent implements OnInit {
   heightCard = "140px";
   widthCard = "140px";
 
-  constructor(private personGroupService: PersonGroupService) { }
+  constructor(public personGroupService: PersonGroupService) { }
 
   ngOnInit() {
     // console.log(this.personGroupService.getPeople());
   }
 
   onRemoveFromList(person) {
-    // let index = this.peopleToAdd.indexOf(person);
-    // this.peopleToAdd.splice(index, 1);
-
-    // if(!this.people) 
-    //   this.people = [person];
-    // else this.people.push(person);
 
     console.log("remove");
     

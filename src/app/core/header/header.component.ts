@@ -15,7 +15,7 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 export class HeaderComponent implements OnInit {
   backgrounds = ['background1.jpg','background2.jpg', 'background3.jpg', 'background4.jpg', 'background5.jpg'];
 
-  constructor(private route: ActivatedRoute, private router: Router, private groupDetailService: GroupDetailService, private elementRef: ElementRef, private http: HttpClient, private getipService: GetipService, private authService: AuthService, private modalRef: BsModalRef, private modalService: BsModalService) { }
+  constructor(private route: ActivatedRoute, private router: Router, private groupDetailService: GroupDetailService, private elementRef: ElementRef, private http: HttpClient, private getipService: GetipService, public authService: AuthService, private modalRef: BsModalRef, private modalService: BsModalService) { }
 
   ngOnInit() {
 

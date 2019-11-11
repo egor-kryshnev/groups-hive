@@ -14,7 +14,7 @@ import { Group } from './group.model';
 export class GroupsComponent implements OnInit, OnChanges {
   @Input() groups: Group[];
   @Input() groupsAdmin: Group[];
-  private nameGroup: string;
+  nameGroup: string;
 
   constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute, private authService: AuthService, private getipService: GetipService) { }
 

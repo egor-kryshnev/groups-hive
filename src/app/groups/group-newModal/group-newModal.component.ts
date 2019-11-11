@@ -42,7 +42,7 @@ export class GroupNewModalComponent implements OnInit {
   selectedFile: File = null;
 
 
-  constructor( public modalRef: BsModalRef, private http: HttpClient, private router: Router, private route: ActivatedRoute, private authService: AuthService, private personGroupService: PersonGroupService, private getipService: GetipService, private groupDetailService: GroupDetailService ) { }
+  constructor( public modalRef: BsModalRef, private http: HttpClient, private router: Router, private route: ActivatedRoute, private authService: AuthService, public personGroupService: PersonGroupService, private getipService: GetipService, private groupDetailService: GroupDetailService ) { }
 
   ngOnInit() {
     // this.http.get('https://groups-3fd03.firebaseio.com/people.json').subscribe((res: any[]) => {

@@ -11,6 +11,7 @@ import { AuthService } from 'src/app/auth/auth.service';
 })
 export class ModalChangeAvatarAccountComponent implements OnInit {
   @Input() imgPath: string;
+  @Input() title: string;
   
 
   constructor(public modalRef: BsModalRef, public authService: AuthService ) { }

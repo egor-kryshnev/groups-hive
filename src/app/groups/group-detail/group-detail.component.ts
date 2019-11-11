@@ -27,7 +27,9 @@ export class GroupDetailComponent implements OnInit {
 
   modalRef: BsModalRef;
 
-  constructor(private modalService: BsModalService, private router: Router, private route: ActivatedRoute, private http: HttpClient, private groupDetailService: GroupDetailService, private authService: AuthService, private getipService: GetipService) { }
+  namePerson: string;
+
+  constructor(private modalService: BsModalService, private router: Router, private route: ActivatedRoute, private http: HttpClient, public groupDetailService: GroupDetailService, private authService: AuthService, private getipService: GetipService) { }
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
