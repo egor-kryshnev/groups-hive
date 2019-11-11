@@ -33,6 +33,7 @@ import { ModalChangeAvatarGroupComponent } from './groups/group-detail/modal-cha
 import { SharedModule } from './shared/shared.module';
 import { DropdownDirective } from './shared/dropdown.directive';
 import { ModalChangeAvatarAccountComponent } from './core/header/modal-change-avatar-account/modal-change-avatar-account.component';
+import { FooterComponent } from './core/footer/footer.component';
 
 
 @NgModule({
@@ -40,6 +41,7 @@ import { ModalChangeAvatarAccountComponent } from './core/header/modal-change-av
       AppComponent,
       GroupsComponent,
       HeaderComponent,
+      FooterComponent,
       GroupsListComponent,
       GroupItemComponent,
       GroupNewModalComponent,
