@@ -1,6 +1,6 @@
 <div class="modal-content modal modal-wide" style="width: auto; max-width: 600px;">
   <div class="modal-header">
-    <h4 class="modal-title">Changing image of group</h4>
+    <h4 class="modal-title" i18n="Changing image of group Title Modal@@ChangingImageOfGroupTitleModal">Changing image of group</h4>
     <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
       <span aria-hidden="true">&times;</span>
     </button>
@@ -11,7 +11,7 @@
             <form class="form">
               <fieldset class="form__fieldset">
             
-                <legend class="form__legend">Change avatar of group</legend>
+                <legend class="form__legend" i18n="Change avatar of group Modal@@ChangeAvatarOfGroupModal">Change avatar of group</legend>
             
                 <label class="form__label" for="subject"></label>
                 <div class="row align-items-center justify-content-center">
@@ -31,7 +31,7 @@
       </div>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="modalRef.hide()">Cancel</button>
-    <button type="button" class="btn btn-primary" (click)="onSaveImage()">Save</button>
+    <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="modalRef.hide()" i18n="Cancel Changing Avatar OF Group Button Modal@@CancelChangingAvatarOfGroupBtnModal">Cancel</button>
+    <button type="button" class="btn btn-primary" (click)="onSaveImage()" i18n="Save Changing Avatar OF Group Button Modal@@SaveChangingAvatarOfGroupBtnModal">Save</button>
   </div>
 </div>

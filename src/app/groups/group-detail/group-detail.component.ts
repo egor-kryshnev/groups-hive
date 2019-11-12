@@ -12,6 +12,7 @@ import { BsModalService } from 'ngx-bootstrap/modal';
 import { BsModalRef } from 'ngx-bootstrap/modal';
 import { ModalChangeAvatarGroupComponent } from './modal-change-avatar-group/modal-change-avatar-group.component';
 import { ModalMailSenderComponent } from './modal-mail-sender/modal-mail-sender.component';
+import { ModalLeaveGroupComponent } from './modal-leave-group/modal-leave-group.component';
 
 @Component({
   selector: 'app-group-detail',
@@ -93,7 +94,14 @@ export class GroupDetailComponent implements OnInit {
   }
 
   onLeaveFromGroup() {
-    this.modalRef = this.modalService.show(ModalRemoveGroupComponent,  {
+    // this.modalRef = this.modalService.show(ModalRemoveGroupComponent,  {
+    //   initialState: {
+    //     title: 'Leave From Group',
+    //     leaveOrRemove: true
+    //   }
+    // });
+
+    this.modalRef = this.modalService.show(ModalLeaveGroupComponent, {
       initialState: {
         title: 'Leave From Group',
         leaveOrRemove: true

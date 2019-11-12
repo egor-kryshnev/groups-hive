@@ -1,38 +1,6 @@
-<!-- <div class="modal-content">
-  <div class="modal-header">
-    <h4 class="modal-title">{{ title }}</h4>
-    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body">
-      <div class="container">
-        <div class="col-xs-12">
-          <div class="row align-items-center justify-content-center">
-            <div class="col-xs-2" style="float: left;">
-              <button type="button" class="btn btn-default btn-circle" style="width: 50px;" (click)="onBack()"><i class="fa fa-arrow-circle-o-left fa-2x" aria-hidden="true"></i></button>
-            </div>
-            <div class="col-xs-8">
-              <img [src]="imgPath" style="width: 150px;">
-            </div>
-            <div class="col-xs-2 align-items-right" style="float: right;">
-              <button type="button" class="btn btn-default btn-circle" style="width: 50px;" (click)="onForward()"><i class="fa fa-arrow-circle-o-right fa-2x" aria-hidden="true"></i></button>
-            </div>
-          </div>
-        </div>
-      </div>
-  </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="modalRef.hide()">Cancel</button>
-    <button type="button" class="btn btn-primary" (click)="onSaveAvatar()">Save</button>
-  </div>
-</div> -->
-
-
-
 <div class="modal-content modal modal-wide" style="width: auto; max-width: 600px;">
   <div class="modal-header">
-    <h4 class="modal-title">{{ title }}</h4>
+    <h4 class="modal-title" i18n="Changing avatar of account Title Modal@@ChangingAvatarOfAccountTitleModal">Change Avatar Of Account</h4>
     <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
       <span aria-hidden="true">&times;</span>
     </button>
@@ -43,7 +11,7 @@
             <form class="form">
               <fieldset class="form__fieldset">
             
-                <legend class="form__legend">{{ title }}</legend>
+                <legend class="form__legend" i18n="Change avatar of account Modal@@ChangeAvatarOfAccountModal">Change Avatar Of Account</legend>
             
                 <label class="form__label" for="subject"></label>
                 <div class="row align-items-center justify-content-center">
@@ -63,7 +31,7 @@
       </div>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="modalRef.hide()">Cancel</button>
-    <button type="button" class="btn btn-primary" (click)="onSaveAvatar()">Save</button>
+    <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="modalRef.hide()" i18n="Cancel Changing Avatar Of Account Button Modal@@CancelChangingAvatarOfAccountBtnModal">Cancel</button>
+    <button type="button" class="btn btn-primary" (click)="onSaveAvatar()" i18n="Save Changing Avatar Of Account Button Modal@@SaveChangingAvatarOfAccountBtnModal">Save</button>
   </div>
 </div>

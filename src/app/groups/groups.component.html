@@ -3,7 +3,7 @@
 
     <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
         <div class="input-group">
-          <input type="search" name="nameGroup" [(ngModel)]="nameGroup" placeholder="Search groups" aria-describedby="button-addon1" class="form-control border-0 bg-light">
+          <input type="search" name="nameGroup" [(ngModel)]="nameGroup" placeholder="Search groups" aria-describedby="button-addon1" class="form-control border-0 bg-light" i18n-placeholder="searchGroups| placeholder input for search groups@@searchGroups">
           <div class="input-group-append">
             <button id="button-addon1" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
           </div>
@@ -19,7 +19,7 @@ width: 1400px;">
 <br>
 <div class="row">
   <div class="col-lg-5">
-    <h1 style="text-align: center">Groups Includes Me</h1>
+    <h1 style="text-align: center" i18n="Groups Includes Me@@GroupsIncludesMe">Groups Includes Me</h1>
     <app-groups-list [mygroups]="false" [groups]="groups" [nameGroupp]="nameGroup"></app-groups-list>
   </div>
 
@@ -39,7 +39,7 @@ width: 1400px;">
 
   <div class="col-lg-5">
     <!-- <app-hive></app-hive> -->
-    <h1 style="text-align: center">My Groups</h1>
+    <h1 style="text-align: center" i18n="My Groups| Where im admin@@MyGroups">My Groups</h1>
     <app-groups-list [mygroups]="true" [groups]="groupsAdmin" [nameGroupp]="nameGroup"></app-groups-list>
     <!-- <a href="#" class="float">
       <i class="fa fa-plus my-float"></i>

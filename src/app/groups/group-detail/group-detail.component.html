@@ -3,7 +3,7 @@
 
     <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
         <div class="input-group">
-          <input type="text" class="form-control border-0 bg-light" aria-describedby="button-addon1" name="namePerson" [(ngModel)]="namePerson" placeholder="Search users">
+          <input type="text" class="form-control border-0 bg-light" aria-describedby="button-addon1" name="namePerson" [(ngModel)]="namePerson" placeholder="Search users" i18n-placeholder="Search Users| placeholder for search users@@SearchUsers">
           <div class="input-group-append">
             <button id="button-addon1" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
           </div>
@@ -21,8 +21,8 @@
       <div class="input-group" style="width: 475px; margin: 0 auto; float: none;" *ngIf="changeName">
         <input type="text" class="form-control" placeholder="" [value]="groupDetailService.getGroupName()" [(ngModel)]="changingName">
         <div class="input-group-prepend">
-          <button class="btn btn-primary" type="button" id="savename" (click)="onSaveName(changingName)">Save Name</button>
-          <button class="btn btn-danger" type="button" id="cancel" (click)="onCancelChangingName()">Cancel</button>
+          <button class="btn btn-primary" type="button" id="savename" (click)="onSaveName(changingName)" i18n="Save Changing Name Button| Save name in changing name of groups@@SaveNameGroup">Save Name</button>
+          <button class="btn btn-danger" type="button" id="cancel" (click)="onCancelChangingName()" i18n="Cancel Changing Name Button| Changing changing name in name of groups@@CancelNameGroup">Cancel</button>
         </div>
       </div>
     </div>
@@ -30,9 +30,9 @@
     <h1 style="text-align: center" *ngIf="!changeName">
       <img [src]="groupDetailService.getGroupImagePath()" style="width: 50px;" alt=""/>
       <span> {{ groupDetailService.getGroupName() }}</span>
-      <button class="btn btn-primary" style="margin-left: 25px;" *ngIf="admin" (click)="onChangeName()"><i class="fa fa-pencil" aria-hidden="true"></i> Change Name</button>
-      <button class="btn btn-primary" style="margin-left: 25px;" *ngIf="admin" (click)="onChangAvatarGroup()"><i class="fa fa-file-image-o" aria-hidden="true"></i> Change Avatar</button>
-      <button class="btn btn-primary" style="margin-left: 25px;" (click)="onSendMailForGroup()"><i class="fa fa-envelope" aria-hidden="true"></i> Send Mail</button>
+      <button class="btn btn-primary" style="margin-left: 25px;" *ngIf="admin" (click)="onChangeName()" i18n="Change Name Button@@ChangeNameBtn"><i class="fa fa-pencil" aria-hidden="true"></i> Change Name</button>
+      <button class="btn btn-primary" style="margin-left: 25px;" *ngIf="admin" (click)="onChangAvatarGroup()" i18n="Change Avatar Button@@ChangeAvatarBtn"><i class="fa fa-file-image-o" aria-hidden="true"></i> Change Avatar</button>
+      <button class="btn btn-primary" style="margin-left: 25px;" (click)="onSendMailForGroup()" i18n="Send Mail Button@@SendMailBtn"><i class="fa fa-envelope" aria-hidden="true"></i> Send Mail</button>
     </h1>
 
     <hr style="border: none;
@@ -48,7 +48,7 @@
         <div>
           <!-- <div class="row"> -->
             <label style="margin-left: 5px;"><h1>Description</h1></label>
-            <button class="btn btn-warning" style="position: relative; margin-bottom: 15px; margin-left: 15px;" (click)="onChangeDescriptionGroup()">Change Description</button>
+            <button class="btn btn-warning" style="position: relative; margin-bottom: 15px; margin-left: 15px;" (click)="onChangeDescriptionGroup()" i18n="Change Description Button@@ChangeDescriptionBtn">Change Description</button>
           <!-- </div> -->
           <cdk-virtual-scroll-viewport style="height: 600px;" itemSize="250" class="viewport">
             <h3>{{ description }}</h3>
@@ -59,5 +59,5 @@
   </div>
 </div>
 
-<button class="btn btn-danger" *ngIf="admin" style="float: right; margin-right: 20px;" (click)="onRemoveGroup()">Remove Group</button>
-<button class="btn btn-danger" style="float: right; margin-right: 20px;" (click)="onLeaveFromGroup()">Leave Group</button>
+<button class="btn btn-danger btnHover" *ngIf="admin" style="float: right; margin-right: 20px;" (click)="onRemoveGroup()" i18n="Remove Group Button@@RemoveGroupBtn">Remove Group</button>
+<button class="btn btn-danger btnHover" style="float: right; margin-right: 20px;" (click)="onLeaveFromGroup()" i18n="Leave Groups Button@@LeaveGroupBtn">Leave Group</button>

@@ -1,24 +1,6 @@
-<!-- <div class="modal-content">
-  <div class="modal-header">
-    <h4 class="modal-title">{{ title }}</h4>
-    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body">
-    <label for="description">Description</label>
-    <textarea class="form-control" name="description" id="description" [(ngModel)]="description" cols="50" rows="6"></textarea>
-  </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="modalRef.hide()">Cancel</button>
-    <button type="button" class="btn btn-primary" (click)="onSubmit()">Submit</button>
-  </div>
-</div> -->
-
-
 <div class="modal-content modal modal-wide" style="width: auto; max-width: 600px;">
   <div class="modal-header">
-    <h4 class="modal-title">{{ title }}</h4>
+    <h4 class="modal-title" i18n="Change Description Of Group Title Modal@@ChangeDescriptionOfGroupTitleModal">Change Descripition Of Group</h4>
     <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
       <span aria-hidden="true">&times;</span>
     </button>
@@ -28,22 +10,15 @@
         <div class="col-xs-12">
             <form class="form">
               <fieldset class="form__fieldset">
-            
-                <legend class="form__legend">Description</legend>
-            
-                
-                
-
+                <legend class="form__legend" i18n="Description Modal@@DescriptionModal">Description</legend>
                 <textarea placeholder="Yor text" id="text" name="description" rows="4" [(ngModel)]="description" style="overflow: hidden; word-wrap: break-word; resize: none; height: 150px; "></textarea>
-
-            
               </fieldset>
             </form>
         </div>
       </div>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="modalRef.hide()">Cancel</button>
-    <button type="button" class="btn btn-primary" (click)="onSubmit()">Submit</button>
+    <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="modalRef.hide()" i18n="Cancel Changing Description Of Group Button Modal@@CancelChangingDescriptionOfGroupBtnModal">Cancel</button>
+    <button type="button" class="btn btn-primary" (click)="onSubmit()"  i18n="Save Changing Description Of Group Button Modal@@SaveChangingDescriptionOfGroupBtnModal">Submit</button>
   </div>
 </div>

@@ -34,6 +34,7 @@ import { SharedModule } from './shared/shared.module';
 import { DropdownDirective } from './shared/dropdown.directive';
 import { ModalChangeAvatarAccountComponent } from './core/header/modal-change-avatar-account/modal-change-avatar-account.component';
 import { FooterComponent } from './core/footer/footer.component';
+import { ModalLeaveGroupComponent } from './groups/group-detail/modal-leave-group/modal-leave-group.component';
 
 
 @NgModule({
@@ -52,6 +53,7 @@ import { FooterComponent } from './core/footer/footer.component';
       GroupDetailComponent,
       PeoplegroupListComponent,
       ModalRemoveGroupComponent,
+      ModalLeaveGroupComponent,
       ModalChangeAvatarGroupComponent,
       ModalChangeDescriptionComponent,
       ModalMailSenderComponent,
@@ -84,6 +86,7 @@ import { FooterComponent } from './core/footer/footer.component';
    entryComponents: [
       GroupNewModalComponent,
       ModalRemoveGroupComponent,
+      ModalLeaveGroupComponent,
       ModalChangeAvatarGroupComponent,
       ModalChangeDescriptionComponent,
       ModalMailSenderComponent,

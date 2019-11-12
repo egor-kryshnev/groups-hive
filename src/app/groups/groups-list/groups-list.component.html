@@ -1,39 +1,23 @@
 <cdk-virtual-scroll-viewport style="height: 600px;" itemSize="250" class="viewport">
 <ul id="hexGrid">
         <ng-container *ngFor="let group of groups | filter :['name'] : nameGroupp : 'includes'" >
-            <!-- <li *ngIf="checking(group.name)" class="hex"> -->
             <li class="hex" (click)="onChooseGroup(group._id)">
                 <a class="hexIn">
                     <img src="{{ group.imgPath }}" alt=""/>
                     <div class="circle">{{ group.people.length }}</div>
                     <div class="name">{{ group.name }}</div>
                     <h1>{{ group.name }}</h1>
-                    <!-- <p>{{ group.people.length }} of members</p> -->
                     <p>{{ group.description }}</p>
                 </a>
             </li>
         </ng-container>
 
-        <!-- <li *ngIf="mygroups" class="hex" (click)="onNew()">
-            <a class="hexIn">
-                <img src="assets/img/Plus_Sign.png" alt=""/>
-                <h1>Create a new Group</h1>
-                <p>Create a new Group</p>
-            </a>
-        </li> -->
     </ul>
 </cdk-virtual-scroll-viewport>
 
 <a *ngIf="mygroups" href="#" class="float" disabled="" (click)="onNew()">
   <i class="fa fa-plus my-float"></i>
 </a>
-
-<!-- <ul id="hexGrid">
-    <ng-container *ngFor="let group of groups" >
-            <app-group-item class="hexmy" [group]="group" [id]="group._id"></app-group-item>
-    </ng-container>
-
-</ul> -->
 
 
 

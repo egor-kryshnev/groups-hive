@@ -2,13 +2,53 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="he" datatype="plaintext" original="ng2.template">
     <body>
-      <trans-unit id="5f6b9234cc67a886c44d48fbc46924bbfe23466d" datatype="html">
+      <trans-unit id="searchGroups" datatype="html">
+        <source>Search groups</source>
+        <target>חיפוש אנשים</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/groups/groups.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="description"> placeholder input for search groups</note>
+        <note priority="1" from="meaning">searchGroups</note>
+      </trans-unit>
+      <trans-unit id="GroupsIncludesMe" datatype="html">
+        <source>Groups Includes Me</source>
+        <target>קבוצות שאתה נמצה בהן</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/groups/groups.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+        <note priority="1" from="description">Groups Includes Me</note>
+      </trans-unit>
+      <trans-unit id="MyGroups" datatype="html">
+        <source>My Groups</source>
+        <target>קבוצות שלי</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/groups/groups.component.html</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+        <note priority="1" from="description"> Where im admin</note>
+        <note priority="1" from="meaning">My Groups</note>
+      </trans-unit>
+      <trans-unit id="GrettingUser" datatype="html">
+        <source>Hello <x id="INTERPOLATION" equiv-text="{{ authService.getName() }}"/></source>
+        <target><x id="INTERPOLATION" equiv-text="{{ authService.getName() }}"/> שלום</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/header/header.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+        <note priority="1" from="description"> Greeting to user in header</note>
+        <note priority="1" from="meaning">Greeting User</note>
+      </trans-unit>
+      <trans-unit id="background" datatype="html">
         <source>Backgrounds <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/><x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
-        <target>רקעים</target>
+        <target>רקעים <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/><x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/core/header/header.component.html</context>
           <context context-type="linenumber">31</context>
         </context-group>
+        <note priority="1" from="description">Backgrounds Header</note>
       </trans-unit>
     </body>
   </file>

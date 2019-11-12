@@ -26,9 +26,9 @@
       <img id="userAvatar" class="navbar-nav nav-right" style="width:30px; height:30px;" [src]="authService.getAvatarPath()"
         alt="avatar" (click)="onChangeAvatar()">
         <span>&</span>
-      <h5 id="userName" style="padding-right:40px; padding-top:5px;">Hello {{ authService.getName() }}</h5>
+      <h5 id="userName" style="padding-right:40px; padding-top:5px;" i18n="Greeting User| Greeting to user in header@@GrettingUser">Hello {{ authService.getName() }}</h5>
       <li class="dropdown" appDropdown #r="appDropdown" style="align-items: center;" >
-          <a id="btnBackgrounds" class="dropdown-toggle" role="button" i18n>Backgrounds <span class="caret"></span></a>
+          <a id="btnBackgrounds" class="dropdown-toggle" role="button" i18n="Backgrounds Header@@background">Backgrounds <span class="caret"></span></a>
           <ul class="dropdown-menu dropdown-menu-right" [ngClass]="{'show':r.isOpen}">
             <ng-container *ngFor="let background of backgrounds">
               <li (click)="onChooseBackground(background)"><img class="backgrounds" src="assets/img/backgrounds/{{ background }}" alt="image"></li>
