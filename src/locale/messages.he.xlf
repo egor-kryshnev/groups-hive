@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="he" datatype="plaintext" original="ng2.template">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
     <body>
       <trans-unit id="searchGroups" datatype="html">
         <source>Search groups</source>
-        <target>חיפוש אנשים</target>
+        <target>חפש קבוצות</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/groups/groups.component.html</context>
           <context context-type="linenumber">6</context>
@@ -14,7 +14,7 @@
       </trans-unit>
       <trans-unit id="GroupsIncludesMe" datatype="html">
         <source>Groups Includes Me</source>
-        <target>קבוצות שאתה נמצה בהן</target>
+        <target>הקבוצות שאני חבר בהן</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/groups/groups.component.html</context>
           <context context-type="linenumber">22</context>
@@ -23,7 +23,7 @@
       </trans-unit>
       <trans-unit id="MyGroups" datatype="html">
         <source>My Groups</source>
-        <target>קבוצות שלי</target>
+        <target>הקבוצות שלי</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/groups/groups.component.html</context>
           <context context-type="linenumber">42</context>
@@ -31,9 +31,45 @@
         <note priority="1" from="description"> Where im admin</note>
         <note priority="1" from="meaning">My Groups</note>
       </trans-unit>
+      <trans-unit id="ChangingAvatarOfAccountTitleModal" datatype="html">
+        <source>Change Avatar Of Account</source>
+        <target>שינוי תמונת הפרופיל</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/header/modal-change-avatar-account/modal-change-avatar-account.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <note priority="1" from="description">Changing avatar of account Title Modal</note>
+      </trans-unit>
+      <trans-unit id="ChangeAvatarOfAccountModal" datatype="html">
+        <source>Change Avatar Of Account</source>
+        <target>שינוי תמונת הפרופיל</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/header/modal-change-avatar-account/modal-change-avatar-account.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <note priority="1" from="description">Change avatar of account Modal</note>
+      </trans-unit>
+      <trans-unit id="CancelChangingAvatarOfAccountBtnModal" datatype="html">
+        <source>Cancel</source>
+        <target>סגור</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/header/modal-change-avatar-account/modal-change-avatar-account.component.html</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+        <note priority="1" from="description">Cancel Changing Avatar Of Account Button Modal</note>
+      </trans-unit>
+      <trans-unit id="SaveChangingAvatarOfAccountBtnModal" datatype="html">
+        <source>Save</source>
+        <target>שמור</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/core/header/modal-change-avatar-account/modal-change-avatar-account.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+        <note priority="1" from="description">Save Changing Avatar Of Account Button Modal</note>
+      </trans-unit>
       <trans-unit id="GrettingUser" datatype="html">
         <source>Hello <x id="INTERPOLATION" equiv-text="{{ authService.getName() }}"/></source>
-        <target><x id="INTERPOLATION" equiv-text="{{ authService.getName() }}"/> שלום</target>
+        <target><x id="INTERPOLATION" equiv-text="{{ authService.getName() }}"/> היי</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/core/header/header.component.html</context>
           <context context-type="linenumber">29</context>
@@ -49,6 +85,333 @@
           <context context-type="linenumber">31</context>
         </context-group>
         <note priority="1" from="description">Backgrounds Header</note>
+      </trans-unit>
+      <trans-unit id="ChangeDescriptionOfGroupTitleModal" datatype="html">
+        <source>Change Descripition Of Group</source>
+        <target>שנה תיאור של קבוצה זו</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/groups/group-detail/modal-change-description/modal-change-description.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <note priority="1" from="description">Change Description Of Group Title Modal</note>
+      </trans-unit>
+      <trans-unit id="DescriptionModal" datatype="html">
+        <source>Description</source>
+        <target>תיאור</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/groups/group-detail/modal-change-description/modal-change-description.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+        <note priority="1" from="description">Description Modal</note>
+      </trans-unit>
+      <trans-unit id="CancelChangingDescriptionOfGroupBtnModal" datatype="html">
+        <source>Cancel</source>
+        <target>סגור</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/groups/group-detail/modal-change-description/modal-change-description.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+        <note priority="1" from="description">Cancel Changing Description Of Group Button Modal</note>
+      </trans-unit>
+      <trans-unit id="SaveChangingDescriptionOfGroupBtnModal" datatype="html">
+        <source>Submit</source>
+        <target>אישור</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/groups/group-detail/modal-change-description/modal-change-description.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+        <note priority="1" from="description">Save Changing Description Of Group Button Modal</note>
+      </trans-unit>
+      <trans-unit id="ConfirmationRemoveGroupTitleModal" datatype="html">
+        <source>Remove Group</source>
+        <target>מחק קבוצה</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/groups/group-detail/modal-remove-group/modal-remove-group.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <note priority="1" from="description">Confirmation Remove Group Title Modal</note>
+      </trans-unit>
+      <trans-unit id="ConfirmationRemoveGroupTextModal" datatype="html">
+        <source>Yoy really want to do this</source>
+        <target>האם אתה בטוח?</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/groups/group-detail/modal-remove-group/modal-remove-group.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <note priority="1" from="description">Confirmation Remove Group Text Modal</note>
+      </trans-unit>
+      <trans-unit id="CancelConfirmationRemoveGroupModal" datatype="html">
+        <source>Cancel</source>
+        <target>סגור</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/groups/group-detail/modal-remove-group/modal-remove-group.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <note priority="1" from="description">Cancel Confirmation Remove Group Modal</note>
+      </trans-unit>
+      <trans-unit id="RemoveConfirmationRemoveGroupModal" datatype="html">
+        <source>Remove</source>
+        <target>מחק</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/groups/group-detail/modal-remove-group/modal-remove-group.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+        <note priority="1" from="description">Remove Confirmation Remove Group Modal</note>
+      </trans-unit>
+      <trans-unit id="ChangingImageOfGroupTitleModal" datatype="html">
+        <source>Changing image of group</source>
+        <target>שנה תמונת קבוצה</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/groups/group-detail/modal-change-avatar-group/modal-change-avatar-group.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <note priority="1" from="description">Changing image of group Title Modal</note>
+      </trans-unit>
+      <trans-unit id="ChangeAvatarOfGroupModal" datatype="html">
+        <source>Change avatar of group</source>
+        <target>שנה תמונת קבוצה</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/groups/group-detail/modal-change-avatar-group/modal-change-avatar-group.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <note priority="1" from="description">Change avatar of group Modal</note>
+      </trans-unit>
+      <trans-unit id="CancelChangingAvatarOfGroupBtnModal" datatype="html">
+        <source>Cancel</source>
+        <target>סגור</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/groups/group-detail/modal-change-avatar-group/modal-change-avatar-group.component.html</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+        <note priority="1" from="description">Cancel Changing Avatar OF Group Button Modal</note>
+      </trans-unit>
+      <trans-unit id="SaveChangingAvatarOfGroupBtnModal" datatype="html">
+        <source>Save</source>
+        <target>שמור</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/groups/group-detail/modal-change-avatar-group/modal-change-avatar-group.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+        <note priority="1" from="description">Save Changing Avatar OF Group Button Modal</note>
+      </trans-unit>
+      <trans-unit id="MailSenderTitleModal" datatype="html">
+        <source>Mail Sender</source>
+        <target>שלח מייל</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/groups/group-detail/modal-mail-sender/modal-mail-sender.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <note priority="1" from="description">Mail Sender Title Modal</note>
+      </trans-unit>
+      <trans-unit id="DescriptionMailSenderModal" datatype="html">
+        <source>Mail for all members of the group</source>
+        <target>מייל לכל חברי הקבוצה</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/groups/group-detail/modal-mail-sender/modal-mail-sender.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <note priority="1" from="description">Description Mail Sender Modal</note>
+      </trans-unit>
+      <trans-unit id="SubjectOfMailInMailSenderModal" datatype="html">
+        <source>Subject</source>
+        <target>נושא</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/groups/group-detail/modal-mail-sender/modal-mail-sender.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <note priority="1" from="description">Subject Of Mail In Mail Sender Modal</note>
+      </trans-unit>
+      <trans-unit id="TextOfMailInMailSenderModal" datatype="html">
+        <source>Your text</source>
+        <target>תוכן ההודעה</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/groups/group-detail/modal-mail-sender/modal-mail-sender.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <note priority="1" from="description">Text Of Mail In Mail Sender Modal</note>
+      </trans-unit>
+      <trans-unit id="CancelSendMailInMailSenderModal" datatype="html">
+        <source>Cancel</source>
+        <target>סגור</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/groups/group-detail/modal-mail-sender/modal-mail-sender.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+        <note priority="1" from="description">Cancel Send Mail In Mail Sender Modal</note>
+      </trans-unit>
+      <trans-unit id="SendMailInMailSenderModal" datatype="html">
+        <source>Send</source>
+        <target>שלח</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/groups/group-detail/modal-mail-sender/modal-mail-sender.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+        <note priority="1" from="description">Send Mail In Mail Sender Modal</note>
+      </trans-unit>
+      <trans-unit id="ConfirmationLeaveGroupTitleModal" datatype="html">
+        <source>Leave From Group</source>
+        <target>עזוב קבוצה</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/groups/group-detail/modal-leave-group/modal-leave-group.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <note priority="1" from="description">Confirmation Leave Group Title Modal</note>
+      </trans-unit>
+      <trans-unit id="ConfirmationLeaveGroupTextModal" datatype="html">
+        <source>Yoy really want to do this</source>
+        <target>האם אתה בטוח?</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/groups/group-detail/modal-leave-group/modal-leave-group.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <note priority="1" from="description">Confirmation Leave Group Text Modal</note>
+      </trans-unit>
+      <trans-unit id="CancelConfirmationLeaveGroupModal" datatype="html">
+        <source>Cancel</source>
+        <target>סגור</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/groups/group-detail/modal-leave-group/modal-leave-group.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <note priority="1" from="description">Cancel Confirmation Leave Group Modal</note>
+      </trans-unit>
+      <trans-unit id="LeaveConfirmationRemoveGroupModal" datatype="html">
+        <source>Leave</source>
+        <target>עזוב</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/groups/group-detail/modal-leave-group/modal-leave-group.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+        <note priority="1" from="description">Leave Confirmation Remove Group Modal</note>
+      </trans-unit>
+      <trans-unit id="SearchUsers" datatype="html">
+        <source>Search users</source>
+        <target>חפש אנשים</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/groups/group-detail/group-detail.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="description"> placeholder for search users</note>
+        <note priority="1" from="meaning">Search Users</note>
+      </trans-unit>
+      <trans-unit id="SaveNameGroup" datatype="html">
+        <source>Save Name</source>
+        <target>שמור שם</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/groups/group-detail/group-detail.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+        <note priority="1" from="description"> Save name in changing name of groups</note>
+        <note priority="1" from="meaning">Save Changing Name Button</note>
+      </trans-unit>
+      <trans-unit id="CancelNameGroup" datatype="html">
+        <source>Cancel</source>
+        <target>סגור</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/groups/group-detail/group-detail.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+        <note priority="1" from="description"> Changing changing name in name of groups</note>
+        <note priority="1" from="meaning">Cancel Changing Name Button</note>
+      </trans-unit>
+      <trans-unit id="ChangeNameBtn" datatype="html">
+        <source><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> Change Name</source>
+        <target><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> שנה שם</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/groups/group-detail/group-detail.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+        <note priority="1" from="description">Change Name Button</note>
+      </trans-unit>
+      <trans-unit id="ChangeAvatarBtn" datatype="html">
+        <source><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> Change Avatar</source>
+        <target><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> שנה תמונה</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/groups/group-detail/group-detail.component.html</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+        <note priority="1" from="description">Change Avatar Button</note>
+      </trans-unit>
+      <trans-unit id="SendMailBtn" datatype="html">
+        <source><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> Send Mail</source>
+        <target><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> שלח מייל</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/groups/group-detail/group-detail.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+        <note priority="1" from="description">Send Mail Button</note>
+      </trans-unit>
+      <trans-unit id="DSCRPT" datatype="html">
+        <source>Description</source>
+        <target>תיאור</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/groups/group-detail/group-detail.component.html</context>
+          <context context-type="linenumber">50</context>
+        </context-group>
+        <note priority="1" from="description">Description</note>
+      </trans-unit>
+      <trans-unit id="ChangeDescriptionBtn" datatype="html">
+        <source>Change Description</source>
+        <target>שנה תיאור</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/groups/group-detail/group-detail.component.html</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+        <note priority="1" from="description">Change Description Button</note>
+      </trans-unit>
+      <trans-unit id="RemoveGroupBtn" datatype="html">
+        <source>Remove Group</source>
+        <target>מחק קבוצה</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/groups/group-detail/group-detail.component.html</context>
+          <context context-type="linenumber">62</context>
+        </context-group>
+        <note priority="1" from="description">Remove Group Button</note>
+      </trans-unit>
+      <trans-unit id="LeaveGroupBtn" datatype="html">
+        <source>Leave Group</source>
+        <target>עזוב קבוצה</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/groups/group-detail/group-detail.component.html</context>
+          <context context-type="linenumber">63</context>
+        </context-group>
+        <note priority="1" from="description">Leave Groups Button</note>
+      </trans-unit>
+      <trans-unit id="ChangingAvatarOfPersonTitleModal" datatype="html">
+        <source>Change Avatar Of Person</source>
+        <target>שנה את תמונת המשתמש</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/groups/group-detail/peoplegroup-list/modal-change-avatar-person/modal-change-avatar-person.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <note priority="1" from="description">Changing avatar of person Title Modal</note>
+      </trans-unit>
+      <trans-unit id="ChangeAvatarOfPersonModal" datatype="html">
+        <source>Change Avatar Of Person</source>
+        <target>שנה את תמונת המשתמש</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/groups/group-detail/peoplegroup-list/modal-change-avatar-person/modal-change-avatar-person.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <note priority="1" from="description">Change avatar of person Modal</note>
+      </trans-unit>
+      <trans-unit id="CancelChangingAvatarOfPersonBtnModal" datatype="html">
+        <source>Cancel</source>
+        <target>סגור</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/groups/group-detail/peoplegroup-list/modal-change-avatar-person/modal-change-avatar-person.component.html</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+        <note priority="1" from="description">Cancel Changing Avatar Of Person Button Modal</note>
+      </trans-unit>
+      <trans-unit id="SaveChangingAvatarOfPersonBtnModal" datatype="html">
+        <source>Save</source>
+        <target>שמור</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/groups/group-detail/peoplegroup-list/modal-change-avatar-person/modal-change-avatar-person.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+        <note priority="1" from="description">Save Changing Avatar Of Person Button Modal</note>
       </trans-unit>
     </body>
   </file>
