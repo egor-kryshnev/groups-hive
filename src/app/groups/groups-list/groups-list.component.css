@@ -11,6 +11,7 @@
   margin-top: 20%;
   margin-left: 75%;
 }
+
 .name {
   position: relative;
   width: 250px;
@@ -49,7 +50,7 @@
 /* Hexagons */
 #hexGrid {
   overflow: hidden;
-  width: 80%;
+  width: 50%;
   margin: 0 auto;
   /* padding: 0.866% 0; */
   padding: 3.7%;

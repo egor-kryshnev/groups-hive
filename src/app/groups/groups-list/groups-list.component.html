@@ -1,5 +1,16 @@
 <cdk-virtual-scroll-viewport style="height: 600px;" itemSize="250" class="viewport">
 <ul id="hexGrid">
+        <ng-container *ngFor="let groupAdmin of groupsAdmin | filter :['name'] : nameGroupp : 'includes'" >
+            <li class="hex" (click)="onChooseGroup(groupAdmin._id)">
+                <a class="hexIn">
+                    <img src="{{ groupAdmin.imgPath }}" alt=""/>
+                    <div class="circle">{{ groupAdmin.people.length }}</div>
+                    <div class="name">{{ groupAdmin.name }}</div>
+                    <h1>{{ groupAdmin.name }}</h1>
+                    <p>{{ groupAdmin.description }}</p>
+                </a>
+            </li>
+        </ng-container>
         <ng-container *ngFor="let group of groups | filter :['name'] : nameGroupp : 'includes'" >
             <li class="hex" (click)="onChooseGroup(group._id)">
                 <a class="hexIn">
@@ -15,7 +26,7 @@
     </ul>
 </cdk-virtual-scroll-viewport>
 
-<a *ngIf="mygroups" href="#" class="float" disabled="" (click)="onNew()">
+<a href="#" class="float" disabled="" (click)="onNew()">
   <i class="fa fa-plus my-float"></i>
 </a>
 

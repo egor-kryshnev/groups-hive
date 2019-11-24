@@ -13,6 +13,7 @@ import { GroupNewModalComponent } from './../group-newModal/group-newModal.compo
 })
 export class GroupsListComponent implements OnInit {
   @Input() groups: Group[];
+  @Input() groupsAdmin: Group[];
   @Input() mygroups: boolean;
   @Input() nameGroupp: string;
   user: string;
