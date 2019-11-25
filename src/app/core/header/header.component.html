@@ -3,12 +3,27 @@
     <div class="navbar-header">
       <div class="row">
 
+          <div class="navbar-nav nav-right">
+              <img id="userAvatar" class="navbar-nav nav-right" style="width:30px; height:30px;" [src]="authService.getAvatarPath()"
+                alt="avatar" (click)="onChangeAvatar()">
+                <span>&</span>
+              <h5 id="userName" style="padding-right:40px; padding-top:5px;" i18n="Greeting User| Greeting to user in header@@GrettingUser">Hello {{ authService.getName() }}</h5>
+              <li class="dropdown" appDropdown #r="appDropdown" style="align-items: center;" >
+                  <a id="btnBackgrounds" class="dropdown-toggle" role="button" i18n="Backgrounds Header@@background">Backgrounds <span class="caret"></span></a>
+                  <ul class="dropdown-menu dropdown-menu-right" [ngClass]="{'show':r.isOpen}">
+                    <ng-container *ngFor="let background of backgrounds">
+                      <li (click)="onChooseBackground(background)"><img class="backgrounds" src="assets/img/backgrounds/{{ background }}" alt="image"></li>
+                    </ng-container>
+                </ul>
+            </li>
+            </div>
 
-            <p>
+
+            <!-- <p>
                <a href="/">
                 <img border="0" src="assets/img/z.jpg" style="width:180px; height:30px; position:absolute; top: 12px;">
                 </a>
-            </p>
+            </p> -->
 
         <!--
          <img id="logoSite" (click)="onHome()" src="assets/img/la.jpg" alt="avatar" style="width:160px; height:40px" >
@@ -22,7 +37,7 @@
 
     </div>
 
-    <div class="navbar-nav nav-right">
+    <!-- <div class="navbar-nav nav-right">
       <img id="userAvatar" class="navbar-nav nav-right" style="width:30px; height:30px;" [src]="authService.getAvatarPath()"
         alt="avatar" (click)="onChangeAvatar()">
         <span>&</span>
@@ -35,8 +50,14 @@
             </ng-container>
         </ul>
     </li>
-    </div>
+    </div> -->
   </div>
+
+  <p>
+    <a href="/">
+     <img border="0" src="assets/img/z.jpg" style="width:180px; height:30px; position:absolute; top: 12px; right: 20px;">
+     </a>
+ </p>
 
 </nav>
 

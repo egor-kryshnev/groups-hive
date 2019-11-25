@@ -37,6 +37,7 @@
 .navbar {
     background-color: black;
     color: black;
+    position: sticky;
 }
 
 .navbar-header a {
@@ -118,6 +119,8 @@ ul li:hover {
 .form-inline {
   margin-right: 20px;
 }
+
+
 
 
 

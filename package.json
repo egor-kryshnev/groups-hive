@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "int:extract": "ng xi18n --output-path locale",
-    "start:he": "ng serve --configuration=he",
+    "he": "ng serve --configuration=he",
     "build:he": "ng build --configuration=he"
   },
   "private": true,

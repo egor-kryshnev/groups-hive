@@ -12,6 +12,10 @@ h3 {
   margin-left: 55px;
 }
 
+h3:hover{
+  opacity: 0.5;;
+}
+
 footer ul.footerleft {
   margin-left: 150px;
   margin-top: 10px;
@@ -24,6 +28,11 @@ footer ul.footerleft li {
 
 footer a {
   color: #222;
+}
+
+.YESODOT_5{
+  position: absolute;
+  top: 12%;
 }
 
 footer a:hover {

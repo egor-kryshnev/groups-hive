@@ -8,8 +8,28 @@
   line-height: 28px;
   text-align: center;
   background: #000;
-  margin-top: 20%;
-  margin-left: 75%;
+  margin-top: 26%;
+  margin-left: 82%;
+}
+
+#crown{
+  width: 40px;
+  height: 35px;
+
+}
+
+.AdminCircle{
+  position: relative;
+  width: 70px;
+  height: 30px;
+  border-radius: 50%;
+  font-size: 20px;
+  color: #fff;
+  line-height: 28px;
+  text-align: center;
+  background: green;
+  margin-top: 14%;
+  margin-left: 38%;
 }
 
 .name {
@@ -22,7 +42,7 @@
   text-align: center;
   background: rgb(0, 0, 0);
   margin-top: 90%;
-  left: -17%;
+  left: 3%;
 }
 
 .float{
@@ -30,7 +50,7 @@
 	width:60px;
 	height:60px;
 	bottom:40px;
-  right:40px;
+  left:50px;
 	background-color:rgb(23, 23, 24);
 	color:#FFF;
 	border-radius:50px;
@@ -43,9 +63,14 @@
 }
 
 .float:hover{
-  visibility:visible!important;
-	opacity:1!important;
+  cursor: pointer;
 }
+
+#fontFloat:hover{
+  color: #88b999;
+  /* cursor: pointer; */
+}
+
 
 /* Hexagons */
 #hexGrid {
