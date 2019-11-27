@@ -12,8 +12,18 @@ h3 {
   margin-left: 55px;
 }
 
+.yesodot{
+  position: absolute;
+  left: 92.3%;
+  top: -28%;
+}
+
+.yesodot:hover {
+  cursor: pointer;
+}
+
 h3:hover{
-  opacity: 0.5;;
+  opacity: 0.5;
 }
 
 footer ul.footerleft {
