@@ -47,9 +47,9 @@
 
 .float{
 	position:fixed;
-	width:60px;
-	height:60px;
-	bottom:40px;
+	width:80px;
+	height:80px;
+	bottom:80px;
   left:50px;
 	background-color:rgb(23, 23, 24);
 	color:#FFF;
@@ -59,11 +59,18 @@
 }
 
 .my-float{
-	margin-top:22px;
+	margin-top:32px;
 }
 
 .float:hover{
   cursor: pointer;
+}
+
+#fontFloat:hover{
+  color: #88b999;
+  height: 40px;
+  width: auto;
+  /* cursor: pointer; */
 }
 
 #fontFloat:hover{

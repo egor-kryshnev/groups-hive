@@ -30,11 +30,12 @@
     <h1 style="text-align: center" *ngIf="!changeName">
         <button class="btn btn-danger btnHover" *ngIf="admin" style="margin-right: 20px;" (click)="onRemoveGroup()" i18n="Remove Group Button@@RemoveGroupBtn">Remove Group</button>
         <button class="btn btn-danger btnHover" style="margin-right: 20px;" (click)="onLeaveFromGroup()" i18n="Leave Groups Button@@LeaveGroupBtn">Leave Group</button>
+
       <!-- <img [src]="groupDetailService.getGroupImagePath()" style="width: 50px;" alt=""/> -->
       <!-- <span> {{ groupDetailService.getGroupName() }}</span> -->
-      <button class="btn btn-primary" style="margin-left: 25px;" *ngIf="admin" (click)="onChangeName()" i18n="Change Name Button@@ChangeNameBtn"><i class="fa fa-pencil" aria-hidden="true"></i> Change Name</button>
-      <button class="btn btn-primary" style="margin-left: 25px;" *ngIf="admin" (click)="onChangAvatarGroup()" i18n="Change Avatar Button@@ChangeAvatarBtn"><i class="fa fa-file-image-o" aria-hidden="true"></i> Change Avatar</button>
       <button class="btn btn-primary" style="margin-left: 25px;" (click)="onSendMailForGroup()" i18n="Send Mail Button@@SendMailBtn"><i class="fa fa-envelope" aria-hidden="true"></i> Send Mail</button>
+      <button class="btn btn-primary" style="margin-left: 25px;" *ngIf="admin" (click)="onChangAvatarGroup()" i18n="Change Avatar Button@@ChangeAvatarBtn"><i class="fa fa-file-image-o" aria-hidden="true"></i> Change Avatar</button>
+      <button class="btn btn-primary" style="margin-left: 25px;" *ngIf="admin" (click)="onChangeName()" i18n="Change Name Button@@ChangeNameBtn"><i class="fa fa-pencil" aria-hidden="true"></i> Change Name</button>
       <span style="margin: 25px;"> {{ groupDetailService.getGroupName() }}</span>
       <img [src]="groupDetailService.getGroupImagePath()" style="width: 50px;" alt=""/>
     </h1>
@@ -42,8 +43,8 @@
     <hr style="border: none;
     background-color: black;
     opacity: 0.2;
-    height: 12px;
-    width: 1400px;">
+    height: 8px;
+    width: 950px;">
     <div class="row">
 
       <div class="col-lg-9">
@@ -57,7 +58,7 @@
             <!-- <button class="btn btn-warning" style="position: relative; margin-bottom: 15px; margin-left: 15px;" (click)="onChangeDescriptionGroup()" i18n="Change Description Button@@ChangeDescriptionBtn">Change Description</button> -->
           <!-- </div> -->
           <cdk-virtual-scroll-viewport style="height: 600px;" itemSize="250" class="viewport">
-            <h3 style="text-align: right; margin-right: 20px;">{{ description }}</h3>
+            <h3 style="text-align: right; margin-right: 85px;">{{ description }}</h3>
           </cdk-virtual-scroll-viewport>
         </div>
       </div>
