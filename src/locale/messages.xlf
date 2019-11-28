@@ -6,24 +6,16 @@
         <source>Search groups</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/groups/groups.component.html</context>
-          <context context-type="linenumber">6</context>
+          <context context-type="linenumber">7</context>
         </context-group>
         <note priority="1" from="description"> placeholder input for search groups</note>
         <note priority="1" from="meaning">searchGroups</note>
-      </trans-unit>
-      <trans-unit id="GroupsIncludesMe" datatype="html">
-        <source>Groups Includes Me</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/groups/groups.component.html</context>
-          <context context-type="linenumber">22</context>
-        </context-group>
-        <note priority="1" from="description">Groups Includes Me</note>
       </trans-unit>
       <trans-unit id="MyGroups" datatype="html">
         <source>My Groups</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/groups/groups.component.html</context>
-          <context context-type="linenumber">42</context>
+          <context context-type="linenumber">23</context>
         </context-group>
         <note priority="1" from="description"> Where im admin</note>
         <note priority="1" from="meaning">My Groups</note>
@@ -64,7 +56,7 @@
         <source>Hello <x id="INTERPOLATION" equiv-text="{{ authService.getName() }}"/></source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/core/header/header.component.html</context>
-          <context context-type="linenumber">29</context>
+          <context context-type="linenumber">10</context>
         </context-group>
         <note priority="1" from="description"> Greeting to user in header</note>
         <note priority="1" from="meaning">Greeting User</note>
@@ -73,7 +65,7 @@
         <source>Backgrounds <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/><x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/core/header/header.component.html</context>
-          <context context-type="linenumber">31</context>
+          <context context-type="linenumber">12</context>
         </context-group>
         <note priority="1" from="description">Backgrounds Header</note>
       </trans-unit>
@@ -257,7 +249,7 @@
         <source>Search users</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/groups/group-detail/group-detail.component.html</context>
-          <context context-type="linenumber">6</context>
+          <context context-type="linenumber">7</context>
         </context-group>
         <note priority="1" from="description"> placeholder for search users</note>
         <note priority="1" from="meaning">Search Users</note>
@@ -280,43 +272,11 @@
         <note priority="1" from="description"> Changing changing name in name of groups</note>
         <note priority="1" from="meaning">Cancel Changing Name Button</note>
       </trans-unit>
-      <trans-unit id="ChangeNameBtn" datatype="html">
-        <source><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> Change Name</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/groups/group-detail/group-detail.component.html</context>
-          <context context-type="linenumber">33</context>
-        </context-group>
-        <note priority="1" from="description">Change Name Button</note>
-      </trans-unit>
-      <trans-unit id="ChangeAvatarBtn" datatype="html">
-        <source><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> Change Avatar</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/groups/group-detail/group-detail.component.html</context>
-          <context context-type="linenumber">34</context>
-        </context-group>
-        <note priority="1" from="description">Change Avatar Button</note>
-      </trans-unit>
-      <trans-unit id="SendMailBtn" datatype="html">
-        <source><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> Send Mail</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/groups/group-detail/group-detail.component.html</context>
-          <context context-type="linenumber">35</context>
-        </context-group>
-        <note priority="1" from="description">Send Mail Button</note>
-      </trans-unit>
-      <trans-unit id="ChangeDescriptionBtn" datatype="html">
-        <source>Change Description</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/groups/group-detail/group-detail.component.html</context>
-          <context context-type="linenumber">51</context>
-        </context-group>
-        <note priority="1" from="description">Change Description Button</note>
-      </trans-unit>
       <trans-unit id="RemoveGroupBtn" datatype="html">
         <source>Remove Group</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/groups/group-detail/group-detail.component.html</context>
-          <context context-type="linenumber">62</context>
+          <context context-type="linenumber">31</context>
         </context-group>
         <note priority="1" from="description">Remove Group Button</note>
       </trans-unit>
@@ -324,9 +284,41 @@
         <source>Leave Group</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/groups/group-detail/group-detail.component.html</context>
-          <context context-type="linenumber">63</context>
+          <context context-type="linenumber">32</context>
         </context-group>
         <note priority="1" from="description">Leave Groups Button</note>
+      </trans-unit>
+      <trans-unit id="SendMailBtn" datatype="html">
+        <source><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> Send Mail</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/groups/group-detail/group-detail.component.html</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+        <note priority="1" from="description">Send Mail Button</note>
+      </trans-unit>
+      <trans-unit id="ChangeAvatarBtn" datatype="html">
+        <source><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> Change Avatar</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/groups/group-detail/group-detail.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+        <note priority="1" from="description">Change Avatar Button</note>
+      </trans-unit>
+      <trans-unit id="ChangeNameBtn" datatype="html">
+        <source><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> Change Name</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/groups/group-detail/group-detail.component.html</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+        <note priority="1" from="description">Change Name Button</note>
+      </trans-unit>
+      <trans-unit id="ChangeDescriptionBtn" datatype="html">
+        <source>Change Description</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/groups/group-detail/group-detail.component.html</context>
+          <context context-type="linenumber">56</context>
+        </context-group>
+        <note priority="1" from="description">Change Description Button</note>
       </trans-unit>
       <trans-unit id="ChangingAvatarOfPersonTitleModal" datatype="html">
         <source>Change Avatar Of Person</source>
@@ -359,6 +351,38 @@
           <context context-type="linenumber">35</context>
         </context-group>
         <note priority="1" from="description">Save Changing Avatar Of Person Button Modal</note>
+      </trans-unit>
+      <trans-unit id="ConfirmationRemoveUserTitleModal" datatype="html">
+        <source>Remove User</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/groups/group-detail/peoplegroup-list/modal-remove-user/modal-remove-user.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <note priority="1" from="description">Confirmation Remove User Title Modal</note>
+      </trans-unit>
+      <trans-unit id="ConfirmationRemoveUserTextModal" datatype="html">
+        <source>Yoy really want to do this</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/groups/group-detail/peoplegroup-list/modal-remove-user/modal-remove-user.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <note priority="1" from="description">Confirmation Remove User Text Modal</note>
+      </trans-unit>
+      <trans-unit id="CancelConfirmationRemoveUserModal" datatype="html">
+        <source>Cancel</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/groups/group-detail/peoplegroup-list/modal-remove-user/modal-remove-user.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <note priority="1" from="description">Cancel Confirmation Remove User Modal</note>
+      </trans-unit>
+      <trans-unit id="RemoveConfirmationRemoveUserModal" datatype="html">
+        <source>Remove</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/groups/group-detail/peoplegroup-list/modal-remove-user/modal-remove-user.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+        <note priority="1" from="description">Remove Confirmation Remove User Modal</note>
       </trans-unit>
     </body>
   </file>

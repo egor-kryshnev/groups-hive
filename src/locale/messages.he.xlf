@@ -413,6 +413,42 @@
         </context-group>
         <note priority="1" from="description">Save Changing Avatar Of Person Button Modal</note>
       </trans-unit>
+      <trans-unit id="ConfirmationRemoveUserTitleModal" datatype="html">
+        <source>Remove User</source>
+        <target>מחק משתמש</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/groups/group-detail/peoplegroup-list/modal-remove-user/modal-remove-user.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <note priority="1" from="description">Confirmation Remove User Title Modal</note>
+      </trans-unit>
+      <trans-unit id="ConfirmationRemoveUserTextModal" datatype="html">
+        <source>Yoy really want to do this</source>
+        <target>האם אתה בטוח?</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/groups/group-detail/peoplegroup-list/modal-remove-user/modal-remove-user.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <note priority="1" from="description">Confirmation Remove User Text Modal</note>
+      </trans-unit>
+      <trans-unit id="CancelConfirmationRemoveUserModal" datatype="html">
+        <source>Cancel</source>
+        <target>סגור</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/groups/group-detail/peoplegroup-list/modal-remove-user/modal-remove-user.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <note priority="1" from="description">Cancel Confirmation Remove User Modal</note>
+      </trans-unit>
+      <trans-unit id="RemoveConfirmationRemoveUserModal" datatype="html">
+        <source>Remove</source>
+        <target>שמור</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/groups/group-detail/peoplegroup-list/modal-remove-user/modal-remove-user.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+        <note priority="1" from="description">Remove Confirmation Remove User Modal</note>
+      </trans-unit>
     </body>
   </file>
 </xliff>
