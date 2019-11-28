@@ -89,7 +89,7 @@
         <source>Cancel</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/groups/group-detail/modal-change-description/modal-change-description.component.html</context>
-          <context context-type="linenumber">21</context>
+          <context context-type="linenumber">22</context>
         </context-group>
         <note priority="1" from="description">Cancel Changing Description Of Group Button Modal</note>
       </trans-unit>
@@ -97,7 +97,7 @@
         <source>Submit</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/groups/group-detail/modal-change-description/modal-change-description.component.html</context>
-          <context context-type="linenumber">22</context>
+          <context context-type="linenumber">23</context>
         </context-group>
         <note priority="1" from="description">Save Changing Description Of Group Button Modal</note>
       </trans-unit>
@@ -121,7 +121,7 @@
         <source>Cancel</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/groups/group-detail/modal-remove-group/modal-remove-group.component.html</context>
-          <context context-type="linenumber">12</context>
+          <context context-type="linenumber">13</context>
         </context-group>
         <note priority="1" from="description">Cancel Confirmation Remove Group Modal</note>
       </trans-unit>
@@ -129,7 +129,7 @@
         <source>Remove</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/groups/group-detail/modal-remove-group/modal-remove-group.component.html</context>
-          <context context-type="linenumber">13</context>
+          <context context-type="linenumber">14</context>
         </context-group>
         <note priority="1" from="description">Remove Confirmation Remove Group Modal</note>
       </trans-unit>
@@ -153,7 +153,7 @@
         <source>Cancel</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/groups/group-detail/modal-change-avatar-group/modal-change-avatar-group.component.html</context>
-          <context context-type="linenumber">34</context>
+          <context context-type="linenumber">35</context>
         </context-group>
         <note priority="1" from="description">Cancel Changing Avatar OF Group Button Modal</note>
       </trans-unit>
@@ -161,7 +161,7 @@
         <source>Save</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/groups/group-detail/modal-change-avatar-group/modal-change-avatar-group.component.html</context>
-          <context context-type="linenumber">35</context>
+          <context context-type="linenumber">36</context>
         </context-group>
         <note priority="1" from="description">Save Changing Avatar OF Group Button Modal</note>
       </trans-unit>
@@ -201,7 +201,7 @@
         <source>Cancel</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/groups/group-detail/modal-mail-sender/modal-mail-sender.component.html</context>
-          <context context-type="linenumber">26</context>
+          <context context-type="linenumber">27</context>
         </context-group>
         <note priority="1" from="description">Cancel Send Mail In Mail Sender Modal</note>
       </trans-unit>
@@ -209,7 +209,7 @@
         <source>Send</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/groups/group-detail/modal-mail-sender/modal-mail-sender.component.html</context>
-          <context context-type="linenumber">27</context>
+          <context context-type="linenumber">28</context>
         </context-group>
         <note priority="1" from="description">Send Mail In Mail Sender Modal</note>
       </trans-unit>
@@ -233,7 +233,7 @@
         <source>Cancel</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/groups/group-detail/modal-leave-group/modal-leave-group.component.html</context>
-          <context context-type="linenumber">12</context>
+          <context context-type="linenumber">13</context>
         </context-group>
         <note priority="1" from="description">Cancel Confirmation Leave Group Modal</note>
       </trans-unit>
@@ -241,7 +241,7 @@
         <source>Leave</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/groups/group-detail/modal-leave-group/modal-leave-group.component.html</context>
-          <context context-type="linenumber">13</context>
+          <context context-type="linenumber">14</context>
         </context-group>
         <note priority="1" from="description">Leave Confirmation Remove Group Modal</note>
       </trans-unit>
@@ -258,7 +258,7 @@
         <source>Save Name</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/groups/group-detail/group-detail.component.html</context>
-          <context context-type="linenumber">24</context>
+          <context context-type="linenumber">22</context>
         </context-group>
         <note priority="1" from="description"> Save name in changing name of groups</note>
         <note priority="1" from="meaning">Save Changing Name Button</note>
@@ -267,7 +267,7 @@
         <source>Cancel</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/groups/group-detail/group-detail.component.html</context>
-          <context context-type="linenumber">25</context>
+          <context context-type="linenumber">23</context>
         </context-group>
         <note priority="1" from="description"> Changing changing name in name of groups</note>
         <note priority="1" from="meaning">Cancel Changing Name Button</note>
@@ -276,7 +276,7 @@
         <source>Remove Group</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/groups/group-detail/group-detail.component.html</context>
-          <context context-type="linenumber">31</context>
+          <context context-type="linenumber">33</context>
         </context-group>
         <note priority="1" from="description">Remove Group Button</note>
       </trans-unit>
@@ -284,31 +284,31 @@
         <source>Leave Group</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/groups/group-detail/group-detail.component.html</context>
-          <context context-type="linenumber">32</context>
+          <context context-type="linenumber">34</context>
         </context-group>
         <note priority="1" from="description">Leave Groups Button</note>
       </trans-unit>
       <trans-unit id="SendMailBtn" datatype="html">
-        <source><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> Send Mail</source>
+        <source><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/> <x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/> Send Mail</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/groups/group-detail/group-detail.component.html</context>
-          <context context-type="linenumber">36</context>
+          <context context-type="linenumber">38</context>
         </context-group>
         <note priority="1" from="description">Send Mail Button</note>
       </trans-unit>
       <trans-unit id="ChangeAvatarBtn" datatype="html">
-        <source><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> Change Avatar</source>
+        <source><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/> <x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/> Change Avatar </source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/groups/group-detail/group-detail.component.html</context>
-          <context context-type="linenumber">37</context>
+          <context context-type="linenumber">39</context>
         </context-group>
         <note priority="1" from="description">Change Avatar Button</note>
       </trans-unit>
       <trans-unit id="ChangeNameBtn" datatype="html">
-        <source><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> Change Name</source>
+        <source><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/> <x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/> Change Name</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/groups/group-detail/group-detail.component.html</context>
-          <context context-type="linenumber">38</context>
+          <context context-type="linenumber">40</context>
         </context-group>
         <note priority="1" from="description">Change Name Button</note>
       </trans-unit>
@@ -316,7 +316,7 @@
         <source>Change Description</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/groups/group-detail/group-detail.component.html</context>
-          <context context-type="linenumber">56</context>
+          <context context-type="linenumber">58</context>
         </context-group>
         <note priority="1" from="description">Change Description Button</note>
       </trans-unit>
@@ -340,7 +340,7 @@
         <source>Cancel</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/groups/group-detail/peoplegroup-list/modal-change-avatar-person/modal-change-avatar-person.component.html</context>
-          <context context-type="linenumber">34</context>
+          <context context-type="linenumber">35</context>
         </context-group>
         <note priority="1" from="description">Cancel Changing Avatar Of Person Button Modal</note>
       </trans-unit>
@@ -348,7 +348,7 @@
         <source>Save</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/groups/group-detail/peoplegroup-list/modal-change-avatar-person/modal-change-avatar-person.component.html</context>
-          <context context-type="linenumber">35</context>
+          <context context-type="linenumber">36</context>
         </context-group>
         <note priority="1" from="description">Save Changing Avatar Of Person Button Modal</note>
       </trans-unit>
@@ -372,7 +372,7 @@
         <source>Cancel</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/groups/group-detail/peoplegroup-list/modal-remove-user/modal-remove-user.component.html</context>
-          <context context-type="linenumber">12</context>
+          <context context-type="linenumber">13</context>
         </context-group>
         <note priority="1" from="description">Cancel Confirmation Remove User Modal</note>
       </trans-unit>
@@ -380,7 +380,7 @@
         <source>Remove</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/groups/group-detail/peoplegroup-list/modal-remove-user/modal-remove-user.component.html</context>
-          <context context-type="linenumber">13</context>
+          <context context-type="linenumber">14</context>
         </context-group>
         <note priority="1" from="description">Remove Confirmation Remove User Modal</note>
       </trans-unit>

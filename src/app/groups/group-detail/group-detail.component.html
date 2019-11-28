@@ -19,10 +19,12 @@
 
     <div class="container align-items-center justify-content-center">
       <div class="input-group" style="width: 475px; margin: 0 auto; float: none;" *ngIf="changeName">
-        <input type="text" class="form-control" placeholder="" [value]="groupDetailService.getGroupName()" [(ngModel)]="changingName">
-        <div class="input-group-prepend">
           <button class="btn btn-primary" type="button" id="savename" (click)="onSaveName(changingName)" i18n="Save Changing Name Button| Save name in changing name of groups@@SaveNameGroup">Save Name</button>
           <button class="btn btn-danger" type="button" id="cancel" (click)="onCancelChangingName()" i18n="Cancel Changing Name Button| Changing changing name in name of groups@@CancelNameGroup">Cancel</button>
+        <input type="text" class="form-control" id="nameInput" placeholder="" [value]="groupDetailService.getGroupName()" [(ngModel)]="changingName">
+        <div class="input-group-prepend">
+          <!-- <button class="btn btn-primary" type="button" id="savename" (click)="onSaveName(changingName)" i18n="Save Changing Name Button| Save name in changing name of groups@@SaveNameGroup">Save Name</button>
+          <button class="btn btn-danger" type="button" id="cancel" (click)="onCancelChangingName()" i18n="Cancel Changing Name Button| Changing changing name in name of groups@@CancelNameGroup">Cancel</button> -->
         </div>
       </div>
     </div>
@@ -33,9 +35,9 @@
 
       <!-- <img [src]="groupDetailService.getGroupImagePath()" style="width: 50px;" alt=""/> -->
       <!-- <span> {{ groupDetailService.getGroupName() }}</span> -->
-      <button class="btn btn-primary" style="margin-left: 25px;" (click)="onSendMailForGroup()" i18n="Send Mail Button@@SendMailBtn"><i class="fa fa-envelope" aria-hidden="true"></i> Send Mail</button>
-      <button class="btn btn-primary" style="margin-left: 25px;" *ngIf="admin" (click)="onChangAvatarGroup()" i18n="Change Avatar Button@@ChangeAvatarBtn"><i class="fa fa-file-image-o" aria-hidden="true"></i> Change Avatar</button>
-      <button class="btn btn-primary" style="margin-left: 25px;" *ngIf="admin" (click)="onChangeName()" i18n="Change Name Button@@ChangeNameBtn"><i class="fa fa-pencil" aria-hidden="true"></i> Change Name</button>
+      <button class="btn btn-primary" style="margin-left: 25px;" (click)="onSendMailForGroup()" i18n="Send Mail Button@@SendMailBtn"><i class="fa fa-envelope" aria-hidden="true"></i><span>&nbsp;</span> Send Mail</button>
+      <button class="btn btn-primary" style="margin-left: 25px;" *ngIf="admin" (click)="onChangAvatarGroup()" i18n="Change Avatar Button@@ChangeAvatarBtn"><i class="fa fa-file-image-o" aria-hidden="true"></i><span>&nbsp;</span> Change Avatar </button>
+      <button class="btn btn-primary" style="margin-left: 25px;" *ngIf="admin" (click)="onChangeName()" i18n="Change Name Button@@ChangeNameBtn"><i class="fa fa-pencil" aria-hidden="true"></i><span>&nbsp;</span> Change Name</button>
       <span style="margin: 25px;"> {{ groupDetailService.getGroupName() }}</span>
       <img [src]="groupDetailService.getGroupImagePath()" style="width: 50px;" alt=""/>
     </h1>
