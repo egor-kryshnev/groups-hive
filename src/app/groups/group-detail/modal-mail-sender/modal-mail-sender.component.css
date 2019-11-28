@@ -9,7 +9,14 @@ html *:before {
 }
 
 
+.modal-header .close {
+  padding: 1rem 1rem;
+  margin: -1rem auto -1rem -1rem;
+}
 
+#subject {
+  text-align: right;
+}
 
 #text {
     display: block;
@@ -26,6 +33,7 @@ html *:before {
     word-wrap: break-word;
     resize: none;
     height: 150px;
+    text-align: right;
 }
 
 #textSign {
@@ -44,6 +52,7 @@ html *:before {
     resize: none;
     height: 35px;
     width: 200px;
+    text-align: right;
 }
 
 body {

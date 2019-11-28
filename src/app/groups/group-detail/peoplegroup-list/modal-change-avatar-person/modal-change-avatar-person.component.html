@@ -1,7 +1,7 @@
 <div class="modal-content modal modal-wide" style="width: auto; max-width: 600px;">
   <div class="modal-header">
-    <h4 class="modal-title" i18n="Changing avatar of person Title Modal@@ChangingAvatarOfPersonTitleModal">Change Avatar Of Person</h4>
-    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+    <h4 class="modal-title order-2" i18n="Changing avatar of person Title Modal@@ChangingAvatarOfPersonTitleModal">Change Avatar Of Person</h4>
+    <button type="button" class="close order-1" aria-label="Close" (click)="modalRef.hide()">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
@@ -11,7 +11,7 @@
             <form class="form">
               <fieldset class="form__fieldset">
             
-                <legend class="form__legend" i18n="Change avatar of person Modal@@ChangeAvatarOfPersonModal">Change Avatar Of Person</legend>
+                <legend class="form__legend" align="right" i18n="Change avatar of person Modal@@ChangeAvatarOfPersonModal">Change Avatar Of Person</legend>
             
                 <label class="form__label" for="subject"></label>
                 <div class="row align-items-center justify-content-center">
@@ -31,7 +31,9 @@
       </div>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="modalRef.hide()" i18n="Cancel Changing Avatar Of Person Button Modal@@CancelChangingAvatarOfPersonBtnModal">Cancel</button>
-    <button type="button" class="btn btn-primary" (click)="onSaveAvatar()" i18n="Save Changing Avatar Of Person Button Modal@@SaveChangingAvatarOfPersonBtnModal">Save</button>
+    <fieldset class="w-100">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="modalRef.hide()" i18n="Cancel Changing Avatar Of Person Button Modal@@CancelChangingAvatarOfPersonBtnModal">Cancel</button>
+      <button type="button" class="btn btn-primary" (click)="onSaveAvatar()" i18n="Save Changing Avatar Of Person Button Modal@@SaveChangingAvatarOfPersonBtnModal" style="margin-left: 5px;">Save</button>
+    </fieldset>
   </div>
 </div>

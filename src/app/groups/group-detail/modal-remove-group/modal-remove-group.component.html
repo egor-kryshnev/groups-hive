@@ -1,15 +1,17 @@
 <div class="modal-content">
   <div class="modal-header">
-    <h4 class="modal-title" i18n="Confirmation Remove Group Title Modal@@ConfirmationRemoveGroupTitleModal">Remove Group</h4>
-    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+    <h4 class="modal-title order-2" i18n="Confirmation Remove Group Title Modal@@ConfirmationRemoveGroupTitleModal">Remove Group</h4>
+    <button type="button" class="close order-1" aria-label="Close" (click)="modalRef.hide()">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
   <div class="modal-body">
-      <h5 i18n="Confirmation Remove Group Text Modal@@ConfirmationRemoveGroupTextModal">Yoy really want to do this</h5>
+      <h5 id="text" i18n="Confirmation Remove Group Text Modal@@ConfirmationRemoveGroupTextModal">Yoy really want to do this</h5>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="modalRef.hide()" i18n="Cancel Confirmation Remove Group Modal@@CancelConfirmationRemoveGroupModal">Cancel</button>
-    <button type="button" class="btn btn-primary" (click)="onSubmit()" i18n="Remove Confirmation Remove Group Modal@@RemoveConfirmationRemoveGroupModal">Remove</button>
+    <fieldset class="w-100">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="modalRef.hide()" i18n="Cancel Confirmation Remove Group Modal@@CancelConfirmationRemoveGroupModal">Cancel</button>
+      <button type="button" class="btn btn-primary" (click)="onSubmit()" i18n="Remove Confirmation Remove Group Modal@@RemoveConfirmationRemoveGroupModal" style="margin-left: 5px;">Remove</button>
+    </fieldset>
   </div>
 </div>

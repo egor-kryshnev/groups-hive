@@ -1,7 +1,7 @@
 <div class="modal-content modal modal-wide" style="width: auto; max-width: 600px;">
   <div class="modal-header">
-    <h4 class="modal-title" i18n="Change Description Of Group Title Modal@@ChangeDescriptionOfGroupTitleModal">Change Descripition Of Group</h4>
-    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+    <h4 class="modal-title order-2" i18n="Change Description Of Group Title Modal@@ChangeDescriptionOfGroupTitleModal">Change Descripition Of Group</h4>
+    <button type="button" class="close order-1" aria-label="Close" (click)="modalRef.hide()">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
@@ -10,7 +10,7 @@
         <div class="col-xs-12">
             <form class="form">
               <fieldset class="form__fieldset">
-                <legend class="form__legend" i18n="Description Modal@@DescriptionModal">Description</legend>
+                <legend class="form__legend" align="right" i18n="Description Modal@@DescriptionModal">Description</legend>
                 <textarea placeholder="Yor text" id="text" name="description" rows="4" [(ngModel)]="description" style="overflow: hidden; word-wrap: break-word; resize: none; height: 150px; "></textarea>
               </fieldset>
             </form>
@@ -18,7 +18,9 @@
       </div>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="modalRef.hide()" i18n="Cancel Changing Description Of Group Button Modal@@CancelChangingDescriptionOfGroupBtnModal">Cancel</button>
-    <button type="button" class="btn btn-primary" (click)="onSubmit()"  i18n="Save Changing Description Of Group Button Modal@@SaveChangingDescriptionOfGroupBtnModal">Submit</button>
+    <fieldset class="w-100">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="modalRef.hide()" i18n="Cancel Changing Description Of Group Button Modal@@CancelChangingDescriptionOfGroupBtnModal">Cancel</button>
+      <button type="button" class="btn btn-primary" (click)="onSubmit()"  i18n="Save Changing Description Of Group Button Modal@@SaveChangingDescriptionOfGroupBtnModal" style="margin-left: 5px;">Submit</button>
+    </fieldset>
   </div>
 </div>

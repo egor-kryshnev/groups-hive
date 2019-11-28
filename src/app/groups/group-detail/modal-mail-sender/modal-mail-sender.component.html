@@ -1,7 +1,7 @@
 <div class="modal-content modal modal-wide" style="width: auto; max-width: 600px;">
   <div class="modal-header">
-    <h4 class="modal-title" i18n="Mail Sender Title Modal@@MailSenderTitleModal">Mail Sender</h4>
-    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+    <h4 class="modal-title order-2" i18n="Mail Sender Title Modal@@MailSenderTitleModal">Mail Sender</h4>
+    <button type="button" class="close order-1" aria-label="Close" (click)="modalRef.hide()">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
@@ -11,7 +11,7 @@
             <form class="form">
               <fieldset class="form__fieldset">
 
-                <legend class="form__legend" i18n="Description Mail Sender Modal@@DescriptionMailSenderModal">Mail for all members of the group</legend>
+                <legend class="form__legend" align="right" i18n="Description Mail Sender Modal@@DescriptionMailSenderModal">Mail for all members of the group</legend>
                 <label class="form__label" for="subject"></label>
                 <input class="form__input" type="text" placeholder="Subject" id="subject" name="subject" [(ngModel)]="subject" required autocomplete="off" i18n-placeholder="Subject Of Mail In Mail Sender Modal@@SubjectOfMailInMailSenderModal">
                 <br>
@@ -23,7 +23,9 @@
       </div>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="modalRef.hide()" i18n="Cancel Send Mail In Mail Sender Modal@@CancelSendMailInMailSenderModal">Cancel</button>
-    <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="onSend()" i18n="Send Mail In Mail Sender Modal@@SendMailInMailSenderModal">Send</button>
+    <fieldset class="w-100">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="modalRef.hide()" i18n="Cancel Send Mail In Mail Sender Modal@@CancelSendMailInMailSenderModal">Cancel</button>
+      <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="onSend()" i18n="Send Mail In Mail Sender Modal@@SendMailInMailSenderModal" style="margin-left: 5px;">Send</button>
+    </fieldset>
   </div>
 </div>
