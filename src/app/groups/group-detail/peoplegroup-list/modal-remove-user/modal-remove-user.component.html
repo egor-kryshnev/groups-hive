@@ -1,0 +1,15 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <h4 class="modal-title" i18n="Confirmation Remove User Title Modal@@ConfirmationRemoveUserTitleModal">Remove User</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+      <h5 i18n="Confirmation Remove User Text Modal@@ConfirmationRemoveUserTextModal">Yoy really want to do this</h5>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="modalRef.hide()" i18n="Cancel Confirmation Remove User Modal@@CancelConfirmationRemoveUserModal">Cancel</button>
+    <button type="button" class="btn btn-primary" (click)="onSubmit()" i18n="Remove Confirmation Remove User Modal@@RemoveConfirmationRemoveUserModal">Remove</button>
+  </div>
+</div>

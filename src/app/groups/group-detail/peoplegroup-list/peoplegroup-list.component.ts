@@ -5,6 +5,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { PeopleGroup } from '../../peopleGroup.model';
 import { GroupNewModalComponent } from '../../group-newModal/group-newModal.component';
 import { ModalChangeAvatarPersonComponent } from './modal-change-avatar-person/modal-change-avatar-person.component';
+import { ModalRemoveUserComponent } from './modal-remove-user/modal-remove-user.component';
 
 @Component({
   selector: 'app-peoplegroup-list',
@@ -48,9 +49,17 @@ export class PeoplegroupListComponent implements OnInit {
     });
   }
 
-  onRemove(index){
-    this.people.splice(index, 1);
-    this.groupDetailService.updatePeopleGroup(this.people);
+  onRemove(person ,index){
+    // this.people.splice(index, 1);
+    // this.groupDetailService.updatePeopleGroup(this.people);
+
+    this.modalRef = this.modalService.show(ModalRemoveUserComponent,  {
+      initialState: {
+        title: 'Remove User',
+        people: this.people,
+        personIndex: index
+      }
+    });
   }
 
   

@@ -35,6 +35,7 @@ import { DropdownDirective } from './shared/dropdown.directive';
 import { ModalChangeAvatarAccountComponent } from './core/header/modal-change-avatar-account/modal-change-avatar-account.component';
 import { FooterComponent } from './core/footer/footer.component';
 import { ModalLeaveGroupComponent } from './groups/group-detail/modal-leave-group/modal-leave-group.component';
+import { ModalRemoveUserComponent } from './groups/group-detail/peoplegroup-list/modal-remove-user/modal-remove-user.component';
 
 
 @NgModule({
@@ -58,7 +59,8 @@ import { ModalLeaveGroupComponent } from './groups/group-detail/modal-leave-grou
       ModalChangeDescriptionComponent,
       ModalMailSenderComponent,
       ModalChangeAvatarPersonComponent,
-      ModalChangeAvatarAccountComponent
+      ModalChangeAvatarAccountComponent,
+      ModalRemoveUserComponent
       // DropdownDirective
    ],
    imports: [
@@ -91,7 +93,8 @@ import { ModalLeaveGroupComponent } from './groups/group-detail/modal-leave-grou
       ModalChangeDescriptionComponent,
       ModalMailSenderComponent,
       ModalChangeAvatarPersonComponent,
-      ModalChangeAvatarAccountComponent
+      ModalChangeAvatarAccountComponent,
+      ModalRemoveUserComponent
    ]
 })
 export class AppModule { }
