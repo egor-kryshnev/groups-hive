@@ -137,9 +137,9 @@
   width: auto;
   height: 100%;
   margin: 0 auto;
-  -webkit-transform: rotate3d(0,0,0,0deg);
+  /* -webkit-transform: rotate3d(0,0,0,0deg);
       -ms-transform: rotate3d(0,0,0,0deg);
-          transform: rotate3d(0,0,0,0deg);
+          transform: rotate3d(0,0,0,0deg); */
 }
 
 .hex h1, .hex p {
