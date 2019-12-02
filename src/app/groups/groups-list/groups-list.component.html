@@ -5,26 +5,35 @@
 <ul id="hexGrid">
         <ng-container *ngFor="let groupAdmin of groupsAdmin | filter :['name'] : nameGroupp : 'includes'" >
             <li class="hex" (click)="onChooseGroup(groupAdmin._id)">
-                <a class="hexIn">
-                    <img src="{{ groupAdmin.imgPath }}" alt=""/>
-                    <div class="circle">{{ groupAdmin.people.length }}</div>
-                    <div class="name">{{ groupAdmin.name }}</div>
-                    <img src="assets/img/crown.png" id="crown"/>
-                    <h1>{{ groupAdmin.name }}</h1>
-                    <p>{{ groupAdmin.description }}</p>
-                    <div class="AdminCircle">מנהל</div>
-                </a>
+                <div class="hexIn">
+                    <a class="hexLink" (click)="onChooseGroup(groupAdmin._id)">
+                        <img src="{{ groupAdmin.imgPath }}" alt=""/>
+                        <div class="circle">{{ groupAdmin.people.length }}</div>
+                        <div class="name">{{ groupAdmin.name }}</div>
+                        <img src="assets/img/crown.png" id="crown"/>
+                        <h1>{{ groupAdmin.name }}</h1>
+                        <p>{{ groupAdmin.description }}</p>
+                        <div class="AdminCircle">מנהל</div>
+                    </a>   
+                </div>
+                <!-- <a class="hexIn">
+                    
+                </a> -->
             </li>
         </ng-container>
         <ng-container *ngFor="let group of groups | filter :['name'] : nameGroupp : 'includes'" >
             <li class="hex" (click)="onChooseGroup(group._id)">
-                <a class="hexIn">
-                    <img src="{{ group.imgPath }}" alt=""/>
-                    <div class="circle">{{ group.people.length }}</div>
-                    <div class="name">{{ group.name }}</div>
-                    <h1>{{ group.name }}</h1>
-                    <p>{{ group.description }}</p>
-                </a>
+                <!-- <a class="hexIn"> -->
+                    <div class="hexIn">
+                            <a class="hexLink" (click)="onChooseGroup(group._id)">
+                                <img src="{{ group.imgPath }}" alt=""/>
+                                <div class="circle">{{ group.people.length }}</div>
+                                <div class="name">{{ group.name }}</div>
+                                <h1>{{ group.name }}</h1>
+                                <p>{{ group.description }}</p>
+                            </a>
+                    </div>
+                <!-- </a> -->
             </li>
         </ng-container>
 
